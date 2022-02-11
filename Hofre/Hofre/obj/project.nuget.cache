@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hObF28NrsJR8F78gv8KUzeXCYooX5VynTa0zeT4Bl8mGDvQUhLzqEZv6YqXkiVxgvMLX0sch7ZuTPTjcGPJAHw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Hofre\\Hofre.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alith\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
