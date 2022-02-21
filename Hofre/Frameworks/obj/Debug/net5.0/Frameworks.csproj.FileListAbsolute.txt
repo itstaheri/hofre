@@ -1,0 +1,12 @@
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\bin\Debug\net5.0\Frameworks.deps.json
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\bin\Debug\net5.0\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\bin\Debug\net5.0\ref\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\bin\Debug\net5.0\Frameworks.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.AssemblyInfoInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.AssemblyInfo.cs
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.csproj.CoreCompileInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\ref\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.pdb

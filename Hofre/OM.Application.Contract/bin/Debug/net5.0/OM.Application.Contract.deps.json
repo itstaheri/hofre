@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "OM.Application.Contract/1.0.0": {
+        "runtime": {
+          "OM.Application.Contract.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OM.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

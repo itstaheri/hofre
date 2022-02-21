@@ -1,0 +1,17 @@
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.AssemblyInfoInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.AssemblyInfo.cs
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.csproj.CoreCompileInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\AM.Domain.deps.json
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\AM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\ref\AM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\AM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\Frameworks.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.csproj.CopyComplete
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\ref\AM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\obj\Debug\net5.0\AM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\AM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Domain\bin\Debug\net5.0\AM.Application.Contract.pdb

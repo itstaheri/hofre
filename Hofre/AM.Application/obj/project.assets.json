@@ -1,11 +1,65 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "AM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/AM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AM.Application.Contract.dll": {}
+        }
+      },
+      "AM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AM.Domain.dll": {}
+        }
+      },
+      "Frameworks/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Frameworks.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Frameworks.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "AM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../AM.Application.Contract/AM.Application.Contract.csproj",
+      "msbuildProject": "../AM.Application.Contract/AM.Application.Contract.csproj"
+    },
+    "AM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AM.Domain/AM.Domain.csproj",
+      "msbuildProject": "../AM.Domain/AM.Domain.csproj"
+    },
+    "Frameworks/1.0.0": {
+      "type": "project",
+      "path": "../Frameworks/Frameworks.csproj",
+      "msbuildProject": "../Frameworks/Frameworks.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "AM.Application.Contract >= 1.0.0",
+      "AM.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\alith\\.nuget\\packages\\": {},
@@ -41,7 +95,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Application.Contract\\AM.Application.Contract.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Application.Contract\\AM.Application.Contract.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Domain\\AM.Domain.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Domain\\AM.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

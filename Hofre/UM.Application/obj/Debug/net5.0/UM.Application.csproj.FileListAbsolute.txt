@@ -1,0 +1,11 @@
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\bin\Debug\net5.0\UM.Application.deps.json
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\bin\Debug\net5.0\UM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\bin\Debug\net5.0\ref\UM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\bin\Debug\net5.0\UM.Application.pdb
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\obj\Debug\net5.0\UM.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\obj\Debug\net5.0\UM.Application.AssemblyInfoInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\obj\Debug\net5.0\UM.Application.AssemblyInfo.cs
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\obj\Debug\net5.0\UM.Application.csproj.CoreCompileInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\obj\Debug\net5.0\UM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\obj\Debug\net5.0\ref\UM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Application\obj\Debug\net5.0\UM.Application.pdb

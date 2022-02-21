@@ -1,3 +1,4 @@
+using AM.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,22 +14,30 @@ namespace Hofre
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration,IWebHostEnvironment env)
         {
             Configuration = configuration;
+            Env = env;
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        public IWebHostEnvironment Env { get; }
+       
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            string ConnetionString = Configuration.GetConnectionString("HofreDB");
+            var mvcBuilder =services.AddRazorPages();
+            ArticleBootestrapper.Configuration(services, ConnetionString);
+            if (Env.IsDevelopment())
+            {
+                mvcBuilder.AddRazorRuntimeCompilation();
+            }
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+          
+           
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -36,7 +45,6 @@ namespace Hofre
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -50,6 +58,7 @@ namespace Hofre
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

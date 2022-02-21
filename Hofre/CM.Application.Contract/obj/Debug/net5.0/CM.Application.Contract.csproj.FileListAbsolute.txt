@@ -1,0 +1,12 @@
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\bin\Debug\net5.0\CM.Application.Contract.deps.json
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\bin\Debug\net5.0\CM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\bin\Debug\net5.0\ref\CM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\bin\Debug\net5.0\CM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\CM.Application.Contract.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\CM.Application.Contract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\CM.Application.Contract.AssemblyInfoInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\CM.Application.Contract.AssemblyInfo.cs
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\CM.Application.Contract.csproj.CoreCompileInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\CM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\ref\CM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Application.Contract\obj\Debug\net5.0\CM.Application.Contract.pdb

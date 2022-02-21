@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ArticleTags\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AM.Application.Contract\AM.Application.Contract.csproj" />
+    <ProjectReference Include="..\Frameworks\Frameworks.csproj" />
+  </ItemGroup>
 
 </Project>

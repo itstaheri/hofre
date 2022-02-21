@@ -1,0 +1,61 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "AM.Application/1.0.0": {
+        "dependencies": {
+          "AM.Application.Contract": "1.0.0",
+          "AM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "AM.Application.dll": {}
+        }
+      },
+      "AM.Application.Contract/1.0.0": {
+        "runtime": {
+          "AM.Application.Contract.dll": {}
+        }
+      },
+      "AM.Domain/1.0.0": {
+        "dependencies": {
+          "AM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0"
+        },
+        "runtime": {
+          "AM.Domain.dll": {}
+        }
+      },
+      "Frameworks/1.0.0": {
+        "runtime": {
+          "Frameworks.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AM.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AM.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AM.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Frameworks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

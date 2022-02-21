@@ -1,0 +1,12 @@
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\bin\Debug\net5.0\CM.Infrastracture.Efcore.deps.json
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\bin\Debug\net5.0\CM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\bin\Debug\net5.0\ref\CM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\bin\Debug\net5.0\CM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\CM.Infrastracture.Efcore.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\CM.Infrastracture.Efcore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\CM.Infrastracture.Efcore.AssemblyInfoInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\CM.Infrastracture.Efcore.AssemblyInfo.cs
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\CM.Infrastracture.Efcore.csproj.CoreCompileInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\CM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\ref\CM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Infrastracture.Efcore\obj\Debug\net5.0\CM.Infrastracture.Efcore.pdb

@@ -1,0 +1,12 @@
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\bin\Debug\net5.0\CM.Domain.deps.json
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\bin\Debug\net5.0\CM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\bin\Debug\net5.0\ref\CM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\bin\Debug\net5.0\CM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\CM.Domain.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\CM.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\CM.Domain.AssemblyInfoInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\CM.Domain.AssemblyInfo.cs
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\CM.Domain.csproj.CoreCompileInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\CM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\ref\CM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Domain\obj\Debug\net5.0\CM.Domain.pdb
