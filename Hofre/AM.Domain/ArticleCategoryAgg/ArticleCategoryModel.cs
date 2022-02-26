@@ -1,4 +1,5 @@
-﻿using Frameworks;
+﻿using AM.Domain.ArticleAgg;
+using Frameworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace AM.Domain.ArticleCategoryAgg
 
         public string Name {  get; private set; }
         public List<ArticleToCategoryModel>  articleToCategories { get; private set; }
+        //public List<ArticleModel>  articles { get; private set; }
 
     }
 }

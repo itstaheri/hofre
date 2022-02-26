@@ -119,7 +119,6 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.As
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
-C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Identity.dll
@@ -203,7 +202,6 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.Ex
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
@@ -262,7 +260,6 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.IO.Fi
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.IO.FileSystem.Watcher.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.IO.IsolatedStorage.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.IO.MemoryMappedFiles.dll
-C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.IO.Pipelines.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.IO.Pipes.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.IO.UnmanagedMemoryStream.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\refs\System.Linq.dll
@@ -401,6 +398,12 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\tr\Microsoft.Code
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Hofre.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Article\Index.cshtml.g.cs
-C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Article\Create.cshtml.g.cs
-C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Article\Edit.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\ArticleCategories\Create.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\ArticleCategories\Edit.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\ArticleCategories\Index.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Articles\Create.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Articles\Index.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Articles\Edit.cshtml.g.cs

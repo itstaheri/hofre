@@ -26,9 +26,6 @@ namespace AM.Infrastracture.Efcore.Migrations
                         .HasColumnType("bigint")
                         .UseIdentityColumn();
 
-                    b.Property<long>("ArticleCategoryId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
@@ -59,6 +56,29 @@ namespace AM.Infrastracture.Efcore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("articles");
+                });
+
+            modelBuilder.Entity("AM.Domain.ArticleAgg.ArticleTagsModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long>("ArticleId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.ToTable("articleTags");
                 });
 
             modelBuilder.Entity("AM.Domain.ArticleCategoryAgg.ArticleCategoryModel", b =>
@@ -94,6 +114,17 @@ namespace AM.Infrastracture.Efcore.Migrations
                     b.ToTable("articleToCategories");
                 });
 
+            modelBuilder.Entity("AM.Domain.ArticleAgg.ArticleTagsModel", b =>
+                {
+                    b.HasOne("AM.Domain.ArticleAgg.ArticleModel", "article")
+                        .WithMany("articleTags")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("article");
+                });
+
             modelBuilder.Entity("AM.Domain.ArticleCategoryAgg.ArticleToCategoryModel", b =>
                 {
                     b.HasOne("AM.Domain.ArticleCategoryAgg.ArticleCategoryModel", "articleCategory")
@@ -115,6 +146,8 @@ namespace AM.Infrastracture.Efcore.Migrations
 
             modelBuilder.Entity("AM.Domain.ArticleAgg.ArticleModel", b =>
                 {
+                    b.Navigation("articleTags");
+
                     b.Navigation("articleToCategories");
                 });
 

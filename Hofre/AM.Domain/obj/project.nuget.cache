@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "yIGw+xmqYewHTXw2e04Gs3VTvFYYf0kVuzTj9MPADaA4BO+vHDrsLWgeWLEKlFwWQatBF3ktDte0o6vkViVa0g==",
+  "dgSpecHash": "m6ghkGdBtVSbwg8PvpQutD4X6Wfvl6MVBFOLoK/QALK0AKl5adO1MU3QWtQMbRbwX77PCm3JdZF9gh0E0GWQeQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Domain\\AM.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alith\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.14\\microsoft.aspnetcore.http.features.5.0.14.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,0 +1,108 @@
+﻿@page
+@model Hofre.Areas.Admin.Pages.Articles.EditModel
+@{
+}
+
+<div class="content-body">
+
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3>افزودن مقاله</h3>
+            </div>
+        </div><!-- Page Heading End -->
+        <!-- Page Button Group Start -->
+
+    </div><!-- Page Headings End -->
+    <!-- Add or Edit Product Start -->
+    <div class="add-edit-product-wrap col-12">
+
+        <div class="add-edit-product-form">
+            <form method="post" enctype="multipart/form-data">
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="title" placeholder="تیتر" required value="@Model.Article.Title"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="slug" placeholder="اسلاگ" required value="@Model.Article.Slug"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="PictureAlt" placeholder="PictureAlt" value="@Model.Article.PictureAlt"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="PictureTitle" placeholder="PictureTitle" value="@Model.Article.PictureTitle"></div>
+                    <div class="col-12 mb-30"><textarea class="form-control" name="ShortDescription" placeholder="توضیحات کوتاه" required>@Model.Article.ShortDescription</textarea></div>
+                    <div class="col-12 mb-30"><textarea class="form-control summernote" name="Description" placeholder="توضیحات" required>@Model.Article.Description</textarea></div>
+                    <div class="col-lg-4 col-12 mb-30">
+                        <h5 class="sub-title">انتخاب چند گانه</h5>
+                        <div class="form-group">
+                            <label>
+                                انتخاب گروه
+                            </label>
+                            <select multiple="multiple" asp-items="Model.categories" name="Categories" class="form-control">
+                                <option value="0">انتخاب گروه</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="title">اپلود تصویر</h4>
+
+                <div class="product-upload-gallery row flex-wrap">
+                    <div class="col-12 mb-30">
+                        <p class="form-help-text mt-0">آپلود حداکثر 800 × 800 پیکسل و حداکثر اندازه 2 مگابایت.</p>
+                        <input class="file-pond" type="file" name="Picture" />
+                    </div>
+                </div>
+                <h4 class="title">اپلود ویدیو</h4>
+
+                <div class="product-upload-gallery row flex-wrap">
+                    <div class="col-12 mb-30">
+                        <p class="form-help-text mt-0">آپلود حداکثر 800 × 800 پیکسل و حداکثر اندازه 2 مگابایت.</p>
+                        <input class="file-pond" type="file" name="Video" />
+                    </div>
+                </div>
+
+
+
+                <!-- Button Group Start -->
+                <div class="row">
+                    <div class="d-flex flex-wrap justify-content-end col mbn-10">
+                        <button class="submit button button-outline button-primary mb-10 ml-10 mr-0">ذخیره و انتشار</button>
+                    </div>
+                </div><!-- Button Group End -->
+
+            </form>
+        </div>
+
+    </div><!-- Add or Edit Product End -->
+
+</div><!-- Content Body End -->
+
+
+<script>
+    $('.summernote').summernote({
+        height: 250,
+
+    });
+</script>
+@section Scripts{
+
+
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <!--Plugins JS-->
+    <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/plugins/tippy4.min.js.js"></script>
+    <!--Main JS-->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Plugins & Activation JS For Only This Page -->
+    <script src="assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/js/plugins/nice-select/niceSelect.active.js"></script>
+    <script src="assets/js/plugins/filepond/filepond.min.js"></script>
+    <script src="assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script src="assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
+    <script src="assets/js/plugins/filepond/filepond.active.js"></script>
+}

@@ -1,4 +1,6 @@
 using AM.Configuration;
+using Frameworks;
+using Hofre.HostFrameworks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,9 @@ namespace Hofre
             string ConnetionString = Configuration.GetConnectionString("HofreDB");
             var mvcBuilder =services.AddRazorPages();
             ArticleBootestrapper.Configuration(services, ConnetionString);
+
+            services.AddTransient<IFileUploader,FileUploader>();
+
             if (Env.IsDevelopment())
             {
                 mvcBuilder.AddRazorRuntimeCompilation();

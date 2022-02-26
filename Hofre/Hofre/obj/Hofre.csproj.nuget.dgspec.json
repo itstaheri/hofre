@@ -45,6 +45,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.14, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -99,6 +105,9 @@
               },
               "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Domain\\AM.Domain.csproj": {
                 "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Domain\\AM.Domain.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Infrastracture.Efcore\\AM.Infrastracture.Efcore.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Infrastracture.Efcore\\AM.Infrastracture.Efcore.csproj"
               }
             }
           }
@@ -399,6 +408,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.14, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

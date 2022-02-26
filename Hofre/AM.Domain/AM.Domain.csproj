@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ArticleTags\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AM.Application.Contract\AM.Application.Contract.csproj" />
     <ProjectReference Include="..\Frameworks\Frameworks.csproj" />
   </ItemGroup>

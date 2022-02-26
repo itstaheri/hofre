@@ -16,4 +16,8 @@
     <ProjectReference Include="..\AM.Configuration\AM.Configuration.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Media\Article\" />
+  </ItemGroup>
+
 </Project>

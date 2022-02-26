@@ -16,6 +16,7 @@ namespace AM.Infrastracture.Efcore.Mappings
             builder.HasKey(x => new { x.ArticleCategoryId, x.ArticleId });
             builder.HasOne(x => x.articleCategory).WithMany(x => x.articleToCategories).HasForeignKey(x => x.ArticleCategoryId);
             builder.HasOne(x => x.article).WithMany(x => x.articleToCategories).HasForeignKey(x => x.ArticleId);
+
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using AM.Application;
+using AM.Application.Contract.Article;
 using AM.Application.Contract.ArticleCategory;
+using AM.Domain.ArticleAgg;
 using AM.Domain.ArticleCategoryAgg;
 using AM.Infrastracture.Efcore;
 using AM.Infrastracture.Efcore.Repositories;
@@ -15,6 +17,8 @@ namespace AM.Configuration
         {
             services.AddTransient<IArticleCategoryRepository, ArticleCategoryRepository>();
             services.AddTransient<IArticleCategoryApplication, ArticleCategoryApplication>();
+            services.AddTransient<IArticleRepository, ArticleRepository>();
+            services.AddTransient<IArticleApplication, ArticleApplication>();
             services.AddDbContext<ArticleContext>(x => { x.UseSqlServer(ConnectionString); });
             
         }

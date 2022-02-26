@@ -37,13 +37,14 @@ namespace AM.Infrastracture.Efcore.Repositories
 
             foreach (var item in query)
             {
-                var getcount = _context.articleCategories.FirstOrDefault(x => x.Id == item.Id).articleToCategories;
-                if (getcount != null)
-                    item.ArticleCounts = getcount.Count;
-                else
-                    item.ArticleCounts = 0;
-
+                //var getcount = _context.articleCategories.SelectMany(x=>x.articles).SelectMany(x=>x.articleCategories);
+                //if (getcount != null)
+                //    item.ArticleCounts = 0;
+                //else
+                //    item.ArticleCounts = 0;
+                item.ArticleCounts = 0;
             }
+
             return query;
         }
 

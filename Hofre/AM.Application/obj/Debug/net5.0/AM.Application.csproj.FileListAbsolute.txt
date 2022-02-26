@@ -17,3 +17,5 @@ C:\Users\alith\source\repos\hofre\Hofre\AM.Application\obj\Debug\net5.0\AM.Appli
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\obj\Debug\net5.0\AM.Application.dll
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\obj\Debug\net5.0\ref\AM.Application.dll
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\obj\Debug\net5.0\AM.Application.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Infrastracture.Efcore.pdb
