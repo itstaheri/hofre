@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AM.Domain\AM.Domain.csproj" />
+    <ProjectReference Include="..\UM.Infrastracture.Efcore\UM.Infrastracture.Efcore.csproj" />
   </ItemGroup>
 
 </Project>

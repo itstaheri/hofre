@@ -15,5 +15,7 @@ namespace AM.Domain.ArticleAgg
         void Save();
         bool Remove(long Id);
         List<ArticleViewModel> GetAll();
+        List<ArticleTagViewModel> GetTagsBy(long Id);
+
     }
 }

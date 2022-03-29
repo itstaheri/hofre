@@ -15,6 +15,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
         private readonly IArticleCategoryApplication _articlecategory;
         public List<SelectListItem> categories;
         private readonly IArticleApplication _repository;
+        public List<SelectListItem> articleTags;
         [BindProperty] public EditArticle Article { get; set; }
 
         public EditModel(IArticleCategoryApplication articlecategory, IArticleApplication repository)
@@ -26,6 +27,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
         public void OnGet(long Id)
         {
             Article = _repository.GetValueForEdit(Id);
+            articleTags = _repository.GetTagsBy(Id).Select(x=>new SelectListItem(x.Title,x.TagId.ToString())).ToList();
             categories = _articlecategory.GetAll().Select(x => new SelectListItem(x.Name, x.Id.ToString(),true)).ToList();
         }
         public RedirectToPageResult OnPost(EditArticle commend)

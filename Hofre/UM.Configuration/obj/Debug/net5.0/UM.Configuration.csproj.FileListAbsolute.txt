@@ -1,6 +1,5 @@
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Configuration.deps.json
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Configuration.dll
-C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\ref\UM.Configuration.dll
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Configuration.pdb
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\UM.Configuration.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\UM.Configuration.AssemblyInfoInputs.cache
@@ -9,3 +8,18 @@ C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\UM.Con
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\UM.Configuration.dll
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\ref\UM.Configuration.dll
 C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\UM.Configuration.pdb
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\UM.Configuration.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\Frameworks.pdb
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\UM.Configuration.csproj.CopyComplete
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\obj\Debug\net5.0\refint\UM.Configuration.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\UM.Application.pdb
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\Exceptions.dll
+C:\Users\alith\source\repos\hofre\Hofre\UM.Configuration\bin\Debug\net5.0\Exceptions.pdb

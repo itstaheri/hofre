@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ElmahCore" Version="2.1.1" />
+    <PackageReference Include="ElmahCore.Sql" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -14,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AM.Configuration\AM.Configuration.csproj" />
+    <ProjectReference Include="..\CM.Configuration\CM.Configuration.csproj" />
+    <ProjectReference Include="..\UM.Configuration\UM.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

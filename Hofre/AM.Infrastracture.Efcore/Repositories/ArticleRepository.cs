@@ -1,6 +1,7 @@
 ﻿using AM.Application.Contract.Article;
 using AM.Domain.ArticleAgg;
 using AM.Domain.ArticleCategoryAgg;
+using AM.Infrastracture.Efcore.Exceptions;
 using Frameworks;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,20 @@ namespace AM.Infrastracture.Efcore.Repositories
 
         public bool Create(ArticleModel commend)
         {
-           
+            if (commend == null)
+                throw new NotFoundException("CreateArticleModel");
+
             _context.articles.Add(commend);
-            _context.SaveChanges();
+            try
+            {
+                _context.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
             return true;
         }
 
@@ -40,7 +52,8 @@ namespace AM.Infrastracture.Efcore.Repositories
                 Slug = x.Slug,
                 Title = x.Title,
                 Video = x.Video,
-                CreationDate = x.CreationDate.ToFarsi()
+                CreationDate = x.CreationDate.ToFarsi(),
+
             }).ToList();
         }
 
@@ -49,12 +62,19 @@ namespace AM.Infrastracture.Efcore.Repositories
             return _context.articles.FirstOrDefault(x => x.Id == Id);
         }
 
+        public List<ArticleTagViewModel> GetTagsBy(long Id)
+        {
+            return _context.articleTags.Where(x => x.ArticleId == Id)
+                .Select(x => new ArticleTagViewModel { TagId = x.Id, Title = x.Name })
+                .ToList();
+        }
+
         public bool Remove(long Id)
         {
             var article = _context.articles.FirstOrDefault(x => x.Id == Id);
             _context.Remove(article);
             _context.SaveChanges();
-            return true; 
+            return true;
         }
 
         public void Save()

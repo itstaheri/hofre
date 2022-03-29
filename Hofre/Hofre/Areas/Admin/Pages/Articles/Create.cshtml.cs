@@ -29,7 +29,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
         public RedirectToPageResult OnPost(CreateArticle commend)
         {
             _repository.Create(commend);
-            
+
             return RedirectToPage("./Index");
         }
 

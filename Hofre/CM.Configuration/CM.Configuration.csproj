@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CM.Application\CM.Application.csproj" />
+    <ProjectReference Include="..\CM.Infrastracture.Efcore\CM.Infrastracture.Efcore.csproj" />
+  </ItemGroup>
+
 </Project>

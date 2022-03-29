@@ -1,6 +1,10 @@
 using AM.Configuration;
+using CM.Configuration;
+using ElmahCore.Mvc;
+using ElmahCore.Sql;
 using Frameworks;
 using Hofre.HostFrameworks;
+using Hofre.MidleWares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UM.Configuration;
 
 namespace Hofre
 {
@@ -30,6 +35,17 @@ namespace Hofre
             string ConnetionString = Configuration.GetConnectionString("HofreDB");
             var mvcBuilder =services.AddRazorPages();
             ArticleBootestrapper.Configuration(services, ConnetionString);
+            UserBootestrapper.Configuration(services, ConnetionString);
+            CourseBootestrapper.Configuration(services, ConnetionString);
+            //frameworks
+            services.AddTransient<IPasswordHasher, PasswordHasher>();
+
+            services.AddElmah<SqlErrorLog>(option =>
+            {
+                //option.OnPermissionCheck = x => x.User.Identity.IsAuthenticated;
+                option.LogPath = "reportlogs";
+                option.ConnectionString = Configuration.GetConnectionString("LogDB");
+            });
 
             services.AddTransient<IFileUploader,FileUploader>();
 
@@ -52,13 +68,18 @@ namespace Hofre
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+            //custom global exception 
+            app.UseCustomExceptionHandler();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseElmah();
 
             app.UseEndpoints(endpoints =>
             {

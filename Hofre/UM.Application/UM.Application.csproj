@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj" />
+    <ProjectReference Include="..\UM.Application.Contract\UM.Application.Contract.csproj" />
+    <ProjectReference Include="..\UM.Domain\UM.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

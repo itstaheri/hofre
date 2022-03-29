@@ -17,10 +17,17 @@ namespace Hofre
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+            Host.CreateDefaultBuilder(args) 
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureLogging(logger =>
+                    {
+                        logger.ClearProviders();
+                        logger.AddConsole();
+                        logger.AddDebug();
+                        logger.AddEventLog();
+                    });
                 });
     }
 }

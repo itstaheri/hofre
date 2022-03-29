@@ -1,6 +1,5 @@
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Application.deps.json
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Application.dll
-C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\ref\AM.Application.dll
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Application.pdb
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Application.Contract.dll
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Domain.dll
@@ -19,3 +18,12 @@ C:\Users\alith\source\repos\hofre\Hofre\AM.Application\obj\Debug\net5.0\ref\AM.A
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\obj\Debug\net5.0\AM.Application.pdb
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Infrastracture.Efcore.dll
 C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\AM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\obj\Debug\net5.0\refint\AM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\UM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\UM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\UM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\UM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\UM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\UM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\Exceptions.dll
+C:\Users\alith\source\repos\hofre\Hofre\AM.Application\bin\Debug\net5.0\Exceptions.pdb

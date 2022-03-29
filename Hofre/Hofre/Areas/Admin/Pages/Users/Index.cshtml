@@ -1,0 +1,141 @@
+﻿@page
+@model Hofre.Areas.Admin.Pages.Users.IndexModel
+@{
+}
+
+<div class="content-body">
+
+    <div class="modal fade" id="exampleModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">عنوان مودال</h5>
+                    <button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>واوووو، شما در حال خواندن این متن در مودال هستید!</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="button button-danger" data-dismiss="modal">Close</button>
+                    <button class="button button-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3 class="title">کاربران</h3>
+            </div>
+
+        </div><!-- Page Heading End -->
+        <a class="button button-success" asp-page="./Create">افزودن کاربر جدید</a>
+    </div><!-- Page Headings End -->
+
+    <div class="row">
+
+
+        <!--Basic Start-->
+        <div class="col-12 mb-30">
+
+            <div class="box">
+                <div class="box-head">
+                    <h3 class="title">لیست</h3>
+                </div>
+                <div class="box-body">
+
+                    <table class="table footable" data-paging="true" data-filtering="true" data-sorting="true" data-breakpoints='{ "xs": 480, "sm": 768, "md": 992, "lg": 1200, "xl": 1400 }'>
+
+                        <thead>
+                            <tr>
+                                <th data-name="پروفایل">پروفایل</th>
+                                <th data-name="نام کاربری">نام کاربری</th>
+                                <th data-name="تاریخ عضویت">تاریخ عضویت</th>
+                                <th>وضعیت</th>
+                                <th>عملیات</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                @foreach (var item in Model.Users)
+                                {
+
+                                    <td height="80" width="80"><img src="~/Media/Article/@item.Username/@item.ProfilePicture" /></td>
+                                    <td>@item.Username</td>
+                                    <td>@item.CreationDate</td>
+                                    @if (item.IsActive == true)
+                                    {
+                                        <td>فعال</td>
+                                    }
+                                    else
+                                    {
+                                        <td>غیرفعال</td>
+                                    }
+                                    <td width="70">
+                                        <a class="button button-warning" asp-page="./Edit" asp-route-Id="@item.Id">ویرایش</a>
+                                    </td>
+                                    <td width="70">
+                                        <form method="post">
+                                            <input type="hidden" name="Id" value="@item.Id" />
+                                            <button class="button button-danger">حذف</button>
+                                        </form>
+
+                                    </td>
+                                    <td>
+                                        <button class="button button-primary" data-toggle="modal" data-target="#exampleModal5" data-whatever="getbootstrap">تغییر پسورد</button>
+                                    </td>
+
+                                }
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- Content Body End -->
+@section Scripts{
+<!-- Global Vendor, plugins & Activation JS -->
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<!--modal-->
+<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+<!--Plugins JS-->
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<!--Main JS-->
+<script src="assets/js/main.js"></script>
+
+<!-- Plugins & Activation JS For Only This Page -->
+<script src="~/assets/js/plugins/moment/moment.min.js"></script>
+<script src="~/assets/js/plugins/footable/footable.min.js"></script>
+<script src="~/assets/js/plugins/footable/footable.active.js"></script>
+
+
+
+<script>
+    $('#exampleModal5').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('پیام جدید به ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+    })
+</script>
+}

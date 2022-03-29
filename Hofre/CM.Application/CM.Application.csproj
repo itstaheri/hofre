@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CM.Application.Contract\CM.Application.Contract.csproj" />
+    <ProjectReference Include="..\CM.Domain\CM.Domain.csproj" />
+    <ProjectReference Include="..\CM.Infrastracture.Efcore\CM.Infrastracture.Efcore.csproj" />
+  </ItemGroup>
+
 </Project>

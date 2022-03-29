@@ -26,8 +26,8 @@ namespace AM.Application
         public bool Create(CreateArticle commend)
         {
             Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = _context.Database.BeginTransaction();
-            string PictureName = _Upload.ArticleUploader(commend.Picture, commend.Title);
-            string VideoName = _Upload.ArticleUploader(commend.Video, commend.Title);
+            string PictureName = _Upload.SingleUploader(commend.Picture,"Article", commend.Title);
+            string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
             var article = new ArticleModel(commend.Title, commend.Slug, commend.ShortDescription, commend.Description,
               VideoName, PictureName, commend.PictureAlt, commend.PictureTitle);
             _repository.Create(article);
@@ -51,8 +51,8 @@ namespace AM.Application
 
         public bool Edit(EditArticle commend)
         {
-            string PictureName = _Upload.ArticleUploader(commend.Picture, commend.Title);
-            string VideoName = _Upload.ArticleUploader(commend.Video, commend.Title);
+            string PictureName = _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
+            string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
             var article = _repository.Getby(commend.Id);
             article.Edit(commend.Title, commend.Slug, commend.ShortDescription, commend.Description
               , VideoName, PictureName, commend.PictureAlt, commend.PictureTitle);
@@ -91,6 +91,11 @@ namespace AM.Application
             return _repository.GetAll();
         }
 
+        public List<ArticleTagViewModel> GetTagsBy(long Id)
+        {
+            return _repository.GetTagsBy(Id);
+        }
+
         public EditArticle GetValueForEdit(long Id)
         {
             var article = _repository.Getby(Id);
@@ -103,6 +108,8 @@ namespace AM.Application
                 PictureTitle = article.PictureTitle,
                 Slug = article.Slug,
                 Title = article.Slug,
+                articleTags = _context.articleTags.Where(x => x.ArticleId == article.Id)
+                .Select(q => new ArticleTagViewModel { TagId = q.Id, Title = q.Name }).ToList()
             };
         }
 

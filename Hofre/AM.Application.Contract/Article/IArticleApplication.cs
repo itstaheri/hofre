@@ -13,6 +13,7 @@ namespace AM.Application.Contract.Article
         EditArticle GetValueForEdit(long Id);
         bool Remove(long Id);
         List<ArticleViewModel> GetAll();
+        List<ArticleTagViewModel> GetTagsBy(long Id); 
 
     }
 }

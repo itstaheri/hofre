@@ -9,6 +9,7 @@ namespace Frameworks
 {
     public interface IFileUploader
     {
-        string ArticleUploader(IFormFile file, string folder);
+        string SingleUploader(IFormFile file,string part, string folder);
+        List<string> CourseUploader(List<IFormFile> files, string folder);
     }
 }

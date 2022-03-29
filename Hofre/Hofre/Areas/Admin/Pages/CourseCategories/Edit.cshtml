@@ -1,0 +1,77 @@
+﻿@page
+@model Hofre.Areas.Admin.Pages.CourseCategories.EditModel
+@{
+}
+
+<div class="content-body">
+
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3>افزودن دسته بندی دوره</h3>
+            </div>
+        </div><!-- Page Heading End -->
+        <!-- Page Button Group Start -->
+
+    </div><!-- Page Headings End -->
+    <!-- Add or Edit Product Start -->
+    <div class="add-edit-product-wrap col-12">
+
+        <div class="add-edit-product-form">
+            <form method="post" enctype="multipart/form-data">
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="Name" placeholder="نام دسته بندی" required value="@Model.courseCategory.Name"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="Slug" placeholder="اسلاگ" required value="@Model.courseCategory.Slug"></div>
+                </div>
+                <div class="row">
+                    <div class="d-flex flex-wrap justify-content-end col mbn-10">
+                        <button class="submit button button-outline button-primary mb-10 ml-10 mr-0">ذخیره و انتشار</button>
+                    </div>
+                </div><!-- Button Group End -->
+
+            </form>
+        </div>
+
+    </div><!-- Add or Edit Product End -->
+
+</div><!-- Content Body End -->
+
+
+
+@section Scripts{
+
+
+    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="~/assets/js/vendor/popper.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+    <script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
+    <script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
+    <script src="~/assets/js/plugins/filepond/filepond.min.js"></script>
+    <script src="~/assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script src="~/assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
+    <script src="~/assets/js/plugins/filepond/filepond.active.js"></script>
+    <script src="~/assets/js/plugins/select2/select2.full.min.js"></script>
+    <script src="~/assets/js/plugins/select2/select2.active.js"></script>
+    <script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
+    <script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-select/bootstrapSelect.active.js"></script>
+
+    <!--Plugins JS-->
+    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+    <!--Main JS-->
+    <script src="~/assets/js/main.js"></script>
+    <script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="~/assets/js/plugins/summernote/summernote.active.js"></script>
+    <script src="~/assets/js/plugins/quill/quill.min.js"></script>
+    <script src="~/assets/js/plugins/quill/quill.active.js"></script>
+}

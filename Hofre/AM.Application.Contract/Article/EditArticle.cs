@@ -9,5 +9,6 @@ namespace AM.Application.Contract.Article
     public class EditArticle : CreateArticle
     {
         public long Id { get; set; }
+        public List<ArticleTagViewModel> articleTags { get; set; } 
     }
 }
