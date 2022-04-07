@@ -35,6 +35,8 @@
         "dependencies": {
           "AM.Configuration": "1.0.0",
           "CM.Configuration": "1.0.0",
+          "DM.Application.Contract": "1.0.0",
+          "DM.Configuration": "1.0.0",
           "ElmahCore": "2.1.1",
           "ElmahCore.Sql": "2.1.1",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.0",
@@ -1867,6 +1869,64 @@
         },
         "compile": {
           "CM.Infrastracture.Efcore.dll": {}
+        }
+      },
+      "DM.Application/1.0.0": {
+        "dependencies": {
+          "DM.Application.Contract": "1.0.0",
+          "DM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DM.Application.dll": {}
+        },
+        "compile": {
+          "DM.Application.dll": {}
+        }
+      },
+      "DM.Application.Contract/1.0.0": {
+        "runtime": {
+          "DM.Application.Contract.dll": {}
+        },
+        "compile": {
+          "DM.Application.Contract.dll": {}
+        }
+      },
+      "DM.Configuration/1.0.0": {
+        "dependencies": {
+          "DM.Application": "1.0.0",
+          "DM.Infrastracture.Efcore": "1.0.0"
+        },
+        "runtime": {
+          "DM.Configuration.dll": {}
+        },
+        "compile": {
+          "DM.Configuration.dll": {}
+        }
+      },
+      "DM.Domain/1.0.0": {
+        "dependencies": {
+          "DM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0"
+        },
+        "runtime": {
+          "DM.Domain.dll": {}
+        },
+        "compile": {
+          "DM.Domain.dll": {}
+        }
+      },
+      "DM.Infrastracture.Efcore/1.0.0": {
+        "dependencies": {
+          "AM.Infrastracture.Efcore": "1.0.0",
+          "CM.Infrastracture.Efcore": "1.0.0",
+          "DM.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0"
+        },
+        "runtime": {
+          "DM.Infrastracture.Efcore.dll": {}
+        },
+        "compile": {
+          "DM.Infrastracture.Efcore.dll": {}
         }
       },
       "Exceptions/1.0.0": {
@@ -4581,6 +4641,31 @@
       "sha512": ""
     },
     "CM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DM.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DM.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DM.Configuration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DM.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DM.Infrastracture.Efcore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

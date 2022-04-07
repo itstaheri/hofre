@@ -1,6 +1,5 @@
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Configuration.deps.json
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Configuration.dll
-C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\ref\TM.Configuration.dll
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Configuration.pdb
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\TM.Configuration.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\TM.Configuration.AssemblyInfoInputs.cache
@@ -9,3 +8,5 @@ C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\TM.Con
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\TM.Configuration.dll
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\ref\TM.Configuration.dll
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\TM.Configuration.pdb
+C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\TM.Configuration.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\refint\TM.Configuration.dll

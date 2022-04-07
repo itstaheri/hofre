@@ -2169,6 +2169,74 @@
           "bin/placeholder/CM.Infrastracture.Efcore.dll": {}
         }
       },
+      "DM.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DM.Application.Contract": "1.0.0",
+          "DM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Application.dll": {}
+        }
+      },
+      "DM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/DM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Application.Contract.dll": {}
+        }
+      },
+      "DM.Configuration/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DM.Application": "1.0.0",
+          "DM.Infrastracture.Efcore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Configuration.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Configuration.dll": {}
+        }
+      },
+      "DM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Domain.dll": {}
+        }
+      },
+      "DM.Infrastracture.Efcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AM.Infrastracture.Efcore": "1.0.0",
+          "CM.Infrastracture.Efcore": "1.0.0",
+          "DM.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Infrastracture.Efcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Infrastracture.Efcore.dll": {}
+        }
+      },
       "Exceptions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7409,6 +7477,31 @@
       "path": "../CM.Infrastracture.Efcore/CM.Infrastracture.Efcore.csproj",
       "msbuildProject": "../CM.Infrastracture.Efcore/CM.Infrastracture.Efcore.csproj"
     },
+    "DM.Application/1.0.0": {
+      "type": "project",
+      "path": "../DM.Application/DM.Application.csproj",
+      "msbuildProject": "../DM.Application/DM.Application.csproj"
+    },
+    "DM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../DM.Application.Contract/DM.Application.Contract.csproj",
+      "msbuildProject": "../DM.Application.Contract/DM.Application.Contract.csproj"
+    },
+    "DM.Configuration/1.0.0": {
+      "type": "project",
+      "path": "../DM.Configuration/DM.Configuration.csproj",
+      "msbuildProject": "../DM.Configuration/DM.Configuration.csproj"
+    },
+    "DM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DM.Domain/DM.Domain.csproj",
+      "msbuildProject": "../DM.Domain/DM.Domain.csproj"
+    },
+    "DM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "path": "../DM.Infrastracture.Efcore/DM.Infrastracture.Efcore.csproj",
+      "msbuildProject": "../DM.Infrastracture.Efcore/DM.Infrastracture.Efcore.csproj"
+    },
     "Exceptions/1.0.0": {
       "type": "project",
       "path": "../Exceptions/Exceptions.csproj",
@@ -7449,6 +7542,8 @@
     "net5.0": [
       "AM.Configuration >= 1.0.0",
       "CM.Configuration >= 1.0.0",
+      "DM.Application.Contract >= 1.0.0",
+      "DM.Configuration >= 1.0.0",
       "ElmahCore >= 2.1.1",
       "ElmahCore.Sql >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.0",
@@ -7496,6 +7591,12 @@
             },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Configuration\\CM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Configuration\\CM.Configuration.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj"
             },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj"

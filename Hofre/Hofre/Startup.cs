@@ -1,5 +1,6 @@
 using AM.Configuration;
 using CM.Configuration;
+using DM.Configuration;
 using ElmahCore.Mvc;
 using ElmahCore.Sql;
 using Frameworks;
@@ -37,6 +38,7 @@ namespace Hofre
             ArticleBootestrapper.Configuration(services, ConnetionString);
             UserBootestrapper.Configuration(services, ConnetionString);
             CourseBootestrapper.Configuration(services, ConnetionString);
+            DiscountBootestrapper.Configuration(services, ConnetionString);
             //frameworks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
 

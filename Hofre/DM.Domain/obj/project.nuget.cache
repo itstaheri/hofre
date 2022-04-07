@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "KOxxwGWnSPfnEwKikRkqZ7rrkIYNRDJnSr7CNaKvsVbLiJF9YQSl/XoEss2pX3p5sJhVo3z6ej9hZe+Sa0UKuA==",
+  "dgSpecHash": "FXpgY67FEVFtxXxfZHQujBjN9XP2q8kHrL9e6+qzk95fIuhEjSC/LHZTtfmC1kQ9VG5thmWGdw+oAnwNkSnAFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alith\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.14\\microsoft.aspnetcore.http.features.5.0.14.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

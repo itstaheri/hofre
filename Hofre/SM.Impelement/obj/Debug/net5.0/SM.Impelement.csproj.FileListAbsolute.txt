@@ -1,6 +1,5 @@
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\bin\Debug\net5.0\SM.Impelement.deps.json
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\bin\Debug\net5.0\SM.Impelement.dll
-C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\bin\Debug\net5.0\ref\SM.Impelement.dll
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\bin\Debug\net5.0\SM.Impelement.pdb
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\SM.Impelement.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\SM.Impelement.AssemblyInfoInputs.cache
@@ -9,3 +8,5 @@ C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\SM.Impele
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\SM.Impelement.dll
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\ref\SM.Impelement.dll
 C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\SM.Impelement.pdb
+C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\SM.Impelement.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\SM.Impelement\obj\Debug\net5.0\refint\SM.Impelement.dll

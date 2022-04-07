@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Admin\Pages\Discounts\Create.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ElmahCore" Version="2.1.1" />
     <PackageReference Include="ElmahCore.Sql" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
@@ -17,11 +21,25 @@
   <ItemGroup>
     <ProjectReference Include="..\AM.Configuration\AM.Configuration.csproj" />
     <ProjectReference Include="..\CM.Configuration\CM.Configuration.csproj" />
+    <ProjectReference Include="..\DM.Application.Contract\DM.Application.Contract.csproj" />
+    <ProjectReference Include="..\DM.Configuration\DM.Configuration.csproj" />
     <ProjectReference Include="..\UM.Configuration\UM.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\Media\Article\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Admin\Pages\Discounts\Create.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\Admin\Pages\Discounts\Create.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Admin\Pages\Discounts\Create.cshtml" />
   </ItemGroup>
 
 </Project>

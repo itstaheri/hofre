@@ -77,19 +77,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frameworks", "Frameworks\Fr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Query", "Query\Query.csproj", "{C7FDCBFA-F553-4F40-931A-108E55A7F0DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{3C338908-D281-47FB-95D6-3600A083CE0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{3C338908-D281-47FB-95D6-3600A083CE0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DiscountManagement", "DiscountManagement", "{8523D0F2-AC56-496C-85BA-23334A1D58E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Domain", "DM.Domain\DM.Domain.csproj", "{8E777D19-95A5-400C-87E9-72F6E6AD74F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Domain", "DM.Domain\DM.Domain.csproj", "{8E777D19-95A5-400C-87E9-72F6E6AD74F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Application", "DM.Application\DM.Application.csproj", "{C1870C8E-119B-4F5D-A163-A9E7C692EDE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Application", "DM.Application\DM.Application.csproj", "{C1870C8E-119B-4F5D-A163-A9E7C692EDE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Application.Contract", "DM.Application.Contract\DM.Application.Contract.csproj", "{58A4AEC4-0153-4F77-B940-CC0DAB8AC59A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Application.Contract", "DM.Application.Contract\DM.Application.Contract.csproj", "{58A4AEC4-0153-4F77-B940-CC0DAB8AC59A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Infrastracture.Efcore", "DM.Infrastracture.Efcore\DM.Infrastracture.Efcore.csproj", "{4E4D6B93-82CE-435B-A2E1-8504A50F2FF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Infrastracture.Efcore", "DM.Infrastracture.Efcore\DM.Infrastracture.Efcore.csproj", "{4E4D6B93-82CE-435B-A2E1-8504A50F2FF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Configuration", "DM.Configuration\DM.Configuration.csproj", "{72E9ED7C-A458-408D-9017-12E6D5C61DC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Configuration", "DM.Configuration\DM.Configuration.csproj", "{72E9ED7C-A458-408D-9017-12E6D5C61DC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

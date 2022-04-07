@@ -11,7 +11,7 @@ using System;
 
 namespace CM.Configuration
 {
-    public class CourseBootestrapper
+    public class CourseBootestrapper    
     {
         public static void Configuration(IServiceCollection services,string ConnectionString)
         {

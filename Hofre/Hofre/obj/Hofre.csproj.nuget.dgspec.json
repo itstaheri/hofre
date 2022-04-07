@@ -727,6 +727,343 @@
         }
       }
     },
+    "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj",
+        "projectName": "DM.Application.Contract",
+        "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj",
+        "packagesPath": "C:\\Users\\alith\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application\\DM.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application\\DM.Application.csproj",
+        "projectName": "DM.Application",
+        "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application\\DM.Application.csproj",
+        "packagesPath": "C:\\Users\\alith\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj",
+        "projectName": "DM.Configuration",
+        "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj",
+        "packagesPath": "C:\\Users\\alith\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application\\DM.Application.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application\\DM.Application.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj",
+        "projectName": "DM.Domain",
+        "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj",
+        "packagesPath": "C:\\Users\\alith\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Frameworks\\Frameworks.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Frameworks\\Frameworks.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj",
+        "projectName": "DM.Infrastracture.Efcore",
+        "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj",
+        "packagesPath": "C:\\Users\\alith\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Infrastracture.Efcore\\AM.Infrastracture.Efcore.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Infrastracture.Efcore\\AM.Infrastracture.Efcore.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Infrastracture.Efcore\\CM.Infrastracture.Efcore.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Infrastracture.Efcore\\CM.Infrastracture.Efcore.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Domain\\DM.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Exceptions\\Exceptions.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -892,6 +1229,12 @@
               },
               "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Configuration\\CM.Configuration.csproj": {
                 "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Configuration\\CM.Configuration.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj"
               },
               "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj": {
                 "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj"

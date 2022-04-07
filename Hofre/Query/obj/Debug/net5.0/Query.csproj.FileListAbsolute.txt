@@ -1,6 +1,5 @@
 C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\Query.deps.json
 C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\Query.dll
-C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\ref\Query.dll
 C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\Query.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Query\obj\Debug\net5.0\Query.csproj.AssemblyReference.cache
 C:\Users\alith\source\repos\hofre\Hofre\Query\obj\Debug\net5.0\Query.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,3 +9,4 @@ C:\Users\alith\source\repos\hofre\Hofre\Query\obj\Debug\net5.0\Query.csproj.Core
 C:\Users\alith\source\repos\hofre\Hofre\Query\obj\Debug\net5.0\Query.dll
 C:\Users\alith\source\repos\hofre\Hofre\Query\obj\Debug\net5.0\ref\Query.dll
 C:\Users\alith\source\repos\hofre\Hofre\Query\obj\Debug\net5.0\Query.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Query\obj\Debug\net5.0\refint\Query.dll

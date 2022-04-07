@@ -447,3 +447,14 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\System.Runtime.Co
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Exceptions.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Exceptions.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Users\Create.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Discounts\Index.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Configuration.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Configuration.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Application.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Infrastracture.Efcore.pdb
