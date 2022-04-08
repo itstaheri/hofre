@@ -3,6 +3,7 @@ using AM.Domain.ArticleAgg;
 using AM.Domain.ArticleCategoryAgg;
 using AM.Infrastracture.Efcore.Exceptions;
 using Frameworks;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace AM.Infrastracture.Efcore.Repositories
             _context = context;
         }
 
-        public bool Create(ArticleModel commend)
+        public async Task Create(ArticleModel commend)
         {
             if (commend == null)
                 throw new NotFoundException("CreateArticleModel");
@@ -28,7 +29,7 @@ namespace AM.Infrastracture.Efcore.Repositories
             _context.articles.Add(commend);
             try
             {
-                _context.SaveChanges();
+               await _context.SaveChangesAsync();
 
             }
             catch (Exception ex)
@@ -36,12 +37,11 @@ namespace AM.Infrastracture.Efcore.Repositories
 
                 throw new SaveErrorException(ex.Message, ex.InnerException);
             }
-            return true;
         }
 
-        public List<ArticleViewModel> GetAll()
+        public async Task<List<ArticleViewModel>> GetAll()
         {
-            return _context.articles.Select(x => new ArticleViewModel
+            return await _context.articles.Select(x => new ArticleViewModel
             {
                 Id = x.Id,
                 Description = x.Description,
@@ -54,32 +54,42 @@ namespace AM.Infrastracture.Efcore.Repositories
                 Video = x.Video,
                 CreationDate = x.CreationDate.ToFarsi(),
 
-            }).ToList();
+            }).ToListAsync();
+           
         }
 
-        public ArticleModel Getby(long Id)
+        public async Task<ArticleModel> Getby(long Id)
         {
-            return _context.articles.FirstOrDefault(x => x.Id == Id);
+            return await _context.articles.FirstOrDefaultAsync(x => x.Id == Id);
         }
 
-        public List<ArticleTagViewModel> GetTagsBy(long Id)
+        public async Task<List<ArticleTagViewModel>> GetTagsBy(long Id)
         {
-            return _context.articleTags.Where(x => x.ArticleId == Id)
+            return await _context.articleTags.Where(x => x.ArticleId == Id)
                 .Select(x => new ArticleTagViewModel { TagId = x.Id, Title = x.Name })
-                .ToList();
+                .ToListAsync();
         }
 
-        public bool Remove(long Id)
+        public async Task Remove(long Id)
         {
-            var article = _context.articles.FirstOrDefault(x => x.Id == Id);
+            var article =await _context.articles.FirstOrDefaultAsync(x => x.Id == Id);
             _context.Remove(article);
-            _context.SaveChanges();
-            return true;
+           await _context.SaveChangesAsync();
+           
         }
 
-        public void Save()
+        public async Task Save()
         {
-            _context.SaveChanges();
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
         }
     }
 }

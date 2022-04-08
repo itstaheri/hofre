@@ -9,11 +9,11 @@ namespace AM.Domain.ArticleCategoryAgg
 {
     public interface IArticleCategoryRepository
     {
-        bool Create(ArticleCategoryModel commend);
-        void Save();
-        ArticleCategoryModel GetBy(long Id);
-        List<ArticleCategoryViewModel> GetAll();
-        bool Remove(long Id);
+        Task Create(ArticleCategoryModel commend);
+        Task Save();
+        Task<ArticleCategoryModel> GetBy(long Id);
+        Task<List<ArticleCategoryViewModel>> GetAll();
+        Task Remove(long Id);
 
     }
 }

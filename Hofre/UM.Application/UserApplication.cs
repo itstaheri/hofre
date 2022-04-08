@@ -33,7 +33,7 @@ namespace UM.Application
             var user = await _repository.GetBy(Id);
             if (user == null)
                 throw new NotFoundException(nameof(user), user.Id);
-            var Password = await _Hash.Hash(newPassword);
+            var Password =  _Hash.Hash(newPassword);
             user.ChangePassword(Password);
             await _repository.Save();
 

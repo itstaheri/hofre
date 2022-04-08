@@ -1,6 +1,8 @@
 ﻿using AM.Application.Contract.ArticleCategory;
 using AM.Domain.ArticleCategoryAgg;
+using Exceptions;
 using Frameworks;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,22 +20,21 @@ namespace AM.Infrastracture.Efcore.Repositories
             _context = context;
         }
 
-        public bool Create(ArticleCategoryModel commend)
+        public async Task Create(ArticleCategoryModel commend)
         {
             _context.articleCategories.Add(commend);
-            _context.SaveChanges();
-            return true;
+            await _context.SaveChangesAsync();
         }
 
-        public List<ArticleCategoryViewModel> GetAll()
+        public async Task<List<ArticleCategoryViewModel>> GetAll()
         {
 
-            var query = _context.articleCategories.Select(x => new ArticleCategoryViewModel
+            var query = await _context.articleCategories.Select(x => new ArticleCategoryViewModel
             {
                 Id = x.Id,
                 CreationDate = x.CreationDate.ToFarsi(),
                 Name = x.Name,
-            }).ToList();
+            }).ToListAsync();
 
             foreach (var item in query)
             {
@@ -48,23 +49,35 @@ namespace AM.Infrastracture.Efcore.Repositories
             return query;
         }
 
-        public ArticleCategoryModel GetBy(long Id)
+        public async Task<ArticleCategoryModel> GetBy(long Id)
         {
-            return _context.articleCategories.FirstOrDefault(x => x.Id == Id);
+            return await _context.articleCategories.FirstOrDefaultAsync(x => x.Id == Id);
         }
 
-        public bool Remove(long Id)
+        public async Task Remove(long Id)
         {
-            var value = _context.articleCategories.FirstOrDefault(x => x.Id == Id);
+            var value = await _context.articleCategories.FirstOrDefaultAsync(x => x.Id == Id);
+            if (value == null)
+            {
+                throw new NotFoundException(nameof(value), value.Id);
+            }
             _context.articleCategories.Remove(value);
-            _context.SaveChanges();
-            return true;
+            await _context.SaveChangesAsync();
 
         }
 
-        public void Save()
+        public async Task Save()
         {
-            _context.SaveChanges();
+            try
+            {
+               await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message,ex.InnerException);
+            }
         }
     }
 }

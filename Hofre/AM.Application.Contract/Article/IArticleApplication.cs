@@ -8,12 +8,12 @@ namespace AM.Application.Contract.Article
 {
     public interface IArticleApplication
     {
-        bool Create(CreateArticle commend);
-        bool Edit(EditArticle commend);
-        EditArticle GetValueForEdit(long Id);
-        bool Remove(long Id);
-        List<ArticleViewModel> GetAll();
-        List<ArticleTagViewModel> GetTagsBy(long Id); 
+        Task Create(CreateArticle commend);
+        Task Edit(EditArticle commend);
+        Task<EditArticle> GetValueForEdit(long Id);
+        Task Remove(long Id);
+        Task<List<ArticleViewModel>> GetAll();
+        Task<List<ArticleTagViewModel>> GetTagsBy(long Id); 
 
     }
 }

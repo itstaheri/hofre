@@ -24,15 +24,18 @@ namespace Hofre.Areas.Admin.Pages.Articles
             _repository = repository;
         }
 
-        public void OnGet(long Id)
+        public async Task OnGet(long Id)
         {
-            Article = _repository.GetValueForEdit(Id);
-            articleTags = _repository.GetTagsBy(Id).Select(x=>new SelectListItem(x.Title,x.TagId.ToString())).ToList();
-            categories = _articlecategory.GetAll().Select(x => new SelectListItem(x.Name, x.Id.ToString(),true)).ToList();
+            Article = await _repository.GetValueForEdit(Id);
+            var GetarticleTags = await _repository.GetTagsBy(Id);
+            var Getcategories = await _articlecategory.GetAll();
+
+            articleTags = GetarticleTags.Select(x => new SelectListItem(x.Title, x.TagId.ToString())).ToList();
+            categories = Getcategories.Select(x => new SelectListItem(x.Name, x.Id.ToString(), true)).ToList();
         }
-        public RedirectToPageResult OnPost(EditArticle commend)
+        public async Task<RedirectToPageResult> OnPost(EditArticle commend)
         {
-            _repository.Edit(commend);
+            await _repository.Edit(commend);
             return RedirectToPage("./Index");
         }
     }

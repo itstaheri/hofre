@@ -10,12 +10,12 @@ namespace AM.Domain.ArticleAgg
 {
     public interface IArticleRepository
     {
-        bool Create(ArticleModel commend);
-        ArticleModel Getby(long Id);
-        void Save();
-        bool Remove(long Id);
-        List<ArticleViewModel> GetAll();
-        List<ArticleTagViewModel> GetTagsBy(long Id);
+        Task Create(ArticleModel commend);
+        Task<ArticleModel> Getby(long Id);
+        Task Save();
+        Task Remove(long Id);
+        Task<List<ArticleViewModel>> GetAll();
+        Task<List<ArticleTagViewModel>> GetTagsBy(long Id);
 
     }
 }

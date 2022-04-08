@@ -23,14 +23,14 @@ namespace AM.Application
             _Upload = Upload;
         }
 
-        public bool Create(CreateArticle commend)
+        public async Task Create(CreateArticle commend)
         {
             Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = _context.Database.BeginTransaction();
-            string PictureName = _Upload.SingleUploader(commend.Picture,"Article", commend.Title);
+            string PictureName = _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
             string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
             var article = new ArticleModel(commend.Title, commend.Slug, commend.ShortDescription, commend.Description,
               VideoName, PictureName, commend.PictureAlt, commend.PictureTitle);
-            _repository.Create(article);
+            await _repository.Create(article);
 
             foreach (var tag in commend.Tags)
             {
@@ -43,17 +43,16 @@ namespace AM.Application
                 var a2c = new ArticleToCategoryModel(article.Id, item);
                 _context.articleToCategories.Add(a2c);
             }
-            _repository.Save();
+            await _repository.Save();
 
             transaction.Commit();
-            return true;
         }
 
-        public bool Edit(EditArticle commend)
+        public async Task Edit(EditArticle commend)
         {
             string PictureName = _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
             string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
-            var article = _repository.Getby(commend.Id);
+            var article = await _repository.Getby(commend.Id);
             article.Edit(commend.Title, commend.Slug, commend.ShortDescription, commend.Description
               , VideoName, PictureName, commend.PictureAlt, commend.PictureTitle);
             var a2c = _context.articleToCategories.Where(x => x.ArticleId == commend.Id);
@@ -63,7 +62,7 @@ namespace AM.Application
             {
                 _context.articleTags.Remove(item);
             }
-            _repository.Save();
+            await _repository.Save();
             foreach (var tag in commend.Tags)
             {
                 var addtag = new ArticleTagsModel(tag, article.Id);
@@ -75,30 +74,29 @@ namespace AM.Application
             {
                 _context.articleToCategories.Remove(item);
             }
-            _repository.Save();
+            await _repository.Save();
             foreach (var item in commend.Categories)
             {
                 var articletocategory = new ArticleToCategoryModel(article.Id, item);
                 _context.articleToCategories.Add(articletocategory);
             }
             #endregion
-            _repository.Save();
-            return true;
+            await _repository.Save();
         }
 
-        public List<ArticleViewModel> GetAll()
+        public async Task<List<ArticleViewModel>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
-        public List<ArticleTagViewModel> GetTagsBy(long Id)
+        public async Task<List<ArticleTagViewModel>> GetTagsBy(long Id)
         {
-            return _repository.GetTagsBy(Id);
+            return await _repository.GetTagsBy(Id);
         }
 
-        public EditArticle GetValueForEdit(long Id)
+        public async Task<EditArticle> GetValueForEdit(long Id)
         {
-            var article = _repository.Getby(Id);
+            var article = await _repository.Getby(Id);
             return new EditArticle
             {
                 Id = article.Id,
@@ -113,11 +111,9 @@ namespace AM.Application
             };
         }
 
-        public bool Remove(long Id)
+        public async Task Remove(long Id)
         {
-            _repository.Remove(Id);
-            _repository.Save();
-            return true;
+            await _repository.Remove(Id);
         }
     }
 }

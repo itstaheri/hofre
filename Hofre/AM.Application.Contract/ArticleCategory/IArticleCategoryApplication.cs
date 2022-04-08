@@ -8,10 +8,10 @@ namespace AM.Application.Contract.ArticleCategory
 {
     public interface IArticleCategoryApplication
     {
-        bool Create(CreateArticleCategory commend);
-        EditArticleCategory GetValueForEdit(long Id);
-        bool Edit(EditArticleCategory commend);
-        public bool Remove(long Id);
-        List<ArticleCategoryViewModel> GetAll();
+        Task Create(CreateArticleCategory commend);
+        Task<EditArticleCategory> GetValueForEdit(long Id);
+        Task Edit(EditArticleCategory commend);
+        public Task Remove(long Id);
+        Task<List<ArticleCategoryViewModel>> GetAll();
     }
 }

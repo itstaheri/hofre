@@ -17,31 +17,29 @@ namespace AM.Application
             _repository = repoiitory;
         }
 
-        public bool Create(CreateArticleCategory commend)
+        public async Task Create(CreateArticleCategory commend)
         {
 
             var articleCategory = new ArticleCategoryModel(commend.Name);
-            _repository.Create(articleCategory);
-            return true;
+            await _repository.Create(articleCategory);
 
         }
 
-        public bool Edit(EditArticleCategory commend)
+        public async Task Edit(EditArticleCategory commend)
         {
-            var articleCategory = _repository.GetBy(commend.Id);
+            var articleCategory = await _repository.GetBy(commend.Id);
             articleCategory.Edit(commend.Name);
-            _repository.Save();
-            return true;
+            await _repository.Save();
         }
 
-        public List<ArticleCategoryViewModel> GetAll()
+        public async Task<List<ArticleCategoryViewModel>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
-        public EditArticleCategory GetValueForEdit(long Id)
+        public async Task<EditArticleCategory> GetValueForEdit(long Id)
         {
-            var articleCategory = _repository.GetBy(Id);
+            var articleCategory = await _repository.GetBy(Id);
             return new EditArticleCategory
             {
                 Id = articleCategory.Id,
@@ -49,10 +47,9 @@ namespace AM.Application
             };
         }
 
-        public bool Remove(long Id)
+        public async Task Remove(long Id)
         {
-            _repository.Remove(Id);
-            return true;
+           await _repository.Remove(Id);
         }
     }
 }

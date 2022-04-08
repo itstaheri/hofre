@@ -18,7 +18,7 @@ namespace Frameworks
 
         private HashingOptions Options { get; }
 
-        public async Task<string> Hash(string password)
+        public string Hash(string password)
         {
             using var algorithm = new Rfc2898DeriveBytes(password, SaltSize, Options.Iterations, HashAlgorithmName.SHA256);
             var key = Convert.ToBase64String(algorithm.GetBytes(KeySize));
