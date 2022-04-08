@@ -20,9 +20,9 @@ namespace Hofre.Areas.Admin.Pages.ArticleCategories
         public void OnGet()
         {
         }
-        public RedirectToPageResult OnPost(CreateArticleCategory commend)
+        public async Task<RedirectToPageResult> OnPost(CreateArticleCategory commend)
         {
-            _repository.Create(commend);
+           await _repository.Create(commend);
             return RedirectToPage("./Index");
         }
     }

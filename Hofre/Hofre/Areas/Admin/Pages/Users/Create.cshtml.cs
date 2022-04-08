@@ -22,10 +22,7 @@ namespace Hofre.Areas.Admin.Pages.Users
 
         public  async Task OnGet()
         {
-            var GetRoles = await _role.GetAll();
-            roles = GetRoles.Select(x => new SelectListItem(x.RoleName,x.Id.ToString())).ToList();
-
-            
+            var GetRoles = (await _role.GetAll()).Select(x => new SelectListItem(x.RoleName, x.Id.ToString())).ToList();
         }
         public async Task<RedirectToPageResult> OnPost(CreateUser commend)
         {

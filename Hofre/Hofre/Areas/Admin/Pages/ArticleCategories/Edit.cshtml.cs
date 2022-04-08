@@ -17,13 +17,13 @@ namespace Hofre.Areas.Admin.Pages.ArticleCategories
             _repository = repository;
         }
 
-        public void OnGet(long Id)
+        public async Task OnGet(long Id)
         {
-            articleCategory = _repository.GetValueForEdit(Id);
+            articleCategory =await _repository.GetValueForEdit(Id);
         }
-        public RedirectToPageResult OnPost(EditArticleCategory commend)
+        public async Task<RedirectToPageResult> OnPost(EditArticleCategory commend)
         {
-            var result = _repository.Edit(commend);
+            await _repository.Edit(commend);
 
             return RedirectToPage("./Index");
         }

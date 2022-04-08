@@ -19,6 +19,7 @@ namespace AM.Domain.ArticleCommentAgg
         }
 
         public void Active()=>IsActive = true;
+        public void DeActive()=>IsActive = false;
 
         public string Text { get; private set; }
         public long ArticleId { get; private set; }

@@ -19,13 +19,13 @@ namespace Hofre.Areas.Admin.Pages.Articles
             _repository = repository;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            articles = _repository.GetAll();
+            articles =await _repository.GetAll();
         }
-        public RedirectToPageResult OnPost(long Id)
+        public async Task<RedirectToPageResult> OnPost(long Id)
         {
-            _repository.Remove(Id);
+           await _repository.Remove(Id);
             return RedirectToPage();
         }
     }

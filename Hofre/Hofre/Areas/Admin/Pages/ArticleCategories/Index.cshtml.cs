@@ -19,14 +19,14 @@ namespace Hofre.Areas.Admin.Pages.ArticleCategories
             _repository = repository;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
 
-            articleCategories = _repository.GetAll();
+            articleCategories =await _repository.GetAll();
         }
-        public RedirectToPageResult OnPost(long Id)
+        public async Task<RedirectToPageResult> OnPost(long Id)
         {
-            var remove = _repository.Remove(Id);
+            await _repository.Remove(Id);
             return RedirectToPage();
         }
     }

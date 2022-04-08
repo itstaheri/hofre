@@ -26,16 +26,13 @@ namespace Hofre.Areas.Admin.Pages.Articles
 
         public async Task OnGet(long Id)
         {
-            Article = await _repository.GetValueForEdit(Id);
-            var GetarticleTags = await _repository.GetTagsBy(Id);
-            var Getcategories = await _articlecategory.GetAll();
-
-            articleTags = GetarticleTags.Select(x => new SelectListItem(x.Title, x.TagId.ToString())).ToList();
-            categories = Getcategories.Select(x => new SelectListItem(x.Name, x.Id.ToString(), true)).ToList();
+            Article =await _repository.GetValueForEdit(Id);
+            articleTags =(await _repository.GetTagsBy(Id)).Select(x=>new SelectListItem(x.Title,x.TagId.ToString())).ToList();
+            categories =(await _articlecategory.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString(),true)).ToList();
         }
         public async Task<RedirectToPageResult> OnPost(EditArticle commend)
         {
-            await _repository.Edit(commend);
+           await _repository.Edit(commend);
             return RedirectToPage("./Index");
         }
     }

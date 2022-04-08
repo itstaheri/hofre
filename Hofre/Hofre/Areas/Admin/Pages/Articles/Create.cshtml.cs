@@ -23,13 +23,12 @@ namespace Hofre.Areas.Admin.Pages.Articles
 
         public async Task OnGet()
         {
-            var Getcategories = await _articlecategory.GetAll();
-            categories=Getcategories.Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToList();
+            var Getcategories = (await _articlecategory.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToList();
 
         }
         public async Task<RedirectToPageResult> OnPost(CreateArticle commend)
         {
-           await _repository.Create(commend);
+            await _repository.Create(commend);
 
             return RedirectToPage("./Index");
         }

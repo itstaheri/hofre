@@ -458,3 +458,4 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Configuration.
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Application.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Articles\ArticleComments\Index.cshtml.g.cs
