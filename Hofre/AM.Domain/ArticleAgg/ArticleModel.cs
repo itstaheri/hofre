@@ -1,4 +1,5 @@
 ﻿using AM.Domain.ArticleCategoryAgg;
+using AM.Domain.ArticleCommentAgg;
 using Frameworks;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,7 @@ namespace AM.Domain.ArticleAgg
         public string PictureTitle { get; private set; }
         public List<ArticleToCategoryModel> articleToCategories { get; private set; }
         public List<ArticleTagsModel> articleTags { get; private set; }
+        public List<ArticleCommentModel> articleComments { get; private set; }
 
     }
 }

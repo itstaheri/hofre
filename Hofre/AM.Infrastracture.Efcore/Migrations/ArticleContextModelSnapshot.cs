@@ -114,6 +114,32 @@ namespace AM.Infrastracture.Efcore.Migrations
                     b.ToTable("articleToCategories");
                 });
 
+            modelBuilder.Entity("AM.Domain.ArticleCommentAgg.ArticleCommentModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long>("ArticleId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.ToTable("articleComments");
+                });
+
             modelBuilder.Entity("AM.Domain.ArticleAgg.ArticleTagsModel", b =>
                 {
                     b.HasOne("AM.Domain.ArticleAgg.ArticleModel", "article")
@@ -144,8 +170,21 @@ namespace AM.Infrastracture.Efcore.Migrations
                     b.Navigation("articleCategory");
                 });
 
+            modelBuilder.Entity("AM.Domain.ArticleCommentAgg.ArticleCommentModel", b =>
+                {
+                    b.HasOne("AM.Domain.ArticleAgg.ArticleModel", "article")
+                        .WithMany("articleComments")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("article");
+                });
+
             modelBuilder.Entity("AM.Domain.ArticleAgg.ArticleModel", b =>
                 {
+                    b.Navigation("articleComments");
+
                     b.Navigation("articleTags");
 
                     b.Navigation("articleToCategories");

@@ -17,6 +17,7 @@ namespace AM.Infrastracture.Efcore.Mappings
             //     builder.HasMany(x => x.articleCategories).WithMany(x => x.articles);
             builder.HasMany(x => x.articleToCategories).WithOne(x => x.article).HasForeignKey(x => x.ArticleId);
             builder.HasMany(x => x.articleTags).WithOne(x => x.article).HasForeignKey(x => x.ArticleId);
+            builder.HasMany(x=>x.articleComments).WithOne(x => x.article).HasForeignKey(x => x.ArticleId);
         }
     }
 }

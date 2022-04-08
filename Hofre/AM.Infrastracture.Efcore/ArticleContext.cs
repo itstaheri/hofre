@@ -1,5 +1,6 @@
 ﻿using AM.Domain.ArticleAgg;
 using AM.Domain.ArticleCategoryAgg;
+using AM.Domain.ArticleCommentAgg;
 using AM.Infrastracture.Efcore.Mappings;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,6 +17,7 @@ namespace AM.Infrastracture.Efcore
         public DbSet<ArticleCategoryModel> articleCategories { get; set; }
         public DbSet<ArticleModel> articles { get; set; }
         public DbSet<ArticleTagsModel> articleTags { get; set; }
+        public DbSet<ArticleCommentModel> articleComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -23,6 +25,7 @@ namespace AM.Infrastracture.Efcore
             builder.ApplyConfiguration(new ArticleCategoryMapp());
             builder.ApplyConfiguration(new ArticleTagsMapp());
             builder.ApplyConfiguration(new ArticleToCategoryMapp());
+            builder.ApplyConfiguration(new ArticleCommentMapp());
             base.OnModelCreating(builder);
         }
     }
