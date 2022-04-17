@@ -6,8 +6,10 @@ using ElmahCore.Sql;
 using Frameworks;
 using Hofre.HostFrameworks;
 using Hofre.MidleWares;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +24,7 @@ namespace Hofre
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration,IWebHostEnvironment env)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
             Env = env;
@@ -30,27 +32,50 @@ namespace Hofre
 
         public IConfiguration Configuration { get; }
         public IWebHostEnvironment Env { get; }
-       
+
         public void ConfigureServices(IServiceCollection services)
         {
             string ConnetionString = Configuration.GetConnectionString("HofreDB");
-            var mvcBuilder =services.AddRazorPages();
+            var mvcBuilder = services.AddRazorPages();
             ArticleBootestrapper.Configuration(services, ConnetionString);
             UserBootestrapper.Configuration(services, ConnetionString);
             CourseBootestrapper.Configuration(services, ConnetionString);
             DiscountBootestrapper.Configuration(services, ConnetionString);
-            //frameworks
+            #region FrameWorks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
-
+            services.AddTransient<IFileUploader, FileUploader>();
             services.AddElmah<SqlErrorLog>(option =>
             {
                 //option.OnPermissionCheck = x => x.User.Identity.IsAuthenticated;
                 option.LogPath = "reportlogs";
                 option.ConnectionString = Configuration.GetConnectionString("LogDB");
             });
+            #endregion
+            #region Auth
+            services.Configure<CookiePolicyOptions>(option =>
+            {
+                option.CheckConsentNeeded = context => true;
+                option.MinimumSameSitePolicy = SameSiteMode.Lax;
 
-            services.AddTransient<IFileUploader,FileUploader>();
 
+            });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, q =>
+                {
+                    //q.LoginPath = new PathString("/Account");
+                    //q.LogoutPath = new PathString("/Account");
+                    //q.AccessDeniedPath = new PathString("/AccessDenied");
+                });
+            services.AddAuthorization(option =>
+            {
+                option.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { "1" }));
+            });
+            #endregion
+
+            //SignalR
+            services.AddSignalR();
+
+            //RumtimeCompiler
             if (Env.IsDevelopment())
             {
                 mvcBuilder.AddRazorRuntimeCompilation();
@@ -59,8 +84,8 @@ namespace Hofre
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-          
-           
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -70,6 +95,9 @@ namespace Hofre
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+            app.UseAuthentication();
+            app.UseCookiePolicy();
+
             //custom global exception 
             app.UseCustomExceptionHandler();
 
@@ -78,15 +106,17 @@ namespace Hofre
 
             app.UseRouting();
 
-            app.UseAuthentication();
-            app.UseAuthorization();
 
             app.UseElmah();
+
+            app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
+
             });
         }
     }

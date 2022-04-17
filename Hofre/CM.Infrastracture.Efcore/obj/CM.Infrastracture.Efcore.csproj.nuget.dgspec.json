@@ -319,7 +319,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Exceptions\\Exceptions.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Exceptions\\Exceptions.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -332,6 +336,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.14, )"
