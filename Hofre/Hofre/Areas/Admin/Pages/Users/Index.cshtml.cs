@@ -16,25 +16,29 @@ namespace Hofre.Areas.Admin.Pages.Users
             _repository = repository;
         }
 
-        public async Task OnGet()
+        public async void OnGet()
         {
             Users = await _repository.GetAll();   
         }
-        public async Task OnPostRemove(long Id)
+        public async Task<RedirectToPageResult> OnPostRemove(long Id)
         {
             await _repository.Remove(Id);
+            return RedirectToPage();
         }
-        public async Task OnPostActive(long Id)
+        public async Task<RedirectToPageResult> OnPostActive(long Id)
         {
             await _repository.Active(Id);
+            return RedirectToPage();
         }
-        public async Task OnPostDeActive(long Id)
+        public async Task<RedirectToPageResult> OnPostDeActive(long Id)
         {
             await _repository.DeActive(Id);
+            return RedirectToPage();
         }
-        public async Task ChangePassword(long Id,string newPassword)
+        public async Task<RedirectToPageResult> ChangePassword(long Id,string newPassword)
         {
             await _repository.ChangePassword(Id, newPassword);
+            return RedirectToPage();
         }
 
     }

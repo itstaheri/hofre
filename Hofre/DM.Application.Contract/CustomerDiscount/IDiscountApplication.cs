@@ -12,6 +12,7 @@ namespace DM.Application.Contract.CustomerDiscount
         Task Edit(EditDiscount commend);
         Task Remove(long Id);
         Task<List<DiscountViewModel>> GetAll();
+        Task<EditDiscount> GetValueForEdit(long Id);
 
     }
 }

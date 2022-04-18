@@ -5,6 +5,7 @@ using ElmahCore.Mvc;
 using ElmahCore.Sql;
 using Frameworks;
 using Hofre.HostFrameworks;
+using Hofre.Hubs;
 using Hofre.MidleWares;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -57,6 +58,13 @@ namespace Hofre
                 option.CheckConsentNeeded = context => true;
                 option.MinimumSameSitePolicy = SameSiteMode.Lax;
 
+<<<<<<< Updated upstream
+=======
+            services.AddTransient<IFileUploader, FileUploader>();
+
+            services.AddSignalR();
+
+>>>>>>> Stashed changes
 
             });
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -116,7 +124,11 @@ namespace Hofre
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
+<<<<<<< Updated upstream
 
+=======
+                endpoints.MapHub<ChatHub>("./ChatHub");
+>>>>>>> Stashed changes
             });
         }
     }

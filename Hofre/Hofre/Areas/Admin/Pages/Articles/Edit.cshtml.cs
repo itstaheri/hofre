@@ -24,7 +24,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
             _repository = repository;
         }
 
-        public async Task OnGet(long Id)
+        public async void OnGet(long Id)
         {
             Article =await _repository.GetValueForEdit(Id);
             articleTags =(await _repository.GetTagsBy(Id)).Select(x=>new SelectListItem(x.Title,x.TagId.ToString())).ToList();

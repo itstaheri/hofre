@@ -15,6 +15,7 @@ namespace Hofre.Areas.Admin.Pages.Discounts
         private readonly ICourseApplication _course;
         public List<DiscountViewModel> discounts;
         public List<SelectListItem> courses;
+        [BindProperty] public EditDiscount Discount { get; set; }
 
         public IndexModel(IDiscountApplication repository, ICourseApplication course)
         {
@@ -22,9 +23,11 @@ namespace Hofre.Areas.Admin.Pages.Discounts
             _course = course;
         }
 
-        public async Task OnGet()
+        public async void OnGet()
         {
             discounts = await _repository.GetAll();
+         //   Discount = await _repository.GetValueForEdit()
+
         }
         public async Task<RedirectToPageResult> OnPost(long Id)
         {

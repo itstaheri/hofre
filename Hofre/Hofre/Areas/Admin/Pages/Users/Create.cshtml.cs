@@ -20,7 +20,7 @@ namespace Hofre.Areas.Admin.Pages.Users
             _role = role;
         }
 
-        public  async Task OnGet()
+        public  async void OnGet()
         {
             var GetRoles = (await _role.GetAll()).Select(x => new SelectListItem(x.RoleName, x.Id.ToString())).ToList();
         }

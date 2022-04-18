@@ -34,6 +34,21 @@ namespace DM.Application
             return await _repository.GetAll();
         }
 
+        public async Task<EditDiscount> GetValueForEdit(long Id)
+        {
+            var discount = await _repository.GetBy(Id);
+            return new EditDiscount
+            {
+                Id = discount.Id,
+                DiscountRate = discount.DiscountRate,
+                //EndDate = discount.DateTimeEnd,
+                //startDate = discount.DateTimeStart
+                CourseId = discount.CourseId,
+                Title = discount.Title,
+
+            };
+        }
+
         public async Task Remove(long Id)
         {
            await _repository.Remove(Id);
