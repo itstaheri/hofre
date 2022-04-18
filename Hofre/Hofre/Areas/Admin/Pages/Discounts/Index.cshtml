@@ -19,6 +19,39 @@
     </div><!-- Page Headings End -->
 
     <div class="row">
+        <!--Modal Edit-->
+        <div class="modal fade" id="exampleModal5"> 
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">پیام جدید</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">مناسبت</label>
+                                <input type="text" class="form-control" name="Title" id="recipient-name">
+                                <label for="recipient-name" class="col-form-label">درصد تخفیف</label>
+                                <input type="text" class="form-control" name="DiscountRate" id="recipient-name">
+                                 <label for="recipient-name" class="col-form-label">تاریخ شروع</label>
+                                <input type="text" class="form-control" name="startDate" id="recipient-name">
+                                 <label for="recipient-name" class="col-form-label">تاریخ پایان</label>
+                                <input type="text" class="form-control" name="EndDate" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">پیام:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="button button-danger" data-dismiss="modal">بستن</button>
+                        <button class="button button-primary">ذخیره تغییرات</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <!--Basic Start-->
@@ -64,9 +97,10 @@
                                         <td>فعال</td>
 
                                     }
-                                   
+
                                     <td width="70">
-                                        <a class="button button-warning" asp-page="./Edit" asp-route-Id="@item.Id">ویرایش</a>
+                                        <button class="button button-primary" data-toggle="modal" data-target="#exampleModal5" data-whatever="mdo">ویرایش</button>
+                                      
                                     </td>
                                     <td width="70">
                                         <form method="post" asp-page-handler="Remove">
@@ -87,21 +121,20 @@
     </div>
 
 </div><!-- Content Body End -->
-
 @section Scripts{
-    <!-- Global Vendor, plugins & Activation JS -->
-    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="~/assets/js/vendor/popper.min.js"></script>
-    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
-    <!--Plugins JS-->
-    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
-    <!--Main JS-->
-    <script src="assets/js/main.js"></script>
+<!-- Global Vendor, plugins & Activation JS -->
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<!--Plugins JS-->
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<!--Main JS-->
+<script src="assets/js/main.js"></script>
 
-    <!-- Plugins & Activation JS For Only This Page -->
-    <script src="~/assets/js/plugins/moment/moment.min.js"></script>
-    <script src="~/assets/js/plugins/footable/footable.min.js"></script>
-    <script src="~/assets/js/plugins/footable/footable.active.js"></script>
+<!-- Plugins & Activation JS For Only This Page -->
+<script src="~/assets/js/plugins/moment/moment.min.js"></script>
+<script src="~/assets/js/plugins/footable/footable.min.js"></script>
+<script src="~/assets/js/plugins/footable/footable.active.js"></script>
 }
