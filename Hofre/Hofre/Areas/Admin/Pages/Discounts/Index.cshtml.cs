@@ -27,8 +27,21 @@ namespace Hofre.Areas.Admin.Pages.Discounts
         {
             discounts = await _repository.GetAll();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
          //   Discount = await _repository.GetValueForEdit()
 =======
+>>>>>>> Stashed changes
+=======
+         //   Discount = await _repository.GetValueForEdit()
+>>>>>>> Stashed changes
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
 >>>>>>> Stashed changes
 
         }
