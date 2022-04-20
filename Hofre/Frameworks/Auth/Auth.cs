@@ -20,9 +20,11 @@ namespace Frameworks.Auth
             _httpContext = httpContext;
         }
 
-        public Task<long> CurrentUserId()
+        public async Task<long> CurrentUserId()
         {
-            throw new NotImplementedException();
+            return await IsAuthenticated()
+                ? long.Parse(_httpContext.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "AccountId")?.Value)
+                : 0;
         }
 
         public async Task<AuthViewModel> CurrentUserInfo()
@@ -44,8 +46,8 @@ namespace Frameworks.Auth
         public async Task<string> CurrentUserRole()
         {
             if (!(await IsAuthenticated()))
-                throw new NotFoundException
-            return _httpContext.HttpContext.User.Claims.First(x=>x.Type == )
+                throw new NotFoundException();
+            return _httpContext.HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value;
         }
 
         public async Task<bool> IsAuthenticated()

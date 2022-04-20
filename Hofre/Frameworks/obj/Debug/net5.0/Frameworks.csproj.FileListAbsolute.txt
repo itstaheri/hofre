@@ -10,3 +10,6 @@ C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.d
 C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\ref\Frameworks.dll
 C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\refint\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\bin\Debug\net5.0\Exceptions.dll
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\bin\Debug\net5.0\Exceptions.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Frameworks\obj\Debug\net5.0\Frameworks.csproj.CopyComplete

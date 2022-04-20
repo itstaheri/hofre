@@ -58,13 +58,10 @@ namespace Hofre
                 option.CheckConsentNeeded = context => true;
                 option.MinimumSameSitePolicy = SameSiteMode.Lax;
 
-<<<<<<< Updated upstream
-=======
             services.AddTransient<IFileUploader, FileUploader>();
 
             services.AddSignalR();
 
->>>>>>> Stashed changes
 
             });
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -80,15 +77,12 @@ namespace Hofre
             });
             #endregion
 
-<<<<<<< Updated upstream
             //SignalR
             services.AddSignalR();
-=======
             services.AddTransient<IFileUploader, FileUploader>();
 
             services.AddSignalR();
 
->>>>>>> Stashed changes
 
             //RumtimeCompiler
             if (Env.IsDevelopment())
@@ -131,15 +125,13 @@ namespace Hofre
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
-=======
+
                 endpoints.MapHub<ChatHub>("./ChatHub");
->>>>>>> Stashed changes
-=======
+
+
                 endpoints.MapHub<ChatHub>("./ChatHub");
->>>>>>> Stashed changes
+
             });
         }
     }
