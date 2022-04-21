@@ -462,3 +462,11 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\libman.json
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Chat.cshtml.g.cs
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Index.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Configuration.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Impelement.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Configuration.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Impelement.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Infrastracture.Efcore.pdb

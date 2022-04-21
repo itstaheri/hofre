@@ -9,7 +9,8 @@
       "DM.Configuration/1.0.0": {
         "dependencies": {
           "DM.Application": "1.0.0",
-          "DM.Infrastracture.Efcore": "1.0.0"
+          "DM.Infrastracture.Efcore": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0"
         },
         "runtime": {
           "DM.Configuration.dll": {}

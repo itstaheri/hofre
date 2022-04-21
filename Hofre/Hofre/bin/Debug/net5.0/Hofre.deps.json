@@ -41,6 +41,7 @@
           "ElmahCore.Sql": "2.1.1",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.0",
+          "SM.Configuration": "1.0.0",
           "UM.Configuration": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "5.0.0.0",
@@ -1958,7 +1959,8 @@
       "DM.Configuration/1.0.0": {
         "dependencies": {
           "DM.Application": "1.0.0",
-          "DM.Infrastracture.Efcore": "1.0.0"
+          "DM.Infrastracture.Efcore": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0"
         },
         "runtime": {
           "DM.Configuration.dll": {}
@@ -2014,6 +2016,49 @@
         },
         "compile": {
           "Frameworks.dll": {}
+        }
+      },
+      "SM.Configuration/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "SM.Impelement": "1.0.0",
+          "SM.Infrastracture.Efcore": "1.0.0"
+        },
+        "runtime": {
+          "SM.Configuration.dll": {}
+        },
+        "compile": {
+          "SM.Configuration.dll": {}
+        }
+      },
+      "SM.Domain/1.0.0": {
+        "runtime": {
+          "SM.Domain.dll": {}
+        },
+        "compile": {
+          "SM.Domain.dll": {}
+        }
+      },
+      "SM.Impelement/1.0.0": {
+        "runtime": {
+          "SM.Impelement.dll": {}
+        },
+        "compile": {
+          "SM.Impelement.dll": {}
+        }
+      },
+      "SM.Infrastracture.Efcore/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "SM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SM.Infrastracture.Efcore.dll": {}
+        },
+        "compile": {
+          "SM.Infrastracture.Efcore.dll": {}
         }
       },
       "UM.Application/1.0.0": {
@@ -4813,6 +4858,26 @@
       "sha512": ""
     },
     "Frameworks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SM.Configuration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SM.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SM.Impelement/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SM.Infrastracture.Efcore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

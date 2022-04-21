@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace SM.Domain
 {
@@ -20,6 +21,9 @@ namespace SM.Domain
             if(logo!= null) Logo = logo;
 
         }
+        [Key]
+        public long Id { get; set; }
+        [MaxLength(255)]
         public string Title { get; private set; }
         public string ContectNumber { get; private set; }
         public string ContectEmail { get; private set; }

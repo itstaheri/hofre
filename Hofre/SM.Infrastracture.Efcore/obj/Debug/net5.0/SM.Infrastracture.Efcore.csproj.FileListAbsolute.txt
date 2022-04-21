@@ -10,3 +10,6 @@ C:\Users\alith\source\repos\hofre\Hofre\SM.Infrastracture.Efcore\obj\Debug\net5.
 C:\Users\alith\source\repos\hofre\Hofre\SM.Infrastracture.Efcore\obj\Debug\net5.0\SM.Infrastracture.Efcore.pdb
 C:\Users\alith\source\repos\hofre\Hofre\SM.Infrastracture.Efcore\obj\Debug\net5.0\SM.Infrastracture.Efcore.csproj.AssemblyReference.cache
 C:\Users\alith\source\repos\hofre\Hofre\SM.Infrastracture.Efcore\obj\Debug\net5.0\refint\SM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\SM.Infrastracture.Efcore\bin\Debug\net5.0\SM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\SM.Infrastracture.Efcore\bin\Debug\net5.0\SM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\SM.Infrastracture.Efcore\obj\Debug\net5.0\SM.Infrastracture.Efcore.csproj.CopyComplete

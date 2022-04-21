@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SM.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,7 @@ namespace Hofre
             UserBootestrapper.Configuration(services, ConnetionString);
             CourseBootestrapper.Configuration(services, ConnetionString);
             DiscountBootestrapper.Configuration(services, ConnetionString);
+            SettingBootestrapper.Configuration(services, ConnetionString);
             #region FrameWorks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IFileUploader, FileUploader>();
@@ -60,9 +62,9 @@ namespace Hofre
                 option.CheckConsentNeeded = context => true;
                 option.MinimumSameSitePolicy = SameSiteMode.Lax;
 
-            services.AddTransient<IFileUploader, FileUploader>();
+                services.AddTransient<IFileUploader, FileUploader>();
 
-            services.AddSignalR();
+                services.AddSignalR();
 
 
             });

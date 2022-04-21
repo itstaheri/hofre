@@ -2340,7 +2340,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "DM.Application": "1.0.0",
-          "DM.Infrastracture.Efcore": "1.0.0"
+          "DM.Infrastracture.Efcore": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0"
         },
         "compile": {
           "bin/placeholder/DM.Configuration.dll": {}
@@ -2404,6 +2405,57 @@
         },
         "runtime": {
           "bin/placeholder/Frameworks.dll": {}
+        }
+      },
+      "SM.Configuration/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "SM.Impelement": "1.0.0",
+          "SM.Infrastracture.Efcore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SM.Configuration.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SM.Configuration.dll": {}
+        }
+      },
+      "SM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SM.Domain.dll": {}
+        }
+      },
+      "SM.Impelement/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SM.Impelement.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SM.Impelement.dll": {}
+        }
+      },
+      "SM.Infrastracture.Efcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "SM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SM.Infrastracture.Efcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SM.Infrastracture.Efcore.dll": {}
         }
       },
       "UM.Application/1.0.0": {
@@ -7815,6 +7867,26 @@
       "path": "../Frameworks/Frameworks.csproj",
       "msbuildProject": "../Frameworks/Frameworks.csproj"
     },
+    "SM.Configuration/1.0.0": {
+      "type": "project",
+      "path": "../SM.Configuration/SM.Configuration.csproj",
+      "msbuildProject": "../SM.Configuration/SM.Configuration.csproj"
+    },
+    "SM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SM.Domain/SM.Domain.csproj",
+      "msbuildProject": "../SM.Domain/SM.Domain.csproj"
+    },
+    "SM.Impelement/1.0.0": {
+      "type": "project",
+      "path": "../SM.Impelement/SM.Impelement.csproj",
+      "msbuildProject": "../SM.Impelement/SM.Impelement.csproj"
+    },
+    "SM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "path": "../SM.Infrastracture.Efcore/SM.Infrastracture.Efcore.csproj",
+      "msbuildProject": "../SM.Infrastracture.Efcore/SM.Infrastracture.Efcore.csproj"
+    },
     "UM.Application/1.0.0": {
       "type": "project",
       "path": "../UM.Application/UM.Application.csproj",
@@ -7851,6 +7923,7 @@
       "ElmahCore.Sql >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
+      "SM.Configuration >= 1.0.0",
       "UM.Configuration >= 1.0.0"
     ]
   },
@@ -7900,6 +7973,9 @@
             },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\SM.Configuration\\SM.Configuration.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\SM.Configuration\\SM.Configuration.csproj"
             },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj"

@@ -23,6 +23,7 @@
     <ProjectReference Include="..\CM.Configuration\CM.Configuration.csproj" />
     <ProjectReference Include="..\DM.Application.Contract\DM.Application.Contract.csproj" />
     <ProjectReference Include="..\DM.Configuration\DM.Configuration.csproj" />
+    <ProjectReference Include="..\SM.Configuration\SM.Configuration.csproj" />
     <ProjectReference Include="..\UM.Configuration\UM.Configuration.csproj" />
   </ItemGroup>
 

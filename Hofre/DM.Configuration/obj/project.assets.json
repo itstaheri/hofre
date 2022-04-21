@@ -6754,7 +6754,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "DM.Application >= 1.0.0",
-      "DM.Infrastracture.Efcore >= 1.0.0"
+      "DM.Infrastracture.Efcore >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 5.0.0"
     ]
   },
   "packageFolders": {
@@ -6810,6 +6811,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
