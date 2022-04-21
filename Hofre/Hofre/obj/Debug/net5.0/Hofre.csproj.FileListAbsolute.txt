@@ -459,3 +459,6 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Application.pd
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Infrastracture.Efcore.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Articles\ArticleComments\Index.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\libman.json
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Chat.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Index.cshtml.g.cs

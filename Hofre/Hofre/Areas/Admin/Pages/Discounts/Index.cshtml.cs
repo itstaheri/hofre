@@ -26,23 +26,6 @@ namespace Hofre.Areas.Admin.Pages.Discounts
         public async void OnGet()
         {
             discounts = await _repository.GetAll();
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-         //   Discount = await _repository.GetValueForEdit()
-=======
->>>>>>> Stashed changes
-=======
-         //   Discount = await _repository.GetValueForEdit()
->>>>>>> Stashed changes
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
         }
         public async Task<RedirectToPageResult> OnPost(long Id)

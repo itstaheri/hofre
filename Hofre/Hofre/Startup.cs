@@ -4,6 +4,7 @@ using DM.Configuration;
 using ElmahCore.Mvc;
 using ElmahCore.Sql;
 using Frameworks;
+using Frameworks.Auth;
 using Hofre.HostFrameworks;
 using Hofre.Hubs;
 using Hofre.MidleWares;
@@ -45,6 +46,7 @@ namespace Hofre
             #region FrameWorks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IFileUploader, FileUploader>();
+            services.AddTransient<IAuth, Auth>();
             services.AddElmah<SqlErrorLog>(option =>
             {
                 //option.OnPermissionCheck = x => x.User.Identity.IsAuthenticated;
@@ -127,10 +129,9 @@ namespace Hofre
                 endpoints.MapDefaultControllerRoute();
 
 
-                endpoints.MapHub<ChatHub>("./ChatHub");
+                endpoints.MapHub<ChatHub>("./Chat");
 
 
-                endpoints.MapHub<ChatHub>("./ChatHub");
 
             });
         }

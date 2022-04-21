@@ -15,3 +15,5 @@ C:\Users\alith\source\repos\hofre\Hofre\DM.Domain\obj\Debug\net5.0\DM.Domain.dll
 C:\Users\alith\source\repos\hofre\Hofre\DM.Domain\obj\Debug\net5.0\refint\DM.Domain.dll
 C:\Users\alith\source\repos\hofre\Hofre\DM.Domain\obj\Debug\net5.0\DM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\DM.Domain\obj\Debug\net5.0\ref\DM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Domain\bin\Debug\net5.0\Exceptions.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Domain\bin\Debug\net5.0\Exceptions.pdb
