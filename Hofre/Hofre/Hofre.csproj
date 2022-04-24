@@ -41,6 +41,29 @@
 
   <ItemGroup>
     <None Include="Areas\Admin\Pages\Discounts\Create.cshtml" />
+    <None Include="wwwroot\MainTheme\assets\fonts\boxicons.woff2" />
+    <None Include="wwwroot\MainTheme\assets\fonts\boxiconsd41d.svg" />
+    <None Include="wwwroot\MainTheme\assets\fonts\Flaticon.svg" />
+    <None Include="wwwroot\MainTheme\assets\fonts\Flaticon.woff2" />
+    <None Include="wwwroot\MainTheme\assets\fonts\Sahel-FD.woff2" />
+    <None Include="wwwroot\MainTheme\assets\fonts\Vazir-FD.woff2" />
+    <None Include="wwwroot\MainTheme\assets\fonts\Vermin-Vibes-V.ttf.svg" />
+    <None Include="wwwroot\MainTheme\assets\js\ajaxchimp.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\contact-form-script.js" />
+    <None Include="wwwroot\MainTheme\assets\js\cursor.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\fancybox.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\form-validator.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\jquery.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\magnific-popup.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\main.js" />
+    <None Include="wwwroot\MainTheme\assets\js\meanmenu.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\parallax.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\popper.min.js" />
+    <None Include="wwwroot\MainTheme\assets\js\wow.min.js" />
+    <None Include="wwwroot\MainTheme\assets\php\form-process.php" />
   </ItemGroup>
 
 </Project>
