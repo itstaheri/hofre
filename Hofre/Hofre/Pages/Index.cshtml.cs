@@ -10,7 +10,8 @@ namespace Hofre.Pages
 {
     public class IndexModel : PageModel
     {
-      private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<IndexModel> _logger;
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -18,11 +19,12 @@ namespace Hofre.Pages
 
         public void OnGet()
         {
+
             //throw new Exception("hey budy");
-            //_logger.Log(LogLevel.Trace, 234, "fuck");
+            //_logger.Log(LogLevel.Trace, 234, "ops");
             //_logger.Log(LogLevel.Information,555, "این یک پیام امتحانی است");
             //_logger.LogWarning("warning",4545454);
-            _logger.Log(LogLevel.Critical, "hi", 2323);
+            //_logger.Log(LogLevel.Critical, "hi", 2323);
         }
     }
 }

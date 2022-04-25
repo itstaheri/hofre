@@ -8,4 +8,8 @@
     <Folder Include="Articles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AM.Infrastracture.Efcore\AM.Infrastracture.Efcore.csproj" />
+  </ItemGroup>
+
 </Project>
