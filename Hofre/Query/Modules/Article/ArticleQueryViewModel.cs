@@ -17,7 +17,7 @@ namespace Query.Modules.Article
         public string Picture { get; set; }
         public string PictureAlt { get; set; }
         public string PictureTitle { get; set; }
-        public List<long> CategoriesId { get; set; }
+        public List<ArticleCategoryQueryModel> ArticleCategories { get; set; }
         public List<ArticleCommentQueryViewModel> ArticleComments { get; set; }
         public List<string> ArticleTags { get; set; }
     }

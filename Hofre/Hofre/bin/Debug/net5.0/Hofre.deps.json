@@ -41,6 +41,7 @@
           "ElmahCore.Sql": "2.1.1",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.0",
+          "Query": "1.0.0",
           "SM.Configuration": "1.0.0",
           "UM.Configuration": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -2016,6 +2017,17 @@
         },
         "compile": {
           "Frameworks.dll": {}
+        }
+      },
+      "Query/1.0.0": {
+        "dependencies": {
+          "AM.Infrastracture.Efcore": "1.0.0"
+        },
+        "runtime": {
+          "Query.dll": {}
+        },
+        "compile": {
+          "Query.dll": {}
         }
       },
       "SM.Configuration/1.0.0": {
@@ -4858,6 +4870,11 @@
       "sha512": ""
     },
     "Frameworks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Query/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

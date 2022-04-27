@@ -19,7 +19,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
             _repository = repository;
         }
 
-        public async void OnGet()
+        public async Task OnGet()
         {
             articles =await _repository.GetAll();
         }

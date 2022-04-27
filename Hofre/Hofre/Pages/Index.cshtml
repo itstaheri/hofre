@@ -7,57 +7,32 @@
     <div class="container">
         <div class="player-details-desc">
             <div class="streams-list">
-                <h3>جریان ها</h3>
+                <h3>آخرین مطالب</h3>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-live-stream-item">
-                            <img src="~/MainTheme/assets/img/trending-img1.jpg" alt="image">
+                    @foreach (var item in Model.Articles)
+                    {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-live-stream-item">
+                                <img src="~/Media/Article/@item.Title/@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle">
 
-                            <div class="content">
-                                <h3>فورتناینت لایت</h3>
-                                <ul class="meta">
-                                    <li>یوتیوب</li>
-                                    <li>آنلاین</li>
-                                </ul>
+                                <div class="content">
+                                    <h3>@item.Title</h3>
+                                    <ul class="meta">
+                                        @foreach (var category in item.ArticleCategories)
+                                        {
+                                            <li><a asp-page="./Category" asp-route-id="">@category.Name</a></li>
+                                        }
+
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="video-btn"><i class="flaticon-play-button"></i></a>
+                                <a href="#" target="_blank" class="link-btn"></a>
                             </div>
-
-                            <a href="#" class="video-btn"><i class="flaticon-play-button"></i></a>
-                            <a href="#" target="_blank" class="link-btn"></a>
                         </div>
-                    </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="single-live-stream-item">
-                            <img src="~/MainTheme/assets/img/trending-img1.jpg" alt="image">
+                    }
 
-                            <div class="content">
-                                <h3>فورتناینت لایت</h3>
-                                <ul class="meta">
-                                    <li>یوتیوب</li>
-                                    <li>آنلاین</li>
-                                </ul>
-                            </div>
-
-                            <a href="#" class="video-btn"><i class="flaticon-play-button"></i></a>
-                            <a href="#" target="_blank" class="link-btn"></a>
-                        </div>
-                    </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="single-live-stream-item">
-                            <img src="~/MainTheme/assets/img/trending-img1.jpg" alt="image">
-
-                            <div class="content">
-                                <h3>فورتناینت لایت</h3>
-                                <ul class="meta">
-                                    <li>یوتیوب</li>
-                                    <li>آنلاین</li>
-                                </ul>
-                            </div>
-
-                            <a href="#" class="video-btn"><i class="flaticon-play-button"></i></a>
-                            <a href="#" target="_blank" class="link-btn"></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

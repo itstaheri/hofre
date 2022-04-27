@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Query.Modules.Article;
 using SM.Configuration;
 using System;
 using System.Collections.Generic;
@@ -79,6 +80,9 @@ namespace Hofre
             {
                 option.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { "1" }));
             });
+            #endregion
+            #region Query
+            services.AddTransient<IArticleQueryRepository, ArticleQueryRepository>();
             #endregion
 
             //SignalR

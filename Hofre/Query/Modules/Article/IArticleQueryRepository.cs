@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Query.Modules.Article
 {
-    public interface IArticleRepository
+    public interface IArticleQueryRepository
     {
         Task<List<ArticleQueryViewModel>> GetAll();
         Task<ArticleQueryViewModel> GetDetailById(long Id);

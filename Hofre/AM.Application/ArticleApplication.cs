@@ -26,6 +26,7 @@ namespace AM.Application
         public async Task Create(CreateArticle commend)
         {
             Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = _context.Database.BeginTransaction();
+           
             string PictureName = _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
             string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
             var article = new ArticleModel(commend.Title, commend.Slug, commend.ShortDescription, commend.Description,
@@ -50,6 +51,7 @@ namespace AM.Application
 
         public async Task Edit(EditArticle commend)
         {
+
             string PictureName = _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
             string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
             var article = await _repository.Getby(commend.Id);
@@ -58,6 +60,7 @@ namespace AM.Application
             var a2c = _context.articleToCategories.Where(x => x.ArticleId == commend.Id);
             var tags = _context.articleTags.Where(x => x.ArticleId == commend.Id);
             #region tag
+           
             foreach (var item in tags)
             {
                 _context.articleTags.Remove(item);
@@ -105,7 +108,7 @@ namespace AM.Application
                 PictureAlt = article.PictureAlt,
                 PictureTitle = article.PictureTitle,
                 Slug = article.Slug,
-                Title = article.Slug,
+                Title = article.Title,
                 articleTags = _context.articleTags.Where(x => x.ArticleId == article.Id)
                 .Select(q => new ArticleTagViewModel { TagId = q.Id, Title = q.Name }).ToList()
             };

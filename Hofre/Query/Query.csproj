@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Articles\" />
+    <Folder Include="Modules\User\" />
   </ItemGroup>
 
   <ItemGroup>

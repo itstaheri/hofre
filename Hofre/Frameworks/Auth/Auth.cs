@@ -52,7 +52,7 @@ namespace Frameworks.Auth
 
         public async Task<bool> IsAuthenticated()
         {
-            return _httpContext.HttpContext.User.Identity.IsAuthenticated;
+            return  _httpContext.HttpContext.User.Identity.IsAuthenticated;
         }
 
         public async Task SignIn(AuthViewModel account)

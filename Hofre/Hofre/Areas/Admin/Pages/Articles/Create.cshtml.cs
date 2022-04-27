@@ -23,7 +23,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
 
         public async void OnGet()
         {
-            var Getcategories = (await _articlecategory.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToList();
+            categories = (await _articlecategory.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToList();
 
         }
         public async Task<RedirectToPageResult> OnPost(CreateArticle commend)

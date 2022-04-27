@@ -470,3 +470,5 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Configuration.
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Impelement.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Query.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Query.pdb

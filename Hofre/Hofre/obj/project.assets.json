@@ -2407,6 +2407,19 @@
           "bin/placeholder/Frameworks.dll": {}
         }
       },
+      "Query/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AM.Infrastracture.Efcore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Query.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Query.dll": {}
+        }
+      },
       "SM.Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7867,6 +7880,11 @@
       "path": "../Frameworks/Frameworks.csproj",
       "msbuildProject": "../Frameworks/Frameworks.csproj"
     },
+    "Query/1.0.0": {
+      "type": "project",
+      "path": "../Query/Query.csproj",
+      "msbuildProject": "../Query/Query.csproj"
+    },
     "SM.Configuration/1.0.0": {
       "type": "project",
       "path": "../SM.Configuration/SM.Configuration.csproj",
@@ -7923,6 +7941,7 @@
       "ElmahCore.Sql >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
+      "Query >= 1.0.0",
       "SM.Configuration >= 1.0.0",
       "UM.Configuration >= 1.0.0"
     ]
@@ -7973,6 +7992,9 @@
             },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Configuration\\DM.Configuration.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Query\\Query.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Query\\Query.csproj"
             },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\SM.Configuration\\SM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\SM.Configuration\\SM.Configuration.csproj"
