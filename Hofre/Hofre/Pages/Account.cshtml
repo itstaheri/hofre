@@ -1,0 +1,154 @@
+﻿@page
+@model Hofre.Pages.AccountModel
+@{
+}
+<section class="profile-authentication-area ptb-100">
+    <div class="container">
+        <div>
+            <button class="btn btn-info" id="btnLogin">ورود</button>
+            <button class="btn btn-primary" id="btnRegister">ثبت نام</button>
+
+        </div>
+        <br />
+        <div class="row">
+
+            <div class="col-lg-8 col-md-12 ">
+                <div class="login-form">
+
+                    <h2>ورود کاربران</h2>
+
+                    <form method="post" asp-page-handler="Login">
+                        <div class="validation text-danger" asp-validation-summary="All"></div>
+
+                        <div class="form-group">
+                            <label>نام کاربری</label>
+                            <input type="text" name="username" class="form-control" placeholder="نام کاربری">
+                        </div>
+
+                        <div class="form-group">
+                            <label>کلمه ی عبور</label>
+                            <input type="password" name="password" class="form-control" placeholder="کلمه ی عبور">
+                        </div>
+
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6 col-sm-6 remember-me-wrap">
+                                <p>
+                                    <input type="checkbox" id="test2">
+                                    <label for="test2">مرا بخاطر بسپار</label>
+                                </p>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 lost-your-password-wrap">
+                                <a href="#" class="lost-your-password">فراموشی گذرواژه؟</a>
+                            </div>
+                        </div>
+
+                        <button type="submit">وارد شوید</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="register-form hide">
+                    <h2>ثبت نام</h2>
+
+                    <form method="post" asp-page-handler="Register">
+                        <div class="validation text-danger" asp-validation-summary="All"></div>
+                        <div class="form-group">
+                            <label>نام کاربری</label>
+                            <input type="text" name="username" class="form-control" placeholder="نام کاربری">
+                        </div>
+
+                        <div class="form-group">
+                            <label>ایمیل</label>
+                            <input type="email" name="email" class="form-control" placeholder="آدرس ایمیل">
+                        </div>
+                        <div class="form-group">
+                            <label>موبایل</label>
+                            <input type="number" name="phoneNumber" class="form-control" placeholder="موبایل">
+                        </div>
+
+                        <div class="form-group">
+                            <label>کلمه ی عبور</label>
+                            <input type="password" name="password" class="form-control" placeholder="کلمه ی عبور">
+                        </div>
+                        <div class="form-group">
+                            <label>تکرار کلمه ی عبور</label>
+                            <input type="password" name="Repassword" class="form-control" placeholder="تکرار کلمه ی عبور">
+                        </div>
+
+                        <p class="description">طول رمز باید حداقل هشت حرف باشد. برای تقویت آن ، از حروف بزرگ و کوچک ، اعداد و نمادهایی مانند استفاده کنید! "؟ $٪ ^ &)</p>
+
+                        <button type="submit" class="signup">ثبت نام</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<script>
+
+
+        let register = document.querySelector(".register-form");
+        let login = document.querySelector(".login-form");
+        let valid = document.querySelectorAll(".validation");
+        let href = window.location.href;
+        
+        if(href.includes("Register"))
+        {
+            login.classList.add("hide");
+            register.classList.remove("hide");
+
+        }
+       document.querySelector("#btnRegister").addEventListener("click",e=>{
+
+           valid.forEach(x=>{
+               x.textContent = "";
+           })
+           if(register.classList.contains("hide")){
+               register.classList.remove("hide")
+               login.classList.add("hide")
+
+           }else{
+               register.classList.remove("hide")
+               login.classList.add("hide")
+
+           }
+       })
+        document.querySelector("#btnLogin").addEventListener("click",e=>{
+            
+           valid.forEach(x=>{
+               x.textContent = "";
+           })
+            if(login.classList.contains("hide")){
+               login.classList.remove("hide")
+               register.classList.add("hide")
+           }else{
+               register.classList.add("hide")
+               login.classList.remove("hide")
+           }
+       })
+
+</script>
+
+<style>
+    .row {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+    .register-form.hide {
+        display: none;
+    }
+
+    .login-form.hide {
+        display: none;
+    }
+</style>

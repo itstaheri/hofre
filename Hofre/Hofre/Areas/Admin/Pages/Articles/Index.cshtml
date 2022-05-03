@@ -33,7 +33,7 @@
 
                         <thead>
                             <tr>
-                                <th data-name="تصویر">تصویر</th>
+                                <th height="20" width="20" data-name="تصویر">تصویر</th>
                                 <th data-name="موضوع">موضوع</th>
                                 <th data-name="توضیح کوتاه">توضیح کوتاه</th>
                                 <th data-name="تاریخ ایجاد">تاریخ ایجاد</th>
@@ -49,7 +49,7 @@
                                 @foreach (var item in Model.articles)
                                 {
 
-                                    <td height="80" width="80"><img src="~/Media/Article/@item.Title/@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle" /></td>
+                                    <td height="10" width="10"><img src="~/Media/Article/@item.Title/@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle" /></td>
                                     <td>@item.Title</td>
                                     <td>@item.ShortDescription</td>
                                     <td>@item.CreationDate</td>

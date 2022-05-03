@@ -472,3 +472,4 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Impelement.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Infrastracture.Efcore.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Query.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Query.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\Account.cshtml.g.cs

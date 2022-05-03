@@ -14,15 +14,32 @@ namespace UM.Infrastracture.Efcore.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly UserContext _context;
-
-        public UserRepository(UserContext context)
+        private readonly IPasswordHasher _hash;
+        public UserRepository(UserContext context, IPasswordHasher hash)
         {
             _context = context;
+            _hash = hash;
+        }
+
+        public async Task<bool> CheckIdentity(string username, string password)
+        {
+            var user = await _context.users.FirstOrDefaultAsync(x => x.Username == username);
+            // if (user == null) throw new NotFoundException(nameof(user), user.Username);
+
+            if (user != null && ( _hash.Check(user.Password, password)).Verified) return true;
+            else return false;
+           
+
+        }
+
+        public async Task<bool> CheckIdentity(string username, string email, string phoneNumber)
+        {
+            return await _context.users.AnyAsync(x => x.Username == username || x.Email == email || x.Phone == phoneNumber);
         }
 
         public async Task Create(UserModel commend)
         {
-            _context.users.Add(commend);
+           await _context.users.AddAsync(commend);
             try
             {
                 await _context.SaveChangesAsync();
@@ -65,6 +82,15 @@ namespace UM.Infrastracture.Efcore.Repositories
                 throw new NotFoundException(nameof(user), Id);
             return user;
 
+        }
+
+        public async Task<UserModel> GetBy(string Username)
+        {
+            var user = await _context.users.FirstOrDefaultAsync(x => x.Username == Username);
+
+            if (user == null)
+                throw new NotFoundException(nameof(user), Username);
+            return user;
         }
 
         public async Task Remove(long Id)

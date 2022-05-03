@@ -1,5 +1,6 @@
 ﻿using Exceptions;
 using Frameworks;
+using Frameworks.Auth;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,12 +14,13 @@ namespace UM.Application
         private readonly IPasswordHasher _Hash;
         private readonly IUserRepository _repository;
         private readonly IFileUploader _uploader;
-
-        public UserApplication(IUserRepository repository, IPasswordHasher Hash, IFileUploader uploader)
+        private readonly IAuth _auth;
+        public UserApplication(IPasswordHasher hash, IUserRepository repository, IFileUploader uploader, IAuth auth)
         {
+            _Hash = hash;
             _repository = repository;
-            _Hash = Hash;
             _uploader = uploader;
+            _auth = auth;
         }
 
         public async Task Active(long Id)
@@ -33,7 +35,7 @@ namespace UM.Application
             var user = await _repository.GetBy(Id);
             if (user == null)
                 throw new NotFoundException(nameof(user), user.Id);
-            var Password =  _Hash.Hash(newPassword);
+            var Password =await _Hash.Hash(newPassword);
             user.ChangePassword(Password);
             await _repository.Save();
 
@@ -44,7 +46,7 @@ namespace UM.Application
         public async Task Create(CreateUser commend)
         {
             string profilePhoto = _uploader.SingleUploader(commend.ProfilePicture, "ProfilePhotos", commend.Username);
-            var user = new UserModel(commend.Username, commend.Email, commend.Phone, commend.Password,profilePhoto, commend.RoleId);
+            var user = new UserModel(commend.Username, commend.Email, commend.Phone, commend.Password, profilePhoto, commend.RoleId);
             await _repository.Create(user);
         }
 
@@ -81,11 +83,57 @@ namespace UM.Application
             };
         }
 
+        public async Task<LoginResult> Login(Login commend)
+        {
+
+            var user = await _repository.GetBy(commend.Username);
+            if (user == null) return new LoginResult(false, false, "کاربری با این نام کاربری وجود ندارد!");
+
+            var check = await _repository.CheckIdentity(commend.Username, commend.Password);
+            if (!check) return new LoginResult(true, check, "نام کاربری یا کلمه ی عبور شما اشتباه است");
+
+            AuthViewModel auth = new AuthViewModel
+            {
+                Email = user.Email,
+                Id = user.Id,
+                Number = user.Phone,
+                Picture = user.ProfilePicture,
+                RoleId = user.RoleId,
+                Username = user.Username
+            };
+
+            await _auth.SignIn(auth);
+
+            return new LoginResult(true, true, "ورود موفق.");
+
+
+        }
+
         public async Task Remove(long Id)
         {
             await _repository.Remove(Id);
             await _repository.Save();
 
+        }
+
+        public async Task<int> Signup(Register commend)
+        {
+            var user = await _repository.CheckIdentity(commend.Username, commend.Email, commend.PhoneNumber);
+            if (!user)
+            {
+                var password =await _Hash.Hash(commend.Password);
+                await _repository.Create(new UserModel(commend.Username, commend.Email, commend.PhoneNumber, password, "user.jpg", 7));
+                return Status.seuccessfulRegister;
+
+            }
+            else if (user)
+            {
+                return Status.RepetitiousData;
+            }
+            else
+            {
+                return Status.UnseuccessfulRegister;
+            }
         }
     }
 }

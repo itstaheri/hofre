@@ -13,6 +13,10 @@ namespace UM.Domain.UserAgg
         Task Save();
         Task Remove(long id);
         Task<UserModel> GetBy(long Id);
+        Task<UserModel> GetBy(string Username);
         Task<List<UserViewModel>> GetAll();
+        Task<bool> CheckIdentity(string username,string password);
+        Task<bool> CheckIdentity(string username,string email,string phoneNumber);
+        
     }
 }

@@ -395,7 +395,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Frameworks\\Frameworks.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Frameworks\\Frameworks.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

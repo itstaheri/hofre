@@ -18,17 +18,29 @@ namespace Frameworks
 
         private HashingOptions Options { get; }
 
-        public string Hash(string password)
+        public async Task<string> Hash(string password)
         {
-            using var algorithm = new Rfc2898DeriveBytes(password, SaltSize, Options.Iterations, HashAlgorithmName.SHA256);
-            var key = Convert.ToBase64String(algorithm.GetBytes(KeySize));
-            var salt = Convert.ToBase64String(algorithm.Salt);
-
+            string salt = string.Empty;
+            string key = string.Empty;
+            await Task.Run(() =>
+            {
+                using var algorithm = new Rfc2898DeriveBytes(password, SaltSize, Options.Iterations, HashAlgorithmName.SHA256);
+                key = Convert.ToBase64String(algorithm.GetBytes(KeySize));
+                salt = Convert.ToBase64String(algorithm.Salt);
+            });
             return $"{Options.Iterations}.{salt}.{key}";
+
         }
 
+        internal class CheckProps
+        {
+            public bool needsUpgrade { get; set; }
+            public bool verified { get; set; }
+        }
         public (bool Verified, bool NeedsUpgrade) Check(string hash, string password)
         {
+            CheckProps checkProps = new CheckProps();
+
             var parts = hash.Split('.', 3);
 
             if (parts.Length != 3)
@@ -40,14 +52,14 @@ namespace Frameworks
             var salt = Convert.FromBase64String(parts[1]);
             var key = Convert.FromBase64String(parts[2]);
 
-            var needsUpgrade = iterations != Options.Iterations;
+            checkProps.needsUpgrade = iterations != Options.Iterations;
 
             using var algorithm = new Rfc2898DeriveBytes(password, salt, iterations, HashAlgorithmName.SHA256);
             var keyToCheck = algorithm.GetBytes(KeySize);
 
-            var verified = keyToCheck.SequenceEqual(key);
+            checkProps.verified = keyToCheck.SequenceEqual(key);
 
-            return (verified, needsUpgrade);
+            return (checkProps.verified, checkProps.needsUpgrade);
         }
     }
 }

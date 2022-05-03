@@ -91,7 +91,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Infrastracture.Efcore", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Configuration", "DM.Configuration\DM.Configuration.csproj", "{72E9ED7C-A458-408D-9017-12E6D5C61DC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Configuration", "SM.Configuration\SM.Configuration.csproj", "{7AADCC6D-1203-43D3-8548-36977BA28008}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Configuration", "SM.Configuration\SM.Configuration.csproj", "{7AADCC6D-1203-43D3-8548-36977BA28008}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
