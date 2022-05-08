@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="ElmahCore" Version="2.1.1" />
     <PackageReference Include="ElmahCore.Sql" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -25,6 +26,7 @@
     <ProjectReference Include="..\DM.Configuration\DM.Configuration.csproj" />
     <ProjectReference Include="..\Query\Query.csproj" />
     <ProjectReference Include="..\SM.Configuration\SM.Configuration.csproj" />
+    <ProjectReference Include="..\TM.Configuration\TM.Configuration.csproj" />
     <ProjectReference Include="..\UM.Configuration\UM.Configuration.csproj" />
   </ItemGroup>
 

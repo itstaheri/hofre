@@ -65,6 +65,7 @@ namespace Frameworks.Auth
                 new Claim("Phone",account.Number),
                 new Claim(ClaimTypes.Email,account.Email),
                 new Claim("Picture",account.Picture),
+                new Claim(ClaimTypes.Name,account.Username)
 
 
             };

@@ -460,7 +460,6 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\DM.Infrastracture.Efcore.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Articles\ArticleComments\Index.cshtml.g.cs
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\libman.json
-C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Chat.cshtml.g.cs
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Index.cshtml.g.cs
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Configuration.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Domain.dll
@@ -473,3 +472,11 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\SM.Infrastracture
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Query.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Query.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\Account.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\Room.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Configuration.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Configuration.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Infrastracture.Efcore.pdb

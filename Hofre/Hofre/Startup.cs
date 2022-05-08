@@ -22,6 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TM.Configuration;
 using UM.Configuration;
 
 namespace Hofre
@@ -46,6 +47,8 @@ namespace Hofre
             CourseBootestrapper.Configuration(services, ConnetionString);
             DiscountBootestrapper.Configuration(services, ConnetionString);
             SettingBootestrapper.Configuration(services, ConnetionString);
+            TicketBootestrapper.Configuration(services, ConnetionString);
+
             #region FrameWorks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IFileUploader, FileUploader>();
@@ -89,7 +92,6 @@ namespace Hofre
             services.AddSignalR();
             services.AddTransient<IFileUploader, FileUploader>();
 
-            services.AddSignalR();
 
 
             //RumtimeCompiler
@@ -133,9 +135,7 @@ namespace Hofre
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
-
-
-                endpoints.MapHub<ChatHub>("./Chat");
+                endpoints.MapHub<ChatHub>("/chatHub");
 
 
 

@@ -10,3 +10,17 @@ C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.
 C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.0\TM.Infrastracture.Efcore.pdb
 C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.0\TM.Infrastracture.Efcore.csproj.AssemblyReference.cache
 C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.0\refint\TM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\Exceptions.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\UM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\UM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\Exceptions.pdb
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\Frameworks.pdb
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\UM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\UM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.0\TM.Infrastracture.Efcore.csproj.CopyComplete
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Infrastracture.Efcore.runtimeconfig.json
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Infrastracture.Efcore.runtimeconfig.dev.json
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.0\TM.Infrastracture.Efcore.genruntimeconfig.cache

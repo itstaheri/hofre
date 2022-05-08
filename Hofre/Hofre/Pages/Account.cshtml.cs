@@ -19,7 +19,7 @@ namespace Hofre.Pages
             _auth = auth;
         }
 
-        public  void OnGet()
+        public void OnGet()
         {
             //if (await (_auth.IsAuthenticated())) Redirecttop("./profile");
 

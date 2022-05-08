@@ -21,7 +21,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
             _repository = repository;
         }
 
-        public async void OnGet()
+        public async Task OnGet()
         {
             categories = (await _articlecategory.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToList();
 

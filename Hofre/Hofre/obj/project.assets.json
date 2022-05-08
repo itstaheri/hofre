@@ -68,6 +68,15 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "Microsoft.AspNet.SignalR.Core/2.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.SignalR.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.SignalR.Core.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2471,6 +2480,51 @@
           "bin/placeholder/SM.Infrastracture.Efcore.dll": {}
         }
       },
+      "TM.Configuration/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "TM.Infrastracture.Efcore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TM.Configuration.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Configuration.dll": {}
+        }
+      },
+      "TM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Frameworks": "1.0.0",
+          "UM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Domain.dll": {}
+        }
+      },
+      "TM.Infrastracture.Efcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "TM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TM.Infrastracture.Efcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Infrastracture.Efcore.dll": {}
+        }
+      },
       "UM.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -2648,6 +2702,21 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNet.SignalR.Core/2.4.3": {
+      "sha512": "zxvv9HhsUa3nfyC7rIwFxHVcGffyQrjqNUO6pBKLyv3eFigkEy3N+6KbbSedzIyCfthglTbvU+m4sg8tawRlvA==",
+      "type": "package",
+      "path": "microsoft.aspnet.signalr.core/2.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.AspNet.SignalR.Core.dll",
+        "lib/net45/Microsoft.AspNet.SignalR.Core.pdb",
+        "lib/net45/Microsoft.AspNet.SignalR.Core.xml",
+        "microsoft.aspnet.signalr.core.2.4.3.nupkg.sha512",
+        "microsoft.aspnet.signalr.core.nuspec",
+        "packageIcon.png"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -7906,6 +7975,21 @@
       "path": "../SM.Infrastracture.Efcore/SM.Infrastracture.Efcore.csproj",
       "msbuildProject": "../SM.Infrastracture.Efcore/SM.Infrastracture.Efcore.csproj"
     },
+    "TM.Configuration/1.0.0": {
+      "type": "project",
+      "path": "../TM.Configuration/TM.Configuration.csproj",
+      "msbuildProject": "../TM.Configuration/TM.Configuration.csproj"
+    },
+    "TM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TM.Domain/TM.Domain.csproj",
+      "msbuildProject": "../TM.Domain/TM.Domain.csproj"
+    },
+    "TM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "path": "../TM.Infrastracture.Efcore/TM.Infrastracture.Efcore.csproj",
+      "msbuildProject": "../TM.Infrastracture.Efcore/TM.Infrastracture.Efcore.csproj"
+    },
     "UM.Application/1.0.0": {
       "type": "project",
       "path": "../UM.Application/UM.Application.csproj",
@@ -7940,10 +8024,12 @@
       "DM.Configuration >= 1.0.0",
       "ElmahCore >= 2.1.1",
       "ElmahCore.Sql >= 2.1.1",
+      "Microsoft.AspNet.SignalR.Core >= 2.4.3",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
       "Query >= 1.0.0",
       "SM.Configuration >= 1.0.0",
+      "TM.Configuration >= 1.0.0",
       "UM.Configuration >= 1.0.0"
     ]
   },
@@ -8000,6 +8086,9 @@
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\SM.Configuration\\SM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\SM.Configuration\\SM.Configuration.csproj"
             },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\TM.Configuration\\TM.Configuration.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\TM.Configuration\\TM.Configuration.csproj"
+            },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Configuration\\UM.Configuration.csproj"
             }
@@ -8023,6 +8112,10 @@
           "ElmahCore.Sql": {
             "target": "Package",
             "version": "[2.1.1, )"
+          },
+          "Microsoft.AspNet.SignalR.Core": {
+            "target": "Package",
+            "version": "[2.4.3, )"
           },
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
@@ -8062,5 +8155,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.SignalR.Core 2.4.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.SignalR.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
