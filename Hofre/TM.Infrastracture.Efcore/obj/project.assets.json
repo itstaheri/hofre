@@ -1882,11 +1882,22 @@
           "bin/placeholder/Frameworks.dll": {}
         }
       },
+      "TM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Application.Contract.dll": {}
+        }
+      },
       "TM.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Frameworks": "1.0.0",
+          "TM.Application.Contract": "1.0.0",
           "UM.Domain": "1.0.0"
         },
         "compile": {
@@ -6614,6 +6625,11 @@
       "type": "project",
       "path": "../Frameworks/Frameworks.csproj",
       "msbuildProject": "../Frameworks/Frameworks.csproj"
+    },
+    "TM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../TM.Application.Contract/TM.Application.Contract.csproj",
+      "msbuildProject": "../TM.Application.Contract/TM.Application.Contract.csproj"
     },
     "TM.Domain/1.0.0": {
       "type": "project",

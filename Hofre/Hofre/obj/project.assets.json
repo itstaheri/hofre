@@ -2480,12 +2480,37 @@
           "bin/placeholder/SM.Infrastracture.Efcore.dll": {}
         }
       },
+      "TM.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "TM.Application.Contract": "1.0.0",
+          "TM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TM.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Application.dll": {}
+        }
+      },
+      "TM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Application.Contract.dll": {}
+        }
+      },
       "TM.Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "TM.Application": "1.0.0",
           "TM.Infrastracture.Efcore": "1.0.0"
         },
         "compile": {
@@ -2500,6 +2525,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Frameworks": "1.0.0",
+          "TM.Application.Contract": "1.0.0",
           "UM.Domain": "1.0.0"
         },
         "compile": {
@@ -7974,6 +8000,16 @@
       "type": "project",
       "path": "../SM.Infrastracture.Efcore/SM.Infrastracture.Efcore.csproj",
       "msbuildProject": "../SM.Infrastracture.Efcore/SM.Infrastracture.Efcore.csproj"
+    },
+    "TM.Application/1.0.0": {
+      "type": "project",
+      "path": "../TM.Application/TM.Application.csproj",
+      "msbuildProject": "../TM.Application/TM.Application.csproj"
+    },
+    "TM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../TM.Application.Contract/TM.Application.Contract.csproj",
+      "msbuildProject": "../TM.Application.Contract/TM.Application.Contract.csproj"
     },
     "TM.Configuration/1.0.0": {
       "type": "project",

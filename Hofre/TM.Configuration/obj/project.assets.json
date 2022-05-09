@@ -1844,11 +1844,36 @@
           "bin/placeholder/Frameworks.dll": {}
         }
       },
+      "TM.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "TM.Application.Contract": "1.0.0",
+          "TM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TM.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Application.dll": {}
+        }
+      },
+      "TM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TM.Application.Contract.dll": {}
+        }
+      },
       "TM.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Frameworks": "1.0.0",
+          "TM.Application.Contract": "1.0.0",
           "UM.Domain": "1.0.0"
         },
         "compile": {
@@ -6537,6 +6562,16 @@
       "path": "../Frameworks/Frameworks.csproj",
       "msbuildProject": "../Frameworks/Frameworks.csproj"
     },
+    "TM.Application/1.0.0": {
+      "type": "project",
+      "path": "../TM.Application/TM.Application.csproj",
+      "msbuildProject": "../TM.Application/TM.Application.csproj"
+    },
+    "TM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../TM.Application.Contract/TM.Application.Contract.csproj",
+      "msbuildProject": "../TM.Application.Contract/TM.Application.Contract.csproj"
+    },
     "TM.Domain/1.0.0": {
       "type": "project",
       "path": "../TM.Domain/TM.Domain.csproj",
@@ -6562,6 +6597,7 @@
     "net5.0": [
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
+      "TM.Application >= 1.0.0",
       "TM.Infrastracture.Efcore >= 1.0.0"
     ]
   },
@@ -6600,6 +6636,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\TM.Application\\TM.Application.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\TM.Application\\TM.Application.csproj"
+            },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\TM.Infrastracture.Efcore\\TM.Infrastracture.Efcore.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\TM.Infrastracture.Efcore\\TM.Infrastracture.Efcore.csproj"
             }
