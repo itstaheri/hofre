@@ -24,3 +24,5 @@ C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.
 C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Infrastracture.Efcore.runtimeconfig.json
 C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Infrastracture.Efcore.runtimeconfig.dev.json
 C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\obj\Debug\net5.0\TM.Infrastracture.Efcore.genruntimeconfig.cache
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Infrastracture.Efcore\bin\Debug\net5.0\TM.Application.Contract.pdb

@@ -23,3 +23,7 @@ C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Dom
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\UM.Application.Contract.pdb
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\UM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\obj\Debug\net5.0\TM.Configuration.csproj.CopyComplete
+C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Application.pdb
+C:\Users\alith\source\repos\hofre\Hofre\TM.Configuration\bin\Debug\net5.0\TM.Application.Contract.pdb

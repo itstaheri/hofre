@@ -10,5 +10,6 @@ namespace TM.Application.Contract.Ticket
     {
         public string Subject { get; set; }
         public string Type { get; set; }
+        public string Username { get; set; }
     }
 }

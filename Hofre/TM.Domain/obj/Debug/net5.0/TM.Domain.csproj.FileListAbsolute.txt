@@ -19,3 +19,5 @@ C:\Users\alith\source\repos\hofre\Hofre\TM.Domain\bin\Debug\net5.0\UM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\TM.Domain\bin\Debug\net5.0\Exceptions.pdb
 C:\Users\alith\source\repos\hofre\Hofre\TM.Domain\bin\Debug\net5.0\UM.Application.Contract.pdb
 C:\Users\alith\source\repos\hofre\Hofre\TM.Domain\obj\Debug\net5.0\TM.Domain.csproj.CopyComplete
+C:\Users\alith\source\repos\hofre\Hofre\TM.Domain\bin\Debug\net5.0\TM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\TM.Domain\bin\Debug\net5.0\TM.Application.Contract.pdb

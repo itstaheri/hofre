@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TM.Application\TM.Application.csproj" />
     <ProjectReference Include="..\TM.Infrastracture.Efcore\TM.Infrastracture.Efcore.csproj" />
   </ItemGroup>
 

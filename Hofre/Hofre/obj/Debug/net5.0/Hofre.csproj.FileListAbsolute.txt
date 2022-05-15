@@ -480,3 +480,8 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Infrastracture
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Configuration.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Application.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Room.cshtml.g.cs

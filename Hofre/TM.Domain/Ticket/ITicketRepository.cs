@@ -13,8 +13,9 @@ namespace TM.Domain.Ticket
         Task DeleteGorup(long Id);
         Task Save();
         Task<TicketModel> GetBy(long Id);
-        Task<MessageModel> GetMessageBy(long TicketId);
+        Task<List<Messages>> GetMessageBy(long TicketId);
         Task<List<TicketViewModel>> GetAll();
+        Task CreateMessage(Messages commend);
 
 
     }

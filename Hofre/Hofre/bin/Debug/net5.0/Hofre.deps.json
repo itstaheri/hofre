@@ -2086,10 +2086,31 @@
           "SM.Infrastracture.Efcore.dll": {}
         }
       },
+      "TM.Application/1.0.0": {
+        "dependencies": {
+          "TM.Application.Contract": "1.0.0",
+          "TM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TM.Application.dll": {}
+        },
+        "compile": {
+          "TM.Application.dll": {}
+        }
+      },
+      "TM.Application.Contract/1.0.0": {
+        "runtime": {
+          "TM.Application.Contract.dll": {}
+        },
+        "compile": {
+          "TM.Application.Contract.dll": {}
+        }
+      },
       "TM.Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "TM.Application": "1.0.0",
           "TM.Infrastracture.Efcore": "1.0.0"
         },
         "runtime": {
@@ -2102,6 +2123,7 @@
       "TM.Domain/1.0.0": {
         "dependencies": {
           "Frameworks": "1.0.0",
+          "TM.Application.Contract": "1.0.0",
           "UM.Domain": "1.0.0"
         },
         "runtime": {
@@ -4955,6 +4977,16 @@
       "sha512": ""
     },
     "SM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TM.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TM.Application.Contract/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
