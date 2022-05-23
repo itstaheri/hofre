@@ -5,6 +5,7 @@ using Frameworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CM.Application
 {
@@ -83,9 +84,9 @@ namespace CM.Application
            
         }
 
-        public List<CourseViewModel> GetAll()
+        public async Task<List<CourseViewModel>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
         public EditCourse GetValueForEdit(long Id)

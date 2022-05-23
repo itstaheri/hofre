@@ -17,9 +17,9 @@ namespace Hofre.Areas.Admin.Pages.Courses
             _repository = repository;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            courses = _repository.GetAll();
+            courses = await _repository.GetAll();
         }
         public RedirectToPageResult OnPostActive(long Id)
         {

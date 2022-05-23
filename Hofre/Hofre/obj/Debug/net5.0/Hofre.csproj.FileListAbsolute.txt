@@ -485,3 +485,7 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Application.dl
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Application.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\TM.Application.Contract.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Tickets\Room.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\AM.Presentation.Api.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\AM.Presentation.Api.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\CM.Presentation.Api.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\CM.Presentation.Api.pdb

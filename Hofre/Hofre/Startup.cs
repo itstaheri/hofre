@@ -1,5 +1,7 @@
 using AM.Configuration;
+using AM.Presentation.Api;
 using CM.Configuration;
+using CM.Presentation.Api;
 using DM.Configuration;
 using ElmahCore.Mvc;
 using ElmahCore.Sql;
@@ -41,7 +43,11 @@ namespace Hofre
         public void ConfigureServices(IServiceCollection services)
         {
             string ConnetionString = Configuration.GetConnectionString("HofreDB");
-            var mvcBuilder = services.AddRazorPages();
+
+            var mvcBuilder = services.AddRazorPages().AddApplicationPart(typeof(ArticleController).Assembly)
+                .AddApplicationPart(typeof(CourseController).Assembly);
+
+
             ArticleBootestrapper.Configuration(services, ConnetionString);
             UserBootestrapper.Configuration(services, ConnetionString);
             CourseBootestrapper.Configuration(services, ConnetionString);
@@ -53,6 +59,7 @@ namespace Hofre
             services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddTransient<IAuth, Auth>();
+
             services.AddElmah<SqlErrorLog>(option =>
             {
                 //option.OnPermissionCheck = x => x.User.Identity.IsAuthenticated;
@@ -90,8 +97,9 @@ namespace Hofre
 
             //SignalR
             services.AddSignalR();
-            services.AddTransient<IFileUploader, FileUploader>();
 
+            //Cors
+            services.AddCors(x=>x.AddPolicy("WebPolicy",o=>o.WithOrigins("https://localhost:5002")));
 
 
             //RumtimeCompiler
@@ -130,12 +138,15 @@ namespace Hofre
 
             app.UseAuthorization();
 
+            //add cors policy
+            app.UseCors("WebPolicy");
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapControllers();
 
 
 

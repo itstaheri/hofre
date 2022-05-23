@@ -21,7 +21,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AM.Configuration\AM.Configuration.csproj" />
+    <ProjectReference Include="..\AM.Presentation.Api\AM.Presentation.Api.csproj" />
     <ProjectReference Include="..\CM.Configuration\CM.Configuration.csproj" />
+    <ProjectReference Include="..\CM.Presentation.Api\CM.Presentation.Api.csproj" />
     <ProjectReference Include="..\DM.Application.Contract\DM.Application.Contract.csproj" />
     <ProjectReference Include="..\DM.Configuration\DM.Configuration.csproj" />
     <ProjectReference Include="..\Query\Query.csproj" />

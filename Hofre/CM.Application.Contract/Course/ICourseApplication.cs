@@ -11,7 +11,7 @@ namespace CM.Application.Contract.Course
         void Create(CreateCourse commend);
         void Edit(EditCourse commend);
         EditCourse GetValueForEdit(long Id);
-        List<CourseViewModel> GetAll();
+        Task<List<CourseViewModel>> GetAll();
         void Remove(long Id);
         void Active(long Id);
         void DeActive(long Id);

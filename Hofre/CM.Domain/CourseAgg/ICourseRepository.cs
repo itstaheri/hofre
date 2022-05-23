@@ -12,7 +12,7 @@ namespace CM.Domain.CourseAgg
         void Create(CourseModel commend);
         CourseModel GetBy(long Id);
         void Save();
-        List<CourseViewModel> GetAll();
+        Task<List<CourseViewModel>> GetAll();
         void AddVideos(CourseVideoModel commend);
         void Remove(long Id);
     }

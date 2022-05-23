@@ -21,9 +21,9 @@ namespace Hofre.Areas.Admin.Pages.Discounts
             _course = course;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            Courses =_course.GetAll().Select(x=>new SelectListItem(x.Subject,x.Id.ToString())).ToList();
+            Courses = (await _course.GetAll()).Select(x => new SelectListItem(x.Subject, x.Id.ToString())).ToList();
         }
         public async Task<RedirectToPageResult> OnPost(CreateDiscount commend)
         {

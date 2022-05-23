@@ -1,0 +1,15 @@
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\bin\Debug\net5.0\CM.Presentation.Api.deps.json
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\bin\Debug\net5.0\CM.Presentation.Api.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\bin\Debug\net5.0\CM.Presentation.Api.pdb
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\bin\Debug\net5.0\CM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\bin\Debug\net5.0\CM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.csproj.AssemblyReference.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.AssemblyInfoInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.AssemblyInfo.cs
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.csproj.CoreCompileInputs.cache
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.csproj.CopyComplete
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\refint\CM.Presentation.Api.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\CM.Presentation.Api.pdb
+C:\Users\alith\source\repos\hofre\Hofre\CM.Presentation.Api\obj\Debug\net5.0\ref\CM.Presentation.Api.dll

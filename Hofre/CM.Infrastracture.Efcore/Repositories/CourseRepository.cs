@@ -1,6 +1,7 @@
 ﻿using CM.Application.Contract.Course;
 using CM.Domain.CourseAgg;
 using Frameworks;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,9 @@ namespace CM.Infrastracture.Efcore.Repositories
             _context.SaveChanges();
         }
 
-        public List<CourseViewModel> GetAll()
+        public async Task<List<CourseViewModel>> GetAll()
         {
-            var query =  _context.courses.Select(x => new CourseViewModel
+            var query =await  _context.courses.Select(x => new CourseViewModel
             {
                 Id = x.Id,
                 Description = x.Description,
@@ -49,9 +50,9 @@ namespace CM.Infrastracture.Efcore.Repositories
                 LastUpdate = x.LastUpdate.ToFarsi(),
                 CourseTime = x.CourseTime,
                 CategoryId = x.CategoryId
-            }).ToList();
+            }).ToListAsync();
 
-            query.ForEach(x => { x.CategoryName = _context.courseCategories.FirstOrDefault(q => q.Id == x.CategoryId).Name; });
+            query.ForEach(async x => { x.CategoryName =(await _context.courseCategories.FirstOrDefaultAsync(q => q.Id == x.CategoryId)).Name; });
             return query.ToList();
 
         }
