@@ -21,19 +21,19 @@ namespace Hofre.Areas.Admin.Pages.Courses
         {
             courses = await _repository.GetAll();
         }
-        public RedirectToPageResult OnPostActive(long Id)
+        public async Task<RedirectToPageResult> OnPostActive(long Id)
         {
-            _repository.Active(Id);
+           await _repository.Active(Id);
             return RedirectToPage();
         }
-        public RedirectToPageResult OnPostDeActive(long Id)
+        public async Task<RedirectToPageResult> OnPostDeActive(long Id)
         {
-            _repository.DeActive(Id);
+           await _repository.DeActive(Id);
             return RedirectToPage();
         }
-        public RedirectToPageResult OnPostRemove(long Id)
+        public async Task<RedirectToPageResult> OnPostRemove(long Id)
         {
-            _repository.Remove(Id);
+           await _repository.Remove(Id);
             return RedirectToPage();
         }
     }

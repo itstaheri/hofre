@@ -9,10 +9,10 @@ namespace CM.Domain.CourseCategoryAgg
 {
     public interface ICourseCategoryRepository
     {
-        void Create(CourseCategoryModel commend);
-        CourseCategoryModel GetBy(long Id);
-        void Save();
-        List<CourseCategoryViewModel> GetAll();
-        void Remove(long Id);
+        Task Create(CourseCategoryModel commend);
+        Task<CourseCategoryModel> GetBy(long Id);
+        Task Save();
+        Task<List<CourseCategoryViewModel>> GetAll();
+        Task Remove(long Id);
     }
 }

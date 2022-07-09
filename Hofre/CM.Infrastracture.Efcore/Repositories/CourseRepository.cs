@@ -1,9 +1,11 @@
 ﻿using CM.Application.Contract.Course;
 using CM.Domain.CourseAgg;
+using Exceptions;
 using Frameworks;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,27 +15,69 @@ namespace CM.Infrastracture.Efcore.Repositories
     public class CourseRepository : ICourseRepository
     {
         private readonly CourseContext _context;
-
-        public CourseRepository(CourseContext context)
+        private readonly IGetPath _path;
+   
+        private readonly IFileHelper _file;
+        public CourseRepository(CourseContext context, IGetPath path,IFileHelper file)
         {
             _context = context;
+            _path = path;
+            _file = file;
         }
 
-        public void AddVideos(CourseVideoModel commend)
+        public async Task AddVideos(CourseVideoModel commend)
         {
-            _context.courseVideos.Add(commend);
-            _context.SaveChanges();
+            await _context.courseVideos.AddAsync(commend);
+            try
+            {
+                await _context.SaveChangesAsync();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
         }
 
-        public void Create(CourseModel commend)
+        public async Task Create(CourseModel commend)
         {
-            _context.courses.Add(commend);
-            _context.SaveChanges();
+            await _context.courses.AddAsync(commend);
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
+        }
+
+        public async Task DeleteVideo(long videoId, string folder)
+        {
+            var video = await _context.courseVideos.FirstOrDefaultAsync(x => x.Id == videoId);
+            _context.courseVideos.Remove(video);
+            try
+            {
+                await _context.SaveChangesAsync();
+                await _file.DeleteFile($"{_path.Path()}//Media//Course//{folder}//{video.VideoName}");
+              
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
+
         }
 
         public async Task<List<CourseViewModel>> GetAll()
         {
-            var query =await  _context.courses.Select(x => new CourseViewModel
+            return await _context.courses.Include(x => x.courseCategory).Select(x => new CourseViewModel
             {
                 Id = x.Id,
                 Description = x.Description,
@@ -49,29 +93,67 @@ namespace CM.Infrastracture.Efcore.Repositories
                 Video = x.Video,
                 LastUpdate = x.LastUpdate.ToFarsi(),
                 CourseTime = x.CourseTime,
-                CategoryId = x.CategoryId
+                CategoryId = x.CategoryId,
+                CategoryName = x.courseCategory.Name,
+                Slug = x.Slug
+                
             }).ToListAsync();
 
-            query.ForEach(async x => { x.CategoryName =(await _context.courseCategories.FirstOrDefaultAsync(q => q.Id == x.CategoryId)).Name; });
-            return query.ToList();
+
 
         }
 
-        public CourseModel GetBy(long Id)
+        public async Task<List<CourseVideos>> GetAllVideos(long Id)
         {
-            return _context.courses.FirstOrDefault(x => x.Id == Id);
+            return await _context.courseVideos.Where(x => x.CourseId == Id)
+                .Select(x=>new CourseVideos
+                {
+                    CourseId = x.CourseId,
+                    Id = x.Id,
+                    VideoName = x.VideoName,    
+
+                }).ToListAsync();
         }
 
-        public void Remove(long Id)
+        public async Task<CourseModel> GetBy(long Id)
         {
-            var course = _context.courses.FirstOrDefault(x => x.Id == Id);
+            return await _context.courses.Include(x=>x.courseVideos).Include(x=>x.courseCategory).FirstOrDefaultAsync(x => x.Id == Id);
+        }
+
+        public async Task Remove(long Id)
+        {
+            var course = await _context.courses.FirstOrDefaultAsync(x => x.Id == Id);
             _context.courses.Remove(course);
-            _context.SaveChanges();
+            try
+            {
+                await _context.SaveChangesAsync();
+                string root = $"{_path.Path()}//Media//Course//{course.Subject}";
+                if (Directory.Exists(root))
+                {
+                    Directory.Delete(root, true);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
         }
 
-        public void Save()
+        public async Task Save()
         {
-            _context.SaveChanges();
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
         }
     }
 }

@@ -95,7 +95,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Configuration", "SM.Conf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.Presentation.Api", "AM.Presentation.Api\AM.Presentation.Api.csproj", "{17B4EF8F-DFB1-4569-B789-8E083F03152B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM.Presentation.Api", "CM.Presentation.Api\CM.Presentation.Api.csproj", "{D99C1740-B5E6-4511-A1D9-7ECC13C0ECF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CM.Presentation.Api", "CM.Presentation.Api\CM.Presentation.Api.csproj", "{D99C1740-B5E6-4511-A1D9-7ECC13C0ECF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

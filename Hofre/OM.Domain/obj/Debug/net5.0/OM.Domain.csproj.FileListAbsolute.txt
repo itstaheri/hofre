@@ -10,3 +10,10 @@ C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\obj\Debug\net5.0\ref\OM.Domain
 C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\obj\Debug\net5.0\OM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\obj\Debug\net5.0\OM.Domain.csproj.AssemblyReference.cache
 C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\obj\Debug\net5.0\refint\OM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\bin\Debug\net5.0\Exceptions.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\bin\Debug\net5.0\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\bin\Debug\net5.0\OM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\bin\Debug\net5.0\Frameworks.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\bin\Debug\net5.0\OM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\bin\Debug\net5.0\Exceptions.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Domain\obj\Debug\net5.0\OM.Domain.csproj.CopyComplete

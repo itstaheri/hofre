@@ -38,6 +38,7 @@
                             <tr>
                                 <th data-name="تصویر">تصویر</th>
                                 <th data-name="موضوع">موضوع</th>
+                                <th data-name="دسته">دسته</th>
                                 <th data-name="مدرس">مدرس</th>
                                 <th data-name="قیمت دوره">قیمت دوره</th>
                                 <th data-name="تاریخ شروع">تاریخ شروع</th>
@@ -51,12 +52,14 @@
 
                         <tbody>
 
-                            <tr>
-                                @foreach (var item in Model.courses)
-                                {
 
-                                    <td height="80" width="80"><img src="~/Media/Article/@item.Subject/@item.Picture" /></td>
+                            @foreach (var item in Model.courses)
+                            {
+                                <tr>
+
+                                    <td height="50" width="80"><img src="~/Media/Course/@item.Subject/@item.Picture" /></td>
                                     <td>@item.Subject</td>
+                                    <td>@item.CategoryName</td>
                                     <td>@item.Teacher</td>
                                     @if (item.IsFree == true)
                                     {
@@ -83,12 +86,12 @@
                                     <td width="70">
                                         <form method="post" asp-page-handler="Remove">
                                             <input type="hidden" name="Id" value="@item.Id" />
-                                            <button class="button button-danger">حذف</button>
+                                            <button type="submit" class="button button-danger">حذف</button>
                                         </form>
                                     </td>
+                                </tr>
+                            }
 
-                                }
-                            </tr>
                         </tbody>
                     </table>
 
@@ -99,21 +102,20 @@
     </div>
 
 </div><!-- Content Body End -->
-
 @section Scripts{
-    <!-- Global Vendor, plugins & Activation JS -->
-    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="~/assets/js/vendor/popper.min.js"></script>
-    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
-    <!--Plugins JS-->
-    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
-    <!--Main JS-->
-    <script src="assets/js/main.js"></script>
+<!-- Global Vendor, plugins & Activation JS -->
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<!--Plugins JS-->
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<!--Main JS-->
+<script src="assets/js/main.js"></script>
 
-    <!-- Plugins & Activation JS For Only This Page -->
-    <script src="~/assets/js/plugins/moment/moment.min.js"></script>
-    <script src="~/assets/js/plugins/footable/footable.min.js"></script>
-    <script src="~/assets/js/plugins/footable/footable.active.js"></script>
+<!-- Plugins & Activation JS For Only This Page -->
+<script src="~/assets/js/plugins/moment/moment.min.js"></script>
+<script src="~/assets/js/plugins/footable/footable.min.js"></script>
+<script src="~/assets/js/plugins/footable/footable.active.js"></script>
 }

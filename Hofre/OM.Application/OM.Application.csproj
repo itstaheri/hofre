@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OM.Application.Contract\OM.Application.Contract.csproj" />
+    <ProjectReference Include="..\OM.Domain\OM.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "qDSixZVSTlkqbCefu4agusGrDBR5r7hsCHMtv8aS3r8D08VMg1SyjptR9OMszW1wmApyqTCZ7/KI6zwatTgB5A==",
+  "dgSpecHash": "BqZORydzhbdR3Wgk09lfc3OgnZ47aDeBpDbOL98IGEFKb2G9Evq4SFbHWLxP6R8j+wq9nhTSpv54cGoqnh+6oA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\Hofre\\Hofre.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alith\\.nuget\\packages\\elmahcore\\2.1.1\\elmahcore.2.1.1.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\elmahcore.common\\2.1.1\\elmahcore.common.2.1.1.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\elmahcore.sql\\2.1.1\\elmahcore.sql.2.1.1.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\grpc.core\\2.46.3\\grpc.core.2.46.3.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\grpc.core.api\\2.46.3\\grpc.core.api.2.46.3.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\htmlagilitypack\\1.11.29\\htmlagilitypack.1.11.29.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.3\\microsoft.aspnet.signalr.core.2.4.3.nupkg.sha512",
@@ -73,11 +75,13 @@
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\smsirrestful\\1.1.3\\smsirrestful.1.1.3.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
@@ -162,6 +166,16 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.AspNet.SignalR.Core 2.4.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.SignalR.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SmsIrRestful 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SmsIrRestful",
       "targetGraphs": [
         "net5.0"
       ]

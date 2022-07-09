@@ -7,6 +7,7 @@ using ElmahCore.Mvc;
 using ElmahCore.Sql;
 using Frameworks;
 using Frameworks.Auth;
+using Frameworks.ZarinPal;
 using Hofre.HostFrameworks;
 using Hofre.Hubs;
 using Hofre.MidleWares;
@@ -14,11 +15,15 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OM.Configuration;
 using Query.Modules.Article;
+using Query.Modules.Course;
 using SM.Configuration;
 using System;
 using System.Collections.Generic;
@@ -47,6 +52,17 @@ namespace Hofre
             var mvcBuilder = services.AddRazorPages().AddApplicationPart(typeof(ArticleController).Assembly)
                 .AddApplicationPart(typeof(CourseController).Assembly);
 
+            services.Configure<IISServerOptions>(option =>
+            {
+                option.MaxRequestBodySize = int.MaxValue;
+            })
+                .Configure<KestrelServerOptions>(option => { option.Limits.MaxRequestBodySize = int.MaxValue; })
+            .Configure<FormOptions>(options =>
+            {
+                options.ValueLengthLimit = int.MaxValue;
+                options.MultipartBodyLengthLimit = int.MaxValue;
+                options.MultipartHeadersLengthLimit = int.MaxValue;
+            });
 
             ArticleBootestrapper.Configuration(services, ConnetionString);
             UserBootestrapper.Configuration(services, ConnetionString);
@@ -54,11 +70,14 @@ namespace Hofre
             DiscountBootestrapper.Configuration(services, ConnetionString);
             SettingBootestrapper.Configuration(services, ConnetionString);
             TicketBootestrapper.Configuration(services, ConnetionString);
+            OrderBootestrapper.Configuration(services, ConnetionString);
 
             #region FrameWorks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
-            services.AddTransient<IFileUploader, FileUploader>();
+            services.AddTransient<IFileHelper, FileHelper>();
             services.AddTransient<IAuth, Auth>();
+            services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
+            services.AddTransient<IGetPath, GetPath>();
 
             services.AddElmah<SqlErrorLog>(option =>
             {
@@ -73,7 +92,7 @@ namespace Hofre
                 option.CheckConsentNeeded = context => true;
                 option.MinimumSameSitePolicy = SameSiteMode.Lax;
 
-                services.AddTransient<IFileUploader, FileUploader>();
+                services.AddTransient<IFileHelper, FileHelper>();
 
                 services.AddSignalR();
 
@@ -93,13 +112,14 @@ namespace Hofre
             #endregion
             #region Query
             services.AddTransient<IArticleQueryRepository, ArticleQueryRepository>();
+            services.AddTransient<ICourseQueryRepository, CourseQueryRepository>();
             #endregion
 
             //SignalR
             services.AddSignalR();
 
             //Cors
-            services.AddCors(x=>x.AddPolicy("WebPolicy",o=>o.WithOrigins("https://localhost:5002")));
+            services.AddCors(x => x.AddPolicy("WebPolicy", o => o.WithOrigins("https://localhost:5002")));
 
 
             //RumtimeCompiler

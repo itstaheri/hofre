@@ -8,13 +8,14 @@ namespace CM.Application.Contract.Course
 {
     public interface ICourseApplication
     {
-        void Create(CreateCourse commend);
-        void Edit(EditCourse commend);
-        EditCourse GetValueForEdit(long Id);
+        Task Create(CreateCourse commend);
+        Task Edit(EditCourse commend);
+        Task<EditCourse> GetValueForEdit(long Id);
         Task<List<CourseViewModel>> GetAll();
-        void Remove(long Id);
-        void Active(long Id);
-        void DeActive(long Id);
-
+        Task Remove(long Id);
+        Task Active(long Id);
+        Task DeActive(long Id);
+        Task DeleteVideo(long videoId,string folder);
+        Task<List<CourseVideos>> GetVideos(long Id);
     }
 }

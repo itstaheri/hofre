@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -29,6 +29,29 @@
 
                                 <a href="#" class="video-btn"><i class="flaticon-play-button"></i></a>
                                 <a href="#" target="_blank" class="link-btn"></a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+              <div class="streams-list">
+                <h3>آخرین دوره ها</h3>
+                    
+                <div class="row">
+                    @foreach (var item in Model.Courses)
+                    {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-live-stream-item">
+                                <img asp-page="./Course" asp-route-slug="@item.Slug" src="~/Media/Course/@item.Subject/@item.Picture"  height="400" width="400">
+                                 
+                                <div class="content">
+                                    <h3>@item.Subject</h3>
+                                   
+                                </div>
+
+                                <a asp-page="./Course" asp-route-slug="@item.Slug" class="video-btn"><i class="flaticon-play-button"></i></a>
+                                <a asp-page="./Course" asp-route-slug="@item.Slug"  class="link-btn"></a>
                             </div>
                         </div>
                     }

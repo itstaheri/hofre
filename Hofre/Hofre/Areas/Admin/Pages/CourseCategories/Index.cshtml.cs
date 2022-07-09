@@ -17,13 +17,13 @@ namespace Hofre.Areas.Admin.Pages.CourseCategories
             _repository = repository;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            courseCategories = _repository.GetAll();
+            courseCategories =await _repository.GetAll();
         }
-        public RedirectToPageResult OnPost(long Id)
+        public async Task<RedirectToPageResult> OnPost(long Id)
         {
-            _repository.Remove(Id);
+            await _repository.Remove(Id);
             return RedirectToPage();
         }
     }

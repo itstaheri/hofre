@@ -17,28 +17,28 @@ namespace CM.Application
             _repository = repository;
         }
 
-        public void Create(CreateCourseCategory commend)
+        public async Task Create(CreateCourseCategory commend)
         {
             var courseCategory = new CourseCategoryModel(commend.Name, commend.Slug);
-            _repository.Create(courseCategory);
-            _repository.Save();
+           await _repository.Create(courseCategory);
+           await _repository.Save();
         }
 
-        public void Edit(EditCourseCategory commend)
+        public async Task Edit(EditCourseCategory commend)
         {
-            var courseCategory = _repository.GetBy(commend.Id);
+            var courseCategory =await _repository.GetBy(commend.Id);
             courseCategory.Edit(commend.Name, commend.Slug);
-            _repository.Save();
+           await _repository.Save();
         }
 
-        public List<CourseCategoryViewModel> GetAll()
+        public async Task<List<CourseCategoryViewModel>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
-        public EditCourseCategory GetValueForEdit(long Id)
+        public async Task<EditCourseCategory> GetValueForEdit(long Id)
         {
-            var courseCategory = _repository.GetBy(Id);
+            var courseCategory = await _repository.GetBy(Id);
             return new EditCourseCategory
             {
                 Id = courseCategory.Id,
@@ -47,10 +47,10 @@ namespace CM.Application
             };
         }
 
-        public void Remove(long Id)
+        public async Task Remove(long Id)
         {
-            _repository.Remove(Id);
-            _repository.Save();
+           await _repository.Remove(Id);
+           await _repository.Save();
         }
     }
 }

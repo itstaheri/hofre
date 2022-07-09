@@ -10,7 +10,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.Core" Version="2.46.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AM.Infrastracture.Efcore\AM.Infrastracture.Efcore.csproj" />
+    <ProjectReference Include="..\CM.Infrastracture.Efcore\CM.Infrastracture.Efcore.csproj" />
+    <ProjectReference Include="..\DM.Application.Contract\DM.Application.Contract.csproj" />
+    <ProjectReference Include="..\DM.Infrastracture.Efcore\DM.Infrastracture.Efcore.csproj" />
   </ItemGroup>
 
 </Project>

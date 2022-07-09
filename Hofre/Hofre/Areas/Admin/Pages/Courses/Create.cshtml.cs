@@ -23,17 +23,18 @@ namespace Hofre.Areas.Admin.Pages.Courses
             _category = category;
         }
       
-        public void OnGet()
+        public async Task OnGet()
         {
            
-            categories = _category.GetAll().Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToList();
+            categories = (await _category.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToList();
 
         }
-        public RedirectToPageResult OnPost(CreateCourse commend)
+        public async Task<RedirectToPageResult> OnPost(CreateCourse commend)
         {
-            _repository.Create(commend);
+           await _repository.Create(commend);
            
-            return RedirectToPage("./index");
+            return RedirectToPage("./index");   
         }
+      
     }
 }

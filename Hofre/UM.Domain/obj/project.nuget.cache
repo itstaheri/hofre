@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SPKq2srNFbjzh11hQTOa8dC20RuvdaaaIU4BLw9tmyEB2mzwKdhrMFBsxMF4jlv/6DjO+BB4E4Nc+nu3aFGnQw==",
+  "dgSpecHash": "aiYn4SDBx5kEz015iaYQt+n9x5NtU1zsnGcwWRHO3YUmULM9PBycTzeyDAONlvDXwVaYg19nguEIyBPXtcE+fw==",
   "success": true,
   "projectFilePath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Domain\\UM.Domain.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,8 @@
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\smsirrestful\\1.1.3\\smsirrestful.1.1.3.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
@@ -41,5 +43,16 @@
     "C:\\Users\\alith\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SmsIrRestful 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SmsIrRestful",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

@@ -13,9 +13,9 @@ namespace UM.Application
     {
         private readonly IPasswordHasher _Hash;
         private readonly IUserRepository _repository;
-        private readonly IFileUploader _uploader;
+        private readonly IFileHelper _uploader;
         private readonly IAuth _auth;
-        public UserApplication(IPasswordHasher hash, IUserRepository repository, IFileUploader uploader, IAuth auth)
+        public UserApplication(IPasswordHasher hash, IUserRepository repository, IFileHelper uploader, IAuth auth)
         {
             _Hash = hash;
             _repository = repository;
@@ -45,7 +45,7 @@ namespace UM.Application
 
         public async Task Create(CreateUser commend)
         {
-            string profilePhoto = _uploader.SingleUploader(commend.ProfilePicture, "ProfilePhotos", commend.Username);
+            string profilePhoto =await _uploader.SingleUploader(commend.ProfilePicture, "ProfilePhotos", commend.Username);
             var user = new UserModel(commend.Username, commend.Email, commend.Phone, commend.Password, profilePhoto, commend.RoleId);
             await _repository.Create(user);
         }
@@ -59,7 +59,7 @@ namespace UM.Application
 
         public async Task Edit(EditUser commend)
         {
-            string profilePhoto = _uploader.SingleUploader(commend.ProfilePicture, "ProfilePhotos", commend.Username);
+            string profilePhoto =await _uploader.SingleUploader(commend.ProfilePicture, "ProfilePhotos", commend.Username);
             var user = await _repository.GetBy(commend.Id);
             user.Edit(commend.Username, commend.Email, commend.Phone, commend.Password, profilePhoto, commend.RoleId);
             await _repository.Save();

@@ -28,7 +28,7 @@
                     <div class="col-lg-12 col-12 mb-30"><input class="form-control" type="text" name="Subject" placeholder="موضوع" required></div>
                     <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" name="slug" placeholder="اسلاگ" required></div>
                     <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" name="teacher" placeholder="مدرس"></div>
-                    <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="number" name="Price" placeholder="قیمت دوره"></div>
+                    <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="number" id="priceInput" name="Price" placeholder="قیمت دوره"></div>
                     <div class="col-12 mb-30"><textarea class="form-control" name="ShortDescription" placeholder="توضیحات کوتاه" required></textarea></div>
                     <div class="col-12 mb-30"><textarea class="form-control summernote" name="Description" placeholder="توضیحات" required></textarea></div>
                     <div class="col-lg-6 col-12 mb-30">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-lg-3 mb-30">
                         <div class="form-check">
-                            <input class="form-check-input" name="IsFree" type="checkbox" value="true" id="flexCheckDefault">
+                            <input class="form-check-input isfree" name="IsFree" type="checkbox" value="true" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                                 دوره ی رایگان
                             </label>
@@ -66,18 +66,18 @@
                 <div class="product-upload-gallery row flex-wrap">
                     <div class="col-12 mb-30">
                         <p class="form-help-text mt-0">آپلود حداکثر 800 × 800 پیکسل و حداکثر اندازه 2 مگابایت.</p>
-                        <input class="file-pond"  name="Picture" id="file-pond" type="file" />
+                        <input name="Picture" type="file" />
                     </div>
                 </div>
                 <h4 class="title"> آپلود ویدیو مقدمه </h4>
-                <div >
+                <div>
                     <div class="col-12 mb-30">
-                        <input  type="file" name="Video" />
+                        <input type="file" name="Video" />
                     </div>
                 </div>
 
                 <h4 class="title"> آپلود ویدیو ها</h4>
-                <div >
+                <div>
                     <div class="col-12 mb-30">
                         <input type="file" name="CourseVideos" multiple />
                     </div>
@@ -98,7 +98,20 @@
 
 </div><!-- Content Body End -->
 
+<script>
+     let priceInput = document.getElementById("priceInput");
+    document.querySelector(".isfree").addEventListener("click",e=>{
+        if(priceInput.attributes.contains("disabled")){
+            priceInput.removeAttribute("disabled")
+        }
+        else
+        {
+            priceInput.setAttribute("disabled","disabled")
 
+        }
+
+    })
+</script>
 <script>
     $('.summernote').summernote({
         height: 250,
@@ -109,40 +122,42 @@
     const pond = FilePond.create(inputElement, {
         imagePreviewHeight: 140,
     });
+
+
 </script>
 @section Scripts{
 
 
-    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="~/assets/js/vendor/popper.min.js"></script>
-    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
-    <script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
-    <script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond.min.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond.active.js"></script>
-    <script src="~/assets/js/plugins/select2/select2.full.min.js"></script>
-    <script src="~/assets/js/plugins/select2/select2.active.js"></script>
-    <script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
-    <script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
-    <script src="~/assets/js/plugins/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="~/assets/js/plugins/bootstrap-select/bootstrapSelect.active.js"></script>
-    <!--Editor-->
-    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="~/assets/js/vendor/popper.min.js"></script>
-    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
-    <!--Plugins JS-->
-    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
-    <!--Main JS-->
-    <script src="~/assets/js/main.js"></script>
-    <script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
-    <script src="~/assets/js/plugins/summernote/summernote.active.js"></script>
-    <script src="~/assets/js/plugins/quill/quill.min.js"></script>
-    <script src="~/assets/js/plugins/quill/quill.active.js"></script>
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
+<script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond.min.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond.active.js"></script>
+<script src="~/assets/js/plugins/select2/select2.full.min.js"></script>
+<script src="~/assets/js/plugins/select2/select2.active.js"></script>
+<script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
+<script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
+<script src="~/assets/js/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="~/assets/js/plugins/bootstrap-select/bootstrapSelect.active.js"></script>
+<!--Editor-->
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<!--Plugins JS-->
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<!--Main JS-->
+<script src="~/assets/js/main.js"></script>
+<script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="~/assets/js/plugins/summernote/summernote.active.js"></script>
+<script src="~/assets/js/plugins/quill/quill.min.js"></script>
+<script src="~/assets/js/plugins/quill/quill.active.js"></script>
 }

@@ -37,7 +37,7 @@ namespace Frameworks.Auth
             result.Id = long.Parse(claims.FirstOrDefault(x => x.Type == "AccountId").Value);
             result.Username = claims.FirstOrDefault(x => x.Type == "Username").Value;
             result.RoleId = long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role).Value);
-            result.Number = claims.FirstOrDefault(x => x.Type == "Mobile").Value;
+            result.Number = claims.FirstOrDefault(x => x.Type == "Phone")?.Value;
             result.Email = claims.FirstOrDefault(x => x.Type == ClaimTypes.Email).Value;
             result.Picture = claims.FirstOrDefault(x => x.Type == "Picture").Value;
             return result;

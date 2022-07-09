@@ -13,10 +13,10 @@ namespace AM.Application
 {
     public class ArticleApplication : IArticleApplication
     {
-        private readonly IFileUploader _Upload;
+        private readonly IFileHelper _Upload;
         private readonly IArticleRepository _repository;
         private readonly ArticleContext _context;
-        public ArticleApplication(IArticleRepository repository, ArticleContext context, IFileUploader Upload)
+        public ArticleApplication(IArticleRepository repository, ArticleContext context, IFileHelper Upload)
         {
             _repository = repository;
             _context = context;
@@ -27,8 +27,8 @@ namespace AM.Application
         {
             Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction = _context.Database.BeginTransaction();
            
-            string PictureName = _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
-            string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
+            string PictureName =await _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
+            string VideoName =await _Upload.SingleUploader(commend.Video, "Article", commend.Title);
             var article = new ArticleModel(commend.Title, commend.Slug, commend.ShortDescription, commend.Description,
               VideoName, PictureName, commend.PictureAlt, commend.PictureTitle);
             await _repository.Create(article);
@@ -52,8 +52,8 @@ namespace AM.Application
         public async Task Edit(EditArticle commend)
         {
 
-            string PictureName = _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
-            string VideoName = _Upload.SingleUploader(commend.Video, "Article", commend.Title);
+            string PictureName =await _Upload.SingleUploader(commend.Picture, "Article", commend.Title);
+            string VideoName =await _Upload.SingleUploader(commend.Video, "Article", commend.Title);
             var article = await _repository.Getby(commend.Id);
             article.Edit(commend.Title, commend.Slug, commend.ShortDescription, commend.Description
               , VideoName, PictureName, commend.PictureAlt, commend.PictureTitle);

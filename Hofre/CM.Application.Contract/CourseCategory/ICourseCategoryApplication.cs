@@ -8,11 +8,11 @@ namespace CM.Application.Contract.CourseCategory
 {
     public interface ICourseCategoryApplication
     {
-        void Create(CreateCourseCategory commend);
-        void Edit(EditCourseCategory commend);
-        EditCourseCategory GetValueForEdit(long Id);
-        List<CourseCategoryViewModel> GetAll();
-        void Remove(long Id);
+        Task Create(CreateCourseCategory commend);
+        Task Edit(EditCourseCategory commend);
+        Task<EditCourseCategory> GetValueForEdit(long Id);
+        Task<List<CourseCategoryViewModel>> GetAll();
+        Task Remove(long Id);
         
     }
 }

@@ -9,11 +9,13 @@ namespace CM.Domain.CourseAgg
 {
     public interface ICourseRepository
     {
-        void Create(CourseModel commend);
-        CourseModel GetBy(long Id);
-        void Save();
+        Task Create(CourseModel commend);
+        Task<CourseModel> GetBy(long Id);
+        Task Save();
         Task<List<CourseViewModel>> GetAll();
-        void AddVideos(CourseVideoModel commend);
-        void Remove(long Id);
+        Task AddVideos(CourseVideoModel commend);
+        Task Remove(long Id);
+        Task DeleteVideo(long videoId,string folder);
+        Task<List<CourseVideos>> GetAllVideos(long Id);
     }
 }

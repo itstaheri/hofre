@@ -35,5 +35,6 @@ namespace Hofre.Areas.Admin.Pages.Articles
            await _repository.Edit(commend);
             return RedirectToPage("./Index");
         }
+        
     }
 }

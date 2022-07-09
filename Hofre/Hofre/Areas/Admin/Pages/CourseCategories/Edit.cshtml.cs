@@ -18,13 +18,13 @@ namespace Hofre.Areas.Admin.Pages.CourseCategories
         }
 
         [BindProperty] public EditCourseCategory courseCategory { get; set; }
-        public void OnGet(long Id)
+        public async Task OnGet(long Id)
         {
-            courseCategory = _repository.GetValueForEdit(Id);
+            courseCategory = await _repository.GetValueForEdit(Id);
         }
-        public RedirectToPageResult OnPost(EditCourseCategory commend)
+        public async Task<RedirectToPageResult> OnPost(EditCourseCategory commend)
         {
-            _repository.Edit(commend);
+           await _repository.Edit(commend);
             return RedirectToPage("./index");
         }
     }

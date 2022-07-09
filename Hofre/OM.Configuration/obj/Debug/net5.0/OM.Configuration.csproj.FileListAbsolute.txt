@@ -10,3 +10,16 @@ C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\obj\Debug\net5.0\ref\OM
 C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\obj\Debug\net5.0\OM.Configuration.pdb
 C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\obj\Debug\net5.0\OM.Configuration.csproj.AssemblyReference.cache
 C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\obj\Debug\net5.0\refint\OM.Configuration.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\Exceptions.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\Frameworks.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\Exceptions.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\Frameworks.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\obj\Debug\net5.0\OM.Configuration.csproj.CopyComplete
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Application.dll
+C:\Users\alith\source\repos\hofre\Hofre\OM.Configuration\bin\Debug\net5.0\OM.Application.pdb

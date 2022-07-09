@@ -2,6 +2,53 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Grpc.Core/2.46.3": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.46.3",
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/grpc_csharp_ext.x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/grpc_csharp_ext.x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.46.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -693,6 +740,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
+      "RestSharp/106.11.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -704,6 +760,15 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "SmsIrRestful/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/SmsIrRestful.dll": {}
+        },
+        "runtime": {
+          "lib/SmsIrRestful.dll": {}
         }
       },
       "System.Buffers/4.5.0": {
@@ -1096,6 +1161,15 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
+        }
+      },
+      "System.Memory/4.5.3": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
         }
       },
       "System.Net.NameResolution/4.3.0": {
@@ -1861,6 +1935,90 @@
           "bin/placeholder/AM.Infrastracture.Efcore.dll": {}
         }
       },
+      "CM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.14"
+        },
+        "compile": {
+          "bin/placeholder/CM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CM.Application.Contract.dll": {}
+        }
+      },
+      "CM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0",
+          "UM.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CM.Domain.dll": {}
+        }
+      },
+      "CM.Infrastracture.Efcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CM.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CM.Infrastracture.Efcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CM.Infrastracture.Efcore.dll": {}
+        }
+      },
+      "DM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/DM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Application.Contract.dll": {}
+        }
+      },
+      "DM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Domain.dll": {}
+        }
+      },
+      "DM.Infrastracture.Efcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AM.Infrastracture.Efcore": "1.0.0",
+          "CM.Infrastracture.Efcore": "1.0.0",
+          "DM.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Infrastracture.Efcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Infrastracture.Efcore.dll": {}
+        }
+      },
       "Exceptions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1879,13 +2037,30 @@
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.14",
-          "Microsoft.Extensions.Options": "6.0.0"
+          "Microsoft.Extensions.Options": "6.0.0",
+          "RestSharp": "106.11.4",
+          "SmsIrRestful": "1.1.3"
         },
         "compile": {
           "bin/placeholder/Frameworks.dll": {}
         },
         "runtime": {
           "bin/placeholder/Frameworks.dll": {}
+        }
+      },
+      "UM.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Exceptions": "1.0.0",
+          "UM.Application.Contract": "1.0.0",
+          "UM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UM.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UM.Application.dll": {}
         }
       },
       "UM.Application.Contract/1.0.0": {
@@ -1936,6 +2111,58 @@
     }
   },
   "libraries": {
+    "Grpc.Core/2.46.3": {
+      "sha512": "lu7KP7BVWdvFXWbn/IFYHBQCpMohJwbLM1aL+nu2C0pY2CdS0idaUNAJNC2nZ60fXfqoxnSiERrIU6rC474oTw==",
+      "type": "package",
+      "path": "grpc.core/2.46.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/Grpc.Core.targets",
+        "buildTransitive/net45/Grpc.Core.targets",
+        "grpc.core.2.46.3.nupkg.sha512",
+        "grpc.core.nuspec",
+        "lib/net45/Grpc.Core.dll",
+        "lib/net45/Grpc.Core.pdb",
+        "lib/net45/Grpc.Core.xml",
+        "lib/netstandard1.5/Grpc.Core.dll",
+        "lib/netstandard1.5/Grpc.Core.pdb",
+        "lib/netstandard1.5/Grpc.Core.xml",
+        "lib/netstandard2.0/Grpc.Core.dll",
+        "lib/netstandard2.0/Grpc.Core.pdb",
+        "lib/netstandard2.0/Grpc.Core.xml",
+        "packageIcon.png",
+        "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so",
+        "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so",
+        "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib",
+        "runtimes/win-x64/native/grpc_csharp_ext.x64.dll",
+        "runtimes/win-x86/native/grpc_csharp_ext.x86.dll"
+      ]
+    },
+    "Grpc.Core.Api/2.46.3": {
+      "sha512": "uy1oe5baVa4V+C8ZyMiA8xYdNIx5A3PiacQL0f1zWDjF2z64Cb1MMXXRTs3GX+jeKpoK/RtOZg8UnJSm2KC/pQ==",
+      "type": "package",
+      "path": "grpc.core.api/2.46.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.core.api.2.46.3.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net45/Grpc.Core.Api.dll",
+        "lib/net45/Grpc.Core.Api.pdb",
+        "lib/net45/Grpc.Core.Api.xml",
+        "lib/netstandard1.5/Grpc.Core.Api.dll",
+        "lib/netstandard1.5/Grpc.Core.Api.pdb",
+        "lib/netstandard1.5/Grpc.Core.Api.xml",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.xml",
+        "lib/netstandard2.1/Grpc.Core.Api.dll",
+        "lib/netstandard2.1/Grpc.Core.Api.pdb",
+        "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "sha512": "b0R9X7L6zMqNsssKDvhYHuNi5x0s4DyHTeXybIAyGaitKiW1Q5aAGKdV2codHPiePv9yHfC9hAMyScXQ/xXhPw==",
       "type": "package",
@@ -2885,6 +3112,22 @@
         "tools/install.ps1"
       ]
     },
+    "RestSharp/106.11.4": {
+      "sha512": "vx35q52cM3UQNOiN3UqSQ9U7I5UeoyzVmjsWKQxOxn6FVu+n01+SNwhxc/jvf92WPBmmwzTV4VYTeTg4KviJdA==",
+      "type": "package",
+      "path": "restsharp/106.11.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.11.4.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    },
     "runtime.native.System/4.3.0": {
       "sha512": "c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
       "type": "package",
@@ -2897,6 +3140,18 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.3.0.nupkg.sha512",
         "runtime.native.system.nuspec"
+      ]
+    },
+    "SmsIrRestful/1.1.3": {
+      "sha512": "ouYKkhQv0zLbdDIPw5Eagpod9828Fd2zQhqt2N2MMPHdCV7oHYuAvClSBS4Pru1MclEvH5mmLfE7cgeFZ9ea+w==",
+      "type": "package",
+      "path": "smsirrestful/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/SmsIrRestful.dll",
+        "smsirrestful.1.1.3.nupkg.sha512",
+        "smsirrestful.nuspec"
       ]
     },
     "System.Buffers/4.5.0": {
@@ -4253,6 +4508,27 @@
         "runtimes/aot/lib/netcore50/System.Linq.Expressions.dll",
         "system.linq.expressions.4.3.0.nupkg.sha512",
         "system.linq.expressions.nuspec"
+      ]
+    },
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "type": "package",
+      "path": "system.memory/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Net.NameResolution/4.3.0": {
@@ -6573,6 +6849,36 @@
       "path": "../AM.Infrastracture.Efcore/AM.Infrastracture.Efcore.csproj",
       "msbuildProject": "../AM.Infrastracture.Efcore/AM.Infrastracture.Efcore.csproj"
     },
+    "CM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../CM.Application.Contract/CM.Application.Contract.csproj",
+      "msbuildProject": "../CM.Application.Contract/CM.Application.Contract.csproj"
+    },
+    "CM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CM.Domain/CM.Domain.csproj",
+      "msbuildProject": "../CM.Domain/CM.Domain.csproj"
+    },
+    "CM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "path": "../CM.Infrastracture.Efcore/CM.Infrastracture.Efcore.csproj",
+      "msbuildProject": "../CM.Infrastracture.Efcore/CM.Infrastracture.Efcore.csproj"
+    },
+    "DM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../DM.Application.Contract/DM.Application.Contract.csproj",
+      "msbuildProject": "../DM.Application.Contract/DM.Application.Contract.csproj"
+    },
+    "DM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DM.Domain/DM.Domain.csproj",
+      "msbuildProject": "../DM.Domain/DM.Domain.csproj"
+    },
+    "DM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "path": "../DM.Infrastracture.Efcore/DM.Infrastracture.Efcore.csproj",
+      "msbuildProject": "../DM.Infrastracture.Efcore/DM.Infrastracture.Efcore.csproj"
+    },
     "Exceptions/1.0.0": {
       "type": "project",
       "path": "../Exceptions/Exceptions.csproj",
@@ -6582,6 +6888,11 @@
       "type": "project",
       "path": "../Frameworks/Frameworks.csproj",
       "msbuildProject": "../Frameworks/Frameworks.csproj"
+    },
+    "UM.Application/1.0.0": {
+      "type": "project",
+      "path": "../UM.Application/UM.Application.csproj",
+      "msbuildProject": "../UM.Application/UM.Application.csproj"
     },
     "UM.Application.Contract/1.0.0": {
       "type": "project",
@@ -6601,7 +6912,11 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "AM.Infrastracture.Efcore >= 1.0.0"
+      "AM.Infrastracture.Efcore >= 1.0.0",
+      "CM.Infrastracture.Efcore >= 1.0.0",
+      "DM.Application.Contract >= 1.0.0",
+      "DM.Infrastracture.Efcore >= 1.0.0",
+      "Grpc.Core >= 2.46.3"
     ]
   },
   "packageFolders": {
@@ -6641,6 +6956,15 @@
           "projectReferences": {
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Infrastracture.Efcore\\AM.Infrastracture.Efcore.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\AM.Infrastracture.Efcore\\AM.Infrastracture.Efcore.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Infrastracture.Efcore\\CM.Infrastracture.Efcore.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Infrastracture.Efcore\\CM.Infrastracture.Efcore.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj"
             }
           }
         }
@@ -6654,6 +6978,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "Grpc.Core": {
+            "target": "Package",
+            "version": "[2.46.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -6672,5 +7002,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SmsIrRestful 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SmsIrRestful",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
