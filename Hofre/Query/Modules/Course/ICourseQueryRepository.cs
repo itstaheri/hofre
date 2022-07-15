@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CM.Application.Contract.CourseComment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -119,27 +119,6 @@
     </div><!-- Add or Edit Product End -->
 
 </div><!-- Content Body End -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <ul>
-            @foreach (var item in Model.videos)
-            {
-
-                <li>
-                    <form method="post" asp-page-handler="DeleteVideo">
-                        <input type="hidden" name="Id" value="@item.Id">
-                        <button type="submit" class="btn btn-danger">X @item.VideoName</button>
-                    </form>
-
-
-                </li>
-
-            }
-        </ul>
-
-    </div>
-
-</div>
 
 <script>
      let priceInput = document.getElementById("priceInput");

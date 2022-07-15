@@ -64,8 +64,13 @@
 
                 <div class="col-lg-4 col-12 mb-30">
                     <h5 class="sub-title">برچسب زدن</h5>
-                    <select asp-items="Model.articleTags"  class="form-control select2-tags" name="Tags" multiple>
-                        <
+                    <select class="form-control select2-tags" name="Tags" multiple>
+                            @foreach (var tag in Model.tags)
+                            {
+
+                                <option value="@tag.TagId">@tag.Title</option>
+                            }
+
                     </select>
                 </div>
 
@@ -94,36 +99,36 @@
 
 
 
-    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="~/assets/js/vendor/popper.min.js"></script>
-    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
-    <script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
-    <script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond.min.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
-    <script src="~/assets/js/plugins/filepond/filepond.active.js"></script>
-    <script src="~/assets/js/plugins/select2/select2.full.min.js"></script>
-    <script src="~/assets/js/plugins/select2/select2.active.js"></script>
-    <script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
-    <script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
-    <script src="~/assets/js/plugins/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="~/assets/js/plugins/bootstrap-select/bootstrapSelect.active.js"></script>
-    <!--Editor-->
-    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="~/assets/js/vendor/popper.min.js"></script>
-    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
-    <!--Plugins JS-->
-    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
-    <!--Main JS-->
-    <script src="~/assets/js/main.js"></script>
-    <script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
-    <script src="~/assets/js/plugins/summernote/summernote.active.js"></script>
-    <script src="~/assets/js/plugins/quill/quill.min.js"></script>
-    <script src="~/assets/js/plugins/quill/quill.active.js"></script>
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
+<script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond.min.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
+<script src="~/assets/js/plugins/filepond/filepond.active.js"></script>
+<script src="~/assets/js/plugins/select2/select2.full.min.js"></script>
+<script src="~/assets/js/plugins/select2/select2.active.js"></script>
+<script src="~/assets/js/plugins/nice-select/jquery.nice-select.min.js"></script>
+<script src="~/assets/js/plugins/nice-select/niceSelect.active.js"></script>
+<script src="~/assets/js/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="~/assets/js/plugins/bootstrap-select/bootstrapSelect.active.js"></script>
+<!--Editor-->
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<!--Plugins JS-->
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<!--Main JS-->
+<script src="~/assets/js/main.js"></script>
+<script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="~/assets/js/plugins/summernote/summernote.active.js"></script>
+<script src="~/assets/js/plugins/quill/quill.min.js"></script>
+<script src="~/assets/js/plugins/quill/quill.active.js"></script>
 }

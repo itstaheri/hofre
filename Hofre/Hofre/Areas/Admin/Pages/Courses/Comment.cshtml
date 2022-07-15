@@ -1,0 +1,97 @@
+﻿@page
+@model Hofre.Areas.Admin.Pages.Courses.CommentModel
+@{
+}
+
+<div class="content-body">
+
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3> نظرات دوره ها</h3>
+            </div>
+        </div><!-- Page Heading End -->
+
+    </div><!-- Page Headings End -->
+
+    <div class="row">
+
+        <!--Order List Start-->
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-vertical-middle">
+                    <thead>
+                        <tr>
+                            <th>دوره</th>
+                            <th>کاربر</th>
+                            <th>متن</th>
+                            <th>تاریخ</th>
+                            <th>وضعیت</th>
+                            <th>عملیات</th>
+                            <th>حذف</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in @Model.Comments)
+                        {
+                            <tr>
+                                <td>@item.CourseSubject</td>
+                                <td>@item.Username</td>
+                                <td>@item.Text</td>
+                                <td>@item.CreationDate</td>
+                                @if (item.IsActive)
+                                {
+                                    <td><span class="badge badge-success">تایید شده</span></td>
+                                }
+                                else
+                                {
+                                    <td><span class="badge badge-danger">در انتظار تایید</span></td>
+                                }
+                                <td class="action h4">
+                                    <div class="table-action-buttons">
+
+                                        @if (item.IsActive==false)
+                                        {
+                                            <form method="post" asp-page-handler="Active">
+                                                <input name="Id" type="hidden" value="@item.Id">
+                                                <button type="submit" class="edit button button-box button-xs button-primary"><i class="zmdi zmdi-more"></i></button>
+
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <form method="post" asp-page-handler="DeActive">
+                                                <input name="Id" type="hidden" value="@item.Id">
+                                                <button type="submit" class="edit button button-box button-xs button-danger"><i class="zmdi zmdi-more"></i></button>
+
+                                            </form>
+                                        }
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-action-buttons">
+
+                                        <form method="post" asp-page-handler="Delete">
+                                            <input type="hidden" name="Id" value="@item.Id">
+                                            <button type="submit" class="delete button button-box button-xs button-danger"><i class="zmdi zmdi-delete"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--Order List End-->
+
+    </div>
+</div>

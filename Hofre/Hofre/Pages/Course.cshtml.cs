@@ -7,6 +7,10 @@ using OM.Application.Contract.Order;
 using Query.Modules.Course;
 using System.Threading.Tasks;
 using Frameworks;
+using CM.Application.Contract.CourseComment;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
+using System.Linq;
 
 namespace Hofre.Pages
 {
@@ -17,22 +21,26 @@ namespace Hofre.Pages
         private readonly IZarinPalFactory _zarinpal;
         private readonly IOrderApplication _order;
         private readonly IAuth _auth;
+        private readonly ICourseCommentApplication _comment;
 
-        public CourseModel(ICourseQueryRepository repository, IZarinPalFactory zarinpal, IOrderApplication order, IAuth auth)
+        public CourseModel(ICourseQueryRepository repository, IZarinPalFactory zarinpal, IOrderApplication order, IAuth auth, ICourseCommentApplication comment)
         {
             _repository = repository;
             _zarinpal = zarinpal;
             _order = order;
             _auth = auth;
+            _comment = comment;
         }
 
         public CourseQueryViewModel Course { get; set; }
+        public List<CourseCommentViewModel> comments;
         public bool IsMember;
 
         public async Task OnGet(string slug)
         {
             Course = await _repository.GetBy(slug);
             IsMember = await _repository.IsMember(Course.Id, (await _auth.CurrentUserId()));
+            comments = (await _comment.GetCommentsBy(Course.Id));
 
         }
         public async Task<IActionResult> OnPostPay(OrderViewModel order, long CourseId)
@@ -65,5 +73,12 @@ namespace Hofre.Pages
                 return RedirectToPage("./PaymentResult", "پرداخت با مشکل مواجه شد.در صورت کسر وجه از حساب شما مبلغ کسر شده تا 24آینده به حساب شما برگشت داده خواهد شد");
             }
         }
+       // [Authorize]
+        public async Task<RedirectToPageResult> OnPostComment(CreateCourseComment commend)
+        {
+            await _comment.Create(commend);
+            return RedirectToPage();
+        }
+
     }
 }

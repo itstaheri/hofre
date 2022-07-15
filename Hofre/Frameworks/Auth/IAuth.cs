@@ -14,6 +14,7 @@ namespace Frameworks.Auth
         Task<long> CurrentUserId();
         Task<string> CurrentUserRole();
         Task<AuthViewModel> CurrentUserInfo();
+        Task<string> CurrentUserName();
 
 
     }

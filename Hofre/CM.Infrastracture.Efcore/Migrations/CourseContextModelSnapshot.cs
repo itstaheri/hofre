@@ -122,6 +122,35 @@ namespace CM.Infrastracture.Efcore.Migrations
                     b.ToTable("courseCategories");
                 });
 
+            modelBuilder.Entity("CM.Domain.CourseCommentAgg.CourseCommentModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long>("CourseId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("courseComments");
+                });
+
             modelBuilder.Entity("CM.Domain.CourseAgg.CourseModel", b =>
                 {
                     b.HasOne("CM.Domain.CourseCategoryAgg.CourseCategoryModel", "courseCategory")
@@ -144,8 +173,21 @@ namespace CM.Infrastracture.Efcore.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("CM.Domain.CourseCommentAgg.CourseCommentModel", b =>
+                {
+                    b.HasOne("CM.Domain.CourseAgg.CourseModel", "course")
+                        .WithMany("courseComments")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("course");
+                });
+
             modelBuilder.Entity("CM.Domain.CourseAgg.CourseModel", b =>
                 {
+                    b.Navigation("courseComments");
+
                     b.Navigation("courseVideos");
                 });
 

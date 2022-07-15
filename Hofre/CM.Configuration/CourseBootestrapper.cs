@@ -1,8 +1,10 @@
 ﻿using CM.Application;
 using CM.Application.Contract.Course;
 using CM.Application.Contract.CourseCategory;
+using CM.Application.Contract.CourseComment;
 using CM.Domain.CourseAgg;
 using CM.Domain.CourseCategoryAgg;
+using CM.Domain.CourseCommentAgg;
 using CM.Infrastracture.Efcore;
 using CM.Infrastracture.Efcore.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +22,8 @@ namespace CM.Configuration
             services.AddTransient<ICourseRepository, CourseRepository>();
             services.AddTransient<ICourseCategoryApplication, CourseCategoryApplication>();
             services.AddTransient<ICourseCategoryRepository, CourseCategoryRepository>();
+            services.AddTransient<ICourseCommentRepository, CourseCommentRepository>();
+            services.AddTransient<ICourseCommentApplication, CourseCommentApplication>();
         }
     }
 }

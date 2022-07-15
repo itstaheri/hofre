@@ -8,6 +8,7 @@ namespace AM.Application.Contract.ArticleComment
 {
     public interface IArticleCommentApplication
     {
+        Task Create(CreateArticleComment commend);
         Task<List<ArticleCommentViewModel>> GetAll();
         Task Remove(long Id);
         Task Active(long Id);

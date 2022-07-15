@@ -16,6 +16,7 @@ namespace CM.Infrastracture.Efcore.Mappings
             builder.HasKey(x => x.Id);
             builder.HasMany(x => x.courseVideos).WithOne(x => x.Course).HasForeignKey(x => x.CourseId);
             builder.HasOne(x => x.courseCategory).WithMany(x => x.courses).HasForeignKey(x => x.CategoryId);
+            builder.HasMany(x => x.courseComments).WithOne(x => x.course).HasForeignKey(x => x.CourseId);
         }
     }
 }

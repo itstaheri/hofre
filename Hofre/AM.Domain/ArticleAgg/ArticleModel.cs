@@ -25,7 +25,6 @@ namespace AM.Domain.ArticleAgg
                 Video = video;
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
-            articleTags = new List<ArticleTagsModel>();
 
         }
         public void Edit(string title, string slug, string shortDescription, string description,

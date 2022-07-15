@@ -1,0 +1,385 @@
+﻿@page "{slug}"
+@model Hofre.Pages.ArticleDetailModel
+@inject Frameworks.Auth.IAuth _auth;
+@{
+}
+
+<section class="page-title-area page-title-bg1">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 title="@Model.Article.Title">@Model.Article.Title</h1>
+        </div>
+    </div>
+</section>
+<section class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc">
+                    <div class="article-video">
+                        @if (!string.IsNullOrWhiteSpace(Model.Article.Video))
+                        {
+                            <iframe src="~/Media/Article/@Model.Article.Title/@Model.Article.Video" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+
+                        }
+                        else
+                        {
+                            <img src="~/Media/Article/@Model.Article.Title/@Model.Article.Picture" />
+
+                        }
+                    </div>
+
+                    <div class="article-content">
+                        <div class="entry-meta">
+                            <ul>
+                                <li>
+                                    <i class='bx bx-folder-open'></i>
+                                    <span>دسته</span>
+                                    @foreach (var category in Model.Article.ArticleCategories)
+                                    {
+                                        <a>@category.Name,</a>
+
+                                    }
+
+                                </li>
+                                <li>
+                                    <i class='bx bx-group'></i>
+                                    <span>بازدید</span>
+                                    <a href="#">813,454</a>
+                                </li>
+                                <li>
+                                    <i class='bx bx-calendar'></i>
+                                    <span>ارسال در</span>
+                                    <a>@Model.Article.CreationDate</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <br />
+
+                        <p>@Model.Article.ShortDescription</p>
+                        <p>@Model.Article.Description</p>
+
+
+                    </div>
+
+                    <div class="article-footer">
+                        <div class="article-tags">
+                            <span><i class='bx bx-purchase-tag'></i></span>
+                            @foreach (var tag in Model.Article.ArticleTags)
+                            {
+                                <a>@tag,</a>
+                            }
+
+                        </div>
+
+                        <div class="article-share">
+                            <ul class="social">
+                                <li><span>اشتراک گذاری:</span></li>
+                                <li><a href="#" class="facebook" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                                <li><a href="#" class="twitter" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                <li><a href="#" class="linkedin" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                                <li><a href="#" class="instagram" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="zelda-post-navigation">
+                        <div class="prev-link-wrapper">
+                            <div class="info-prev-link-wrapper">
+                                <a href="#">
+                                    <span class="image-prev">
+                                        <img src="assets/img/main-blog-img1.jpg" alt="image">
+                                        <span class="post-nav-title">قبلی</span>
+                                    </span>
+
+                                    <span class="prev-link-info-wrapper">
+                                        <span class="prev-title">مهارت های کاربردی در برنامه نویسی اندروید</span>
+                                        <span class="meta-wrapper">
+                                            <span class="date-post">21 دی 1398</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="next-link-wrapper">
+                            <div class="info-next-link-wrapper">
+                                <a href="#">
+                                    <span class="next-link-info-wrapper">
+                                        <span class="next-title">مهارت های کاربردی در برنامه نویسی اندروید</span>
+                                        <span class="meta-wrapper">
+                                            <span class="date-post">21 دی 1398</span>
+                                        </span>
+                                    </span>
+
+                                    <span class="image-next">
+                                        <img src="assets/img/main-blog-img2.jpg" alt="image">
+                                        <span class="post-nav-title">بعدی</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comments-area">
+                        <h3 class="comments-title">@(Model.Article.ArticleComments.Count) نظر :</h3>
+
+                        <ol class="comment-list">
+                            <li class="comment">
+                                @foreach (var comment in Model.Article.ArticleComments)
+                                {
+                                    <article class="comment-body">
+                                        <footer class="comment-meta">
+                                            <div class="comment-author vcard">
+                                                <img src="~/Media/User/@comment.UserProfile" class="avatar" alt="image">
+                                                <b class="fn">@comment.Username</b>
+                                                <span class="says">می گوید:</span>
+                                            </div>
+
+                                            <div class="comment-metadata">
+                                                <a href="#">
+                                                    <span>@comment.CreationDate</span>
+                                                </a>
+                                            </div>
+                                        </footer>
+
+                                        <div class="comment-content">
+                                            <p>@comment.Text</p>
+                                        </div>
+
+                                     @*   <div class="reply">
+                                            <a href="#" class="comment-reply-link">پاسخ دادن</a>
+                                        </div>*@
+                                    </article>
+                                }
+
+
+                        </ol>
+
+                        @if (await _auth.IsAuthenticated())
+                        {
+                            <div class="comment-respond">
+                                <h4 class="comment-reply-title">نظر بدهید</h4>
+
+                                <form class="comment-form" method="post">
+
+
+                                    <p class="comment-form-comment">
+                                        <label>نظر</label>
+                                        <textarea name="text" id="comment" cols="45" placeholder="نظر شما ..." rows="5" maxlength="65525" required="required"></textarea>
+                                        <input type="hidden" name="UserId" value="@await _auth.CurrentUserId()">
+                                        <input type="hidden" name="ArticleId" value="@Model.Article.Id">
+
+                                    </p>
+
+                                    <p class="form-submit">
+                                        <input type="submit" name="submit" id="submit" class="submit" value="ارسال نظر">
+                                    </p>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger">برای ثبت نظر باید وارد حساب کاربری خود شوید</div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <aside class="widget-area">
+                    <section class="widget widget_search">
+                        <h3 class="widget-title">جستجو</h3>
+
+                        <form class="search-form">
+                            <label>
+                                <span class="screen-reader-text">جستجو:</span>
+                                <input type="search" class="search-field" placeholder="جستجو ...">
+                            </label>
+                            <button type="submit"><i class="bx bx-search-alt"></i></button>
+                        </form>
+                    </section>
+
+                    <section class="widget widget_zelda_posts_thumb">
+                        <h3 class="widget-title">پست های محبوب</h3>
+
+                        <article class="item">
+                            <a href="#" class="thumb">
+                                <span class="fullimage cover bg1" role="img"></span>
+                            </a>
+                            <div class="info">
+                                <span>10 دی 1398</span>
+                                <h4 class="title usmall"><a href="#">ابزارهای اندروید برای توسعه بازی های موبایل</a></h4>
+                            </div>
+
+                            <div class="clear"></div>
+                        </article>
+
+                        <article class="item">
+                            <a href="#" class="thumb">
+                                <span class="fullimage cover bg2" role="img"></span>
+                            </a>
+                            <div class="info">
+                                <span>10 دی 1398</span>
+                                <h4 class="title usmall"><a href="#">ابزارهای اندروید برای توسعه بازی های موبایل</a></h4>
+                            </div>
+
+                            <div class="clear"></div>
+                        </article>
+
+                        <article class="item">
+                            <a href="#" class="thumb">
+                                <span class="fullimage cover bg3" role="img"></span>
+                            </a>
+                            <div class="info">
+                                <span>10 دی 1398</span>
+                                <h4 class="title usmall"><a href="#">ابزارهای اندروید برای توسعه بازی های موبایل</a></h4>
+                            </div>
+
+                            <div class="clear"></div>
+                        </article>
+                    </section>
+
+                    <section class="widget widget_categories">
+                        <h3 class="widget-title">دسته بندی ها</h3>
+
+                        <ul>
+                            <li><a href="#">طراحی <span class="post-count">(03)</span></a></li>
+                            <li><a href="#">زندگی <span class="post-count">(05)</span></a></li>
+                            <li><a href="#">اسکریپت <span class="post-count">(10)</span></a></li>
+                            <li><a href="#">دستگاه <span class="post-count">(08)</span></a></li>
+                            <li><a href="#">مدها <span class="post-count">(01)</span></a></li>
+                        </ul>
+                    </section>
+
+                    <section class="widget widget_tag_cloud">
+                        <h3 class="widget-title">برچسب های محبوب</h3>
+
+                        <div class="tagcloud">
+                            <a href="#">تجارت <span class="tag-link-count"> (3)</span></a>
+                            <a href="#">طراحی <span class="tag-link-count"> (3)</span></a>
+                            <a href="#">مدرن <span class="tag-link-count"> (2)</span></a>
+                            <a href="#">مد <span class="tag-link-count"> (2)</span></a>
+                            <a href="#">سفر <span class="tag-link-count"> (1)</span></a>
+                            <a href="#">هوشمند <span class="tag-link-count"> (1)</span></a>
+                            <a href="#">بازاریابی <span class="tag-link-count"> (1)</span></a>
+                            <a href="#">مدها <span class="tag-link-count"> (2)</span></a>
+                        </div>
+                    </section>
+
+                    <section class="widget widget_match_list">
+                        <div class="single-match-list">
+                            <img src="assets/img/team1.png" class="team-1" alt="image">
+                            <span class="date">20 دی 1398 ، 23:00</span>
+                            <ul>
+                                <li>09</li>
+                                <li>14</li>
+                            </ul>
+                            <img src="assets/img/team2.png" class="team-2" alt="image">
+                        </div>
+
+                        <div class="single-match-list">
+                            <img src="assets/img/team3.png" class="team-1" alt="image">
+                            <span class="date">20 دی 1398 ، 23:00</span>
+                            <ul>
+                                <li>10</li>
+                                <li>08</li>
+                            </ul>
+                            <img src="assets/img/team4.png" class="team-2" alt="image">
+                        </div>
+
+                        <div class="single-match-list">
+                            <img src="assets/img/team5.png" class="team-1" alt="image">
+                            <span class="date">20 دی 1398 ، 23:00</span>
+                            <ul>
+                                <li>10</li>
+                                <li>10</li>
+                            </ul>
+                            <img src="assets/img/team6.png" class="team-2" alt="image">
+                        </div>
+
+                        <div class="single-match-list">
+                            <img src="assets/img/team7.png" class="team-1" alt="image">
+                            <span class="date">20 دی 1398 ، 23:00</span>
+                            <ul>
+                                <li>14</li>
+                                <li>15</li>
+                            </ul>
+                            <img src="assets/img/team8.png" class="team-2" alt="image">
+                        </div>
+                    </section>
+
+                    <section class="widget widget_instagram">
+                        <ul>
+                            <li>
+                                <div class="box">
+                                    <img src="assets/img/team-member1.jpg" alt="image">
+                                    <i class="bx bxl-instagram"></i>
+                                    <a href="#" target="_blank" class="link-btn"></a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="box">
+                                    <img src="assets/img/team-member2.jpg" alt="image">
+                                    <i class="bx bxl-instagram"></i>
+                                    <a href="#" target="_blank" class="link-btn"></a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="box">
+                                    <img src="assets/img/team-member3.jpg" alt="image">
+                                    <i class="bx bxl-instagram"></i>
+                                    <a href="#" target="_blank" class="link-btn"></a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="box">
+                                    <img src="assets/img/team-member4.jpg" alt="image">
+                                    <i class="bx bxl-instagram"></i>
+                                    <a href="#" target="_blank" class="link-btn"></a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="box">
+                                    <img src="assets/img/team-member5.jpg" alt="image">
+                                    <i class="bx bxl-instagram"></i>
+                                    <a href="#" target="_blank" class="link-btn"></a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="box">
+                                    <img src="assets/img/team-member6.jpg" alt="image">
+                                    <i class="bx bxl-instagram"></i>
+                                    <a href="#" target="_blank" class="link-btn"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/popper.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/magnific-popup.min.js"></script>
+<script src="~/assets/js/parallax.min.js"></script>
+<script src="~/assets/js/meanmenu.min.js"></script>
+<script src="~/assets/js/isotope.pkgd.min.js"></script>
+<script src="~/assets/js/cursor.min.js"></script>
+<script src="~/assets/js/fancybox.min.js"></script>
+<script src="~/assets/js/wow.min.js"></script>
+<script src="~/assets/js/form-validator.min.js"></script>
+<script src="~/assets/js/contact-form-script.js"></script>
+<script src="~/assets/js/ajaxchimp.min.js"></script>
+<script src="~/assets/js/main.js"></script>
+

@@ -46,9 +46,10 @@
 
                         <tbody>
 
-                            <tr>
-                                @foreach (var item in Model.ArticleComments)
-                                {
+                            @foreach (var item in Model.ArticleComments)
+                            {
+                                <tr>
+
 
                                     <td>@item.ArticleName</td>
                                     <td>@item.Username</td>
@@ -75,7 +76,7 @@
                                     }
                                     else
                                     {
-                                         <td width="70">
+                                        <td width="70">
                                             <form method="post" asp-page-handler="DeActive">
                                                 <input type="hidden" name="Id" value="@item.Id">
                                                 <button class="button button-danger">لغو</button>
@@ -90,9 +91,9 @@
                                             <button class="button button-danger">حذف</button>
                                         </form>
                                     </td>
+                                </tr>
 
-                                }
-                            </tr>
+                            }
                         </tbody>
                     </table>
 

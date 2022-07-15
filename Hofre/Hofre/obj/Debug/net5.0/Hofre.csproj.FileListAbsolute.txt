@@ -508,3 +508,4 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\runtimes\linux-x6
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\bin\Debug\net5.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\ArticleDetail.cshtml.g.cs

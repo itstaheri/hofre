@@ -12,6 +12,7 @@ namespace Hofre.Areas.Admin.Pages.Courses
     {
         private readonly ICourseApplication _repository;
         public List<CourseViewModel> courses;
+        public List<CourseVideos> videos { get; set; }
         public IndexModel(ICourseApplication repository)
         {
             _repository = repository;
@@ -20,6 +21,7 @@ namespace Hofre.Areas.Admin.Pages.Courses
         public async Task OnGet()
         {
             courses = await _repository.GetAll();
+
         }
         public async Task<RedirectToPageResult> OnPostActive(long Id)
         {

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Admin\Pages\Courses\Comment.cshtml" />
     <Content Remove="Areas\Admin\Pages\Courses\Edit.cshtml" />
     <Content Remove="Areas\Admin\Pages\Discounts\Create.cshtml" />
     <Content Remove="Pages\Course.cshtml" />
@@ -46,12 +47,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\Admin\Pages\Courses\Comment.cshtml" />
     <_ContentIncludedByDefault Remove="Areas\Admin\Pages\Courses\Edit.cshtml" />
     <_ContentIncludedByDefault Remove="Areas\Admin\Pages\Discounts\Create.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\Course.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Pages\Courses\Comment.cshtml" />
     <None Include="Areas\Admin\Pages\Courses\Edit.cshtml" />
     <None Include="Areas\Admin\Pages\Discounts\Create.cshtml" />
     <None Include="Pages\Course.cshtml" />
@@ -114,6 +117,10 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Areas\Admin\Pages\Courses\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Admin\Pages\Courses\Comment.cshtml" />
   </ItemGroup>
 
 </Project>

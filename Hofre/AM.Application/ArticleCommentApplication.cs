@@ -28,6 +28,12 @@ namespace AM.Application
             
         }
 
+        public async Task Create(CreateArticleComment commend)
+        {
+            var comment = new ArticleCommentModel(commend.Text, commend.ArticleId, commend.UserId);
+            await _repository.Create(comment);
+        }
+
         public async Task DeActive(long Id)
         {
             var comment = await _repository.GetBy(Id);
@@ -46,5 +52,7 @@ namespace AM.Application
         {
             await _repository.Remove(Id);
         }
+     
+
     }
 }

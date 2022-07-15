@@ -9,8 +9,8 @@ namespace Query.Modules.Article
     public interface IArticleQueryRepository
     {
         Task<List<ArticleQueryViewModel>> GetAll();
-        Task<ArticleQueryViewModel> GetDetailById(long Id);
+        Task<ArticleQueryViewModel> GetDetailBy(long Id);
+        Task<ArticleQueryViewModel> GetDetailBy(string slug);
         Task<List<ArticleQueryViewModel>> Search(string entery);
-        Task<List<ArticleCommentQueryViewModel>> GetCommentsById(long Id);
     }
 }

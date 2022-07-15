@@ -62,6 +62,7 @@ namespace AM.Infrastracture.Efcore.Repositories
             return await _context.articleComments.FirstOrDefaultAsync(x => x.Id == Id);
         }
 
+       
         public async Task Remove(long Id)
         {
             var comment = await _context.articleComments.FirstOrDefaultAsync(x => x.Id == Id);

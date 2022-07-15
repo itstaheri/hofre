@@ -29,7 +29,7 @@ namespace AM.Infrastracture.Efcore.Repositories
             _context.articles.Add(commend);
             try
             {
-               await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
             }
             catch (Exception ex)
@@ -55,12 +55,13 @@ namespace AM.Infrastracture.Efcore.Repositories
                 CreationDate = x.CreationDate.ToFarsi(),
 
             }).ToListAsync();
-           
+
         }
 
         public async Task<ArticleModel> Getby(long Id)
         {
             return await _context.articles.FirstOrDefaultAsync(x => x.Id == Id);
+
         }
 
         public async Task<List<ArticleTagViewModel>> GetTagsBy(long Id)
@@ -72,10 +73,11 @@ namespace AM.Infrastracture.Efcore.Repositories
 
         public async Task Remove(long Id)
         {
-            var article =await _context.articles.FirstOrDefaultAsync(x => x.Id == Id);
+            var article = await _context.articles.FirstOrDefaultAsync(x => x.Id == Id);
+         
             _context.Remove(article);
-           await _context.SaveChangesAsync();
-           
+            await _context.SaveChangesAsync();
+
         }
 
         public async Task Save()

@@ -15,7 +15,7 @@ namespace Hofre.Areas.Admin.Pages.Courses
         private readonly ICourseCategoryApplication _category;
         [BindProperty] public EditCourse course { get; set; }
         public List<SelectListItem> categories { get; set; }
-        public List<CourseVideos> videos { get; set; }
+      
 
         public EditModel(ICourseApplication repository, ICourseCategoryApplication category)
         {
@@ -27,7 +27,6 @@ namespace Hofre.Areas.Admin.Pages.Courses
         {
             course = await _repository.GetValueForEdit(Id);
             categories = (await _category.GetAll()).Select(x=> new SelectListItem(x.Name, x.Id.ToString())).ToList();
-            videos = await _repository.GetVideos(Id);
 
         }
         public async Task<RedirectToPageResult> OnPost(EditCourse edit)

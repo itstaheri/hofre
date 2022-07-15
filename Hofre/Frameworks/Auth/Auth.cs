@@ -43,6 +43,14 @@ namespace Frameworks.Auth
             return result;
         }
 
+        public async Task<string> CurrentUserName()
+        {
+            if (!(await IsAuthenticated()))
+                throw new NotFoundException();
+            return _httpContext.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "Username")?.Value;   
+
+        }
+
         public async Task<string> CurrentUserRole()
         {
             if (!(await IsAuthenticated()))

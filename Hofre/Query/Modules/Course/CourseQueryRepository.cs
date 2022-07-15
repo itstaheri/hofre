@@ -40,6 +40,7 @@ namespace Query.Modules.Course
 
         }
 
+      
         public async Task<bool> FreeCourse(long Id)
         {
             return await _context.courses.AnyAsync(x => x.Id == Id && x.IsFree == true);
@@ -164,6 +165,7 @@ namespace Query.Modules.Course
             return query;
         }
 
+      
 
         public async Task<bool> IsMember(long CourseId, long UserId)
         {

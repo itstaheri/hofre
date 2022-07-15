@@ -16,6 +16,7 @@ namespace Hofre.Areas.Admin.Pages.Articles
         public List<SelectListItem> categories;
         private readonly IArticleApplication _repository;
         public List<SelectListItem> articleTags;
+        public List<ArticleTagViewModel> tags;
         [BindProperty] public EditArticle Article { get; set; }
 
         public EditModel(IArticleCategoryApplication articlecategory, IArticleApplication repository)
@@ -26,15 +27,16 @@ namespace Hofre.Areas.Admin.Pages.Articles
 
         public async Task OnGet(long Id)
         {
-            Article =await _repository.GetValueForEdit(Id);
+            Article = await _repository.GetValueForEdit(Id);
             articleTags =(await _repository.GetTagsBy(Id)).Select(x=>new SelectListItem(x.Title,x.TagId.ToString())).ToList();
-            categories =(await _articlecategory.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString(),true)).ToList();
+            tags = await _repository.GetTagsBy(Id);
+            categories = (await _articlecategory.GetAll()).Select(x => new SelectListItem(x.Name, x.Id.ToString(), true)).ToList();
         }
         public async Task<RedirectToPageResult> OnPost(EditArticle commend)
         {
-           await _repository.Edit(commend);
+            await _repository.Edit(commend);
             return RedirectToPage("./Index");
         }
-        
+
     }
 }

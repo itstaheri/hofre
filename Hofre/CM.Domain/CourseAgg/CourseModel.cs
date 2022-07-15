@@ -1,4 +1,5 @@
 ﻿using CM.Domain.CourseCategoryAgg;
+using CM.Domain.CourseCommentAgg;
 using Frameworks;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ namespace CM.Domain.CourseAgg
     public class CourseModel : BaseEntity
     {
         protected CourseModel() { }
-        public CourseModel(string subject, string shortDescription, string description, 
-            float courseTime, string teacher, double price, string picture, string video,bool isFree,bool isFinal,long cateogryId, string slug)
+        public CourseModel(string subject, string shortDescription, string description,
+            float courseTime, string teacher, double price, string picture, string video, bool isFree, bool isFinal, long cateogryId, string slug)
         {
             Subject = subject;
             ShortDescription = shortDescription;
@@ -68,6 +69,7 @@ namespace CM.Domain.CourseAgg
         public DateTime LastUpdate { get; private set; }
         public List<CourseVideoModel> courseVideos { get; private set; }
         public CourseCategoryModel courseCategory { get; private set; }
+        public List<CourseCommentModel> courseComments { get; private set; }
         public long CategoryId { get; private set; }
     }
 }
