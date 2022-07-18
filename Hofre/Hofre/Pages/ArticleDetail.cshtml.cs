@@ -11,24 +11,24 @@ namespace Hofre.Pages
     {
         private readonly IArticleQueryRepository _repository;
         private readonly IArticleCommentApplication _comment;
-        public ArticleQueryViewModel Article { get; set; }
 
-        public ArticleDetailModel(IArticleQueryRepository repository,IArticleCommentApplication comment)
+        public ArticleQueryViewModel Article { get; set; }
+        public List<ArticleQueryViewModel> RelatedArticle;
+        public ArticleDetailModel(IArticleQueryRepository repository, IArticleCommentApplication comment)
         {
             _repository = repository;
             _comment = comment;
         }
         public async Task OnGet(string slug)
-        
         {
             Article = await _repository.GetDetailBy(slug);
-        
+           
         }
         public async Task<RedirectToPageResult> OnPost(CreateArticleComment commend)
         {
             await _comment.Create(commend);
             return RedirectToPage();
         }
-        
+
     }
 }

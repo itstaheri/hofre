@@ -21,6 +21,6 @@ namespace Query.Modules.Article
         public string PictureTitle { get; set; }
         public List<ArticleCategoryQueryModel> ArticleCategories { get; set; }
         public List<ArticleCommentQueryViewModel> ArticleComments { get; set; }
-        public List<string> ArticleTags { get; set; }
+        public List<ArticleTagQueryViewModel> ArticleTags { get; set; }
     }
 }

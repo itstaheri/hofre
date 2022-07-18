@@ -42,7 +42,7 @@ namespace Query.Modules.Article
                 Slug = x.Slug,
                 ArticleCategories = new List<ArticleCategoryQueryModel>(),
                 ArticleComments = new List<ArticleCommentQueryViewModel>(),
-                ArticleTags = new List<string>()
+                ArticleTags = new List<ArticleTagQueryViewModel>()
 
 
 
@@ -66,10 +66,20 @@ namespace Query.Modules.Article
 
         }
 
+        public async Task<List<ArticleCategoryQueryModel>> GetAllCategories()
+        {
+            return await _context.articleCategories.Select(x=>new ArticleCategoryQueryModel { Id = x.Id,Name=x.Name}).ToListAsync();
+        }
 
-
-      
-
+        public async Task<List<ArticleCategoryQueryModel>> GetArticlesCategories()
+        {
+            return await _context.articleToCategories.Include(x => x.articleCategory)
+                .Select(x => new ArticleCategoryQueryModel
+                {
+                    Id = x.ArticleCategoryId,
+                    Name = x.articleCategory.Name
+                }).ToListAsync();
+        }
 
         public async Task<ArticleQueryViewModel> GetDetailBy(string slug)
         {
@@ -85,15 +95,20 @@ namespace Query.Modules.Article
                 Title = x.Title,
                 Video = x.Video,
                 Slug = x.Slug,
-                ArticleTags = new List<string>(),
+                ArticleTags = new List<ArticleTagQueryViewModel>(),
                 ArticleCategories = new List<ArticleCategoryQueryModel>(),
                 ArticleComments = new List<ArticleCommentQueryViewModel>()
 
             }).FirstOrDefaultAsync(q => q.Slug == slug);
 
             //get tags
-            query.ArticleTags.ForEach(async tag => tag = (await _context.articleTags.FirstOrDefaultAsync(q => q.ArticleId == query.Id)).Name);
+            var tags = await _context.articleTags.Where(x => x.ArticleId == query.Id).ToListAsync();
+            foreach (var tag in tags)
+            {
+                var at = new ArticleTagQueryViewModel { Id = tag.Id, Name = tag.Name };
+                query.ArticleTags.Add(at);
 
+            }
             //get categories
             var categories = await _context.articleToCategories.Where(x => x.ArticleId == query.Id).ToListAsync();
             foreach (var item in categories)
@@ -140,15 +155,20 @@ namespace Query.Modules.Article
                 PictureTitle = x.PictureTitle,
                 Title = x.Title,
                 Video = x.Video,
-                ArticleTags = new List<string>(),
+                ArticleTags = new List<ArticleTagQueryViewModel>(),
                 ArticleCategories = new List<ArticleCategoryQueryModel>(),
                 ArticleComments = new List<ArticleCommentQueryViewModel>()
 
             }).FirstOrDefaultAsync(q => q.Id == Id);
 
             //get tags
-            query.ArticleTags.ForEach(async tag => tag = (await _context.articleTags.FirstOrDefaultAsync(q => q.ArticleId == Id)).Name);
+            var tags = await _context.articleTags.Where(x => x.ArticleId == query.Id).ToListAsync();
+            foreach (var tag in tags)
+            {
+                var at = new ArticleTagQueryViewModel { Id = tag.Id, Name = tag.Name };
+                query.ArticleTags.Add(at);
 
+            }
             //get categories
             var categories = await _context.articleToCategories.Where(x => x.ArticleId == query.Id).ToListAsync();
             foreach (var item in categories)
@@ -180,6 +200,25 @@ namespace Query.Modules.Article
 
         }
 
+        public async Task<List<ArticleQueryViewModel>> GetRelatedArticlesBy(long CategoryId)
+        {
+            var articles = new List<ArticleQueryViewModel>();
+            var category = await _context.articleToCategories.Where(x => x.ArticleCategoryId == CategoryId).Take(2).ToListAsync();
+            foreach (var item in category)
+            {
+               var article = await _context.articles.FirstOrDefaultAsync(x => x.Id == item.ArticleId);
+                articles.Add(new ArticleQueryViewModel
+                {
+                    Id = article.Id,
+                    Slug = article.Slug,
+                    Title = article.Title,
+                    CreationDate = article.CreationDate.ToFarsi(),
+                    Picture = article.Picture
+                });
+            }
+            return articles;
+        }
+
         public async Task<List<ArticleQueryViewModel>> Search(string entery)
         {
             var query = await _context.articles.Select(x => new ArticleQueryViewModel
@@ -193,19 +232,21 @@ namespace Query.Modules.Article
                 PictureTitle = x.PictureTitle,
                 ShortDescription = x.ShortDescription,
                 CreationDate = x.CreationDate.ToFarsi(),
+                ArticleCategories = new List<ArticleCategoryQueryModel>()
 
             }).AsNoTracking()
             .Where(x => x.Title.Contains(entery)).ToListAsync();
 
             foreach (var item in query)
             {
-                foreach (var cat in item.ArticleCategories)
+                var categories = await _context.articleToCategories.Where(x => x.ArticleId == item.Id).ToListAsync();
+                foreach (var cat in categories)
                 {
-                    cat.Id = (await _context.articleToCategories.FirstOrDefaultAsync(x => x.ArticleId == item.Id)).ArticleCategoryId;
-                    cat.Name = (await _context.articleCategories.FirstOrDefaultAsync(x => x.Id == cat.Id)).Name;
+                    var ac = new ArticleCategoryQueryModel { Id = cat.ArticleId, Name = (await _context.articleCategories.FirstOrDefaultAsync(x => x.Id == cat.ArticleCategoryId)).Name };
+
+                    item.ArticleCategories.Add(ac);
                 }
             }
-
             return query;
         }
     }

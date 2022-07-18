@@ -83,6 +83,12 @@ namespace Query.Modules.Course
 
         }
 
+        public async Task<List<CourseCategoryQueryViewModel>> GetAllCategories()
+        {
+            return await _context.courseCategories
+                .Select(x => new CourseCategoryQueryViewModel { Id = x.Id, Name = x.Name }).ToListAsync();
+        }
+
         public async Task<CourseQueryViewModel> GetBy(string Slug)
         {
             long CourseLenght = 0;
@@ -177,6 +183,20 @@ namespace Query.Modules.Course
             var course = await _context.courses.FirstOrDefaultAsync(x => x.Id == Id);
             await _user.userCourses.AddAsync(new UserCourseModel(await _auth.CurrentUserId(), course.Id));
             await _user.SaveChangesAsync();
+        }
+
+        public async Task<List<CourseQueryViewModel>> Search(string entry)
+        {
+            return  await _context.courses.Where(x=>x.Subject.Contains(entry)).Select(x=>new CourseQueryViewModel
+            {
+                Id = x.Id,
+                Subject = x.Subject,
+                Slug = x.Slug,
+                IsFree = x.IsFree,
+                CategoryId = x.CategoryId,
+                CourseTime = x.CourseTime.ToString(),
+                Picture = x.Picture
+            }).ToListAsync();
         }
     }
 }

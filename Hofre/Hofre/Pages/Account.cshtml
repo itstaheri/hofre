@@ -2,6 +2,7 @@
 @model Hofre.Pages.AccountModel
 @{
 }
+<br />
 <section class="profile-authentication-area ptb-100">
     <div class="container">
         <div>
@@ -55,26 +56,21 @@
                     <form method="post" asp-page-handler="Register">
                         <div class="validation text-danger" asp-validation-summary="All"></div>
                         <div class="form-group">
-                            <label>نام کاربری</label>
-                            <input type="text" name="username" class="form-control" placeholder="نام کاربری">
+                            <input type="text" name="username" class="form-control" placeholder="نام کاربری" required>
                         </div>
 
                         <div class="form-group">
-                            <label>ایمیل</label>
-                            <input type="email" name="email" class="form-control" placeholder="آدرس ایمیل">
+                            <input type="email" name="email" class="form-control" placeholder="آدرس ایمیل" required>
                         </div>
                         <div class="form-group">
-                            <label>موبایل</label>
-                            <input type="number" name="phoneNumber" class="form-control" placeholder="موبایل">
+                            <input type="number" name="phoneNumber" class="form-control" placeholder="موبایل" required>
                         </div>
 
                         <div class="form-group">
-                            <label>کلمه ی عبور</label>
-                            <input type="password" name="password" class="form-control" placeholder="کلمه ی عبور">
+                            <input type="password" name="password" class="form-control" placeholder="کلمه ی عبور" required>
                         </div>
                         <div class="form-group">
-                            <label>تکرار کلمه ی عبور</label>
-                            <input type="password" name="Repassword" class="form-control" placeholder="تکرار کلمه ی عبور">
+                            <input type="password" name="Repassword" class="form-control" placeholder="تکرار کلمه ی عبور" required>
                         </div>
 
                         <p class="description">طول رمز باید حداقل هشت حرف باشد. برای تقویت آن ، از حروف بزرگ و کوچک ، اعداد و نمادهایی مانند استفاده کنید! "؟ $٪ ^ &)</p>

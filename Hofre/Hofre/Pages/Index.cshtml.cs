@@ -37,6 +37,8 @@ namespace Hofre.Pages
             //_logger.Log(LogLevel.Information,555, "این یک پیام امتحانی است");
             //_logger.LogWarning("warning",4545454);
             //_logger.Log(LogLevel.Critical, "hi", 2323);
+        
         }
+      
     }
 }

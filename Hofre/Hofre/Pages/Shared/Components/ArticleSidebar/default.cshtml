@@ -1,0 +1,41 @@
+﻿@model Query.Modules.Article.ArticleSidebarViewModel
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment _env
+
+<section class="widget widget_zelda_posts_thumb">
+    <h3 class="widget-title">مقالات اخیر</h3>
+
+    @foreach (var article in Model.LastArticles)
+    {
+        <article class="item">
+            <div class="col-mg-12">
+                <div class="col-4">
+                    <img src="~/Media/Article/@article.Title/@article.Picture" height="50" width="50">
+
+                </div>
+
+                <a asp-page="./ArticleDetail" asp-route-slug="@article.Slug">
+                </a>
+                <div class="info col-8">
+                    <span>@article.CreationDate</span>
+                    <h4 class="title usmall"><a asp-page="./ArticleDetail" asp-route-slug="@article.Slug">@article.Title</a></h4>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+        </article>
+
+    }
+
+</section>
+
+<section class="widget widget_categories">
+    <h3 class="widget-title">دسته بندی ها</h3>
+
+    <ul>
+        @foreach (var category in Model.Categories)
+        {
+            <li><a asp-page="./Category" asp-route-id="@category.Id">@category.Name <span class="post-count">(03)</span></a></li>
+        }
+    </ul>
+</section>

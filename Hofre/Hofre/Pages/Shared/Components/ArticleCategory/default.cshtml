@@ -1,0 +1,15 @@
+﻿@model List<Query.Modules.Article.ArticleCategoryQueryModel>
+
+<li class="nav-item">
+
+
+    <a asp-page="article/index" class="nav-link">مقالات <i class="flaticon-down-arrow"></i></a>
+    <ul class="dropdown-menu">
+
+        @foreach (var cat in Model)
+        {
+            <li class="nav-item"><a asp-page="/article/category" asp-route-id="@cat.Id" class="nav-link">@cat.Name</a></li>
+
+        }
+    </ul>
+</li>

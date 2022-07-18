@@ -12,5 +12,8 @@ namespace Query.Modules.Article
         Task<ArticleQueryViewModel> GetDetailBy(long Id);
         Task<ArticleQueryViewModel> GetDetailBy(string slug);
         Task<List<ArticleQueryViewModel>> Search(string entery);
+        Task<List<ArticleQueryViewModel>> GetRelatedArticlesBy(long CategoryId);
+        Task<List<ArticleCategoryQueryModel>> GetArticlesCategories();
+        Task<List<ArticleCategoryQueryModel>> GetAllCategories();
     }
 }

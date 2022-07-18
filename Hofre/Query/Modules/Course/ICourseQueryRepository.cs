@@ -15,5 +15,7 @@ namespace Query.Modules.Course
         Task JoinToCourse(long Id);
         Task<bool> FreeCourse(long Id);
         Task<bool> IsMember(long CourseId, long UserId);
+        Task<List<CourseQueryViewModel>> Search(string entry);
+        Task<List<CourseCategoryQueryViewModel>> GetAllCategories();
     }
 }
