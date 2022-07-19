@@ -1,0 +1,69 @@
+﻿@page 
+@model Hofre.Pages.SearchModel
+@{
+}
+
+<section class="page-title-area page-title-bg1">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 title="حفره">حفره</h1>
+        </div>
+    </div>
+</section>
+<section class="player-details-area ptb-100">
+    <div class="container">
+        <div class="player-details-desc">
+            <div class="streams-list">
+                <h5>نتیجه جستجو در مقالات</h5>
+
+                <div class="row">
+                    @foreach (var item in Model.articles)
+                    {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-live-stream-item">
+                                <img asp-page="./articledetail" asp-route-slug="@item.Slug" src="~/Media/Article/@item.Title/@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle" height="400" width="400">
+
+                                <div class="content">
+                                    <h3><a asp-route-slug="@item.Slug" asp-page="./ArticleDetail" >@item.Title</a></h3>
+                                    <ul class="meta">
+                                        @foreach (var category in item.ArticleCategories)
+                                        {
+                                            <li><a asp-page="./Category" asp-route-id="">@category.Name</a></li>
+                                        }
+
+                                    </ul>
+                                </div>
+
+                                <a asp-page="./ArticleDetail" asp-route-slug="@item.Slug" class="link-btn"></a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <div class="streams-list">
+                <h5>نتیجه جستجو در دوره ها</h5>
+
+                <div class="row">
+                    @foreach (var item in Model.courses)
+                    {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-live-stream-item">
+                                <img asp-page="./Course" asp-route-slug="@item.Slug" src="~/Media/Course/@item.Subject/@item.Picture" height="400" width="400">
+
+                                <div class="content">
+                                    <h3>@item.Subject</h3>
+
+                                </div>
+
+                                <a asp-page="./Course" asp-route-slug="@item.Slug" class="video-btn"><i class="flaticon-play-button"></i></a>
+                                <a asp-page="./Course" asp-route-slug="@item.Slug" class="link-btn"></a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

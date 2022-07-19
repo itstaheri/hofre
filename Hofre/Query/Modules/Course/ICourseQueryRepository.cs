@@ -17,5 +17,6 @@ namespace Query.Modules.Course
         Task<bool> IsMember(long CourseId, long UserId);
         Task<List<CourseQueryViewModel>> Search(string entry);
         Task<List<CourseCategoryQueryViewModel>> GetAllCategories();
+
     }
 }

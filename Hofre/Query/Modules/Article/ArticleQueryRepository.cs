@@ -66,19 +66,58 @@ namespace Query.Modules.Article
 
         }
 
+        public async Task<List<ArticleQueryViewModel>> GetAll(long Id)
+        {
+            var query = await _context.articles.Where(x => x.Id == Id).Select(x => new ArticleQueryViewModel
+            {
+                Id = x.Id,
+                Description = x.Description,
+                ShortDescription = x.ShortDescription,
+                Title = x.Title,
+                Picture = x.Picture,
+                PictureAlt = x.PictureAlt,
+                PictureTitle = x.PictureTitle,
+                Video = x.Video,
+                CreationDate = x.CreationDate.ToFarsi(),
+                Slug = x.Slug,
+                ArticleCategories = new List<ArticleCategoryQueryModel>(),
+                ArticleComments = new List<ArticleCommentQueryViewModel>(),
+                ArticleTags = new List<ArticleTagQueryViewModel>()
+
+
+
+            }).AsNoTracking().ToListAsync();
+
+            foreach (var item in query)
+            {
+                var categories = await _context.articleToCategories.Where(c => c.ArticleId == item.Id).Select(x => x.articleCategory).ToListAsync();
+                foreach (var cat in categories)
+                {
+                    item.ArticleCategories.Add(new ArticleCategoryQueryModel { Id = cat.Id, Name = cat.Name });
+                }
+            }
+
+            if (query == null)
+            {
+                throw new Exception();
+            }
+            return query;
+        }
+
         public async Task<List<ArticleCategoryQueryModel>> GetAllCategories()
         {
             return await _context.articleCategories.Select(x=>new ArticleCategoryQueryModel { Id = x.Id,Name=x.Name}).ToListAsync();
         }
 
-        public async Task<List<ArticleCategoryQueryModel>> GetArticlesCategories()
+        public async Task<List<ArticleQueryViewModel>> GetArticlesByCategory(long CategoryId)
         {
-            return await _context.articleToCategories.Include(x => x.articleCategory)
-                .Select(x => new ArticleCategoryQueryModel
-                {
-                    Id = x.ArticleCategoryId,
-                    Name = x.articleCategory.Name
-                }).ToListAsync();
+            var query = new List<ArticleQueryViewModel>();
+            var categories = await _context.articleToCategories.Where(x => x.ArticleCategoryId == CategoryId).ToListAsync();
+            foreach (var item in categories)
+            {
+                query.Add(await GetDetailBy(item.ArticleId));
+            }
+            return query;
         }
 
         public async Task<ArticleQueryViewModel> GetDetailBy(string slug)
@@ -237,6 +276,8 @@ namespace Query.Modules.Article
             }).AsNoTracking()
             .Where(x => x.Title.Contains(entery)).ToListAsync();
 
+            if (query.Count == 0) return new List<ArticleQueryViewModel>();
+          
             foreach (var item in query)
             {
                 var categories = await _context.articleToCategories.Where(x => x.ArticleId == item.Id).ToListAsync();

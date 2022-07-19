@@ -1,5 +1,5 @@
-﻿@page
-@model Hofre.Pages.Course.SearchModel
+﻿@page "{categoryId}"
+@model Hofre.Pages.Course.CategoryModel
 @{
 }
 
@@ -10,14 +10,10 @@
         </div>
     </div>
 </section>
-
 <section class="blog-area ptb-100">
-
     <div class="container">
-    <span>نتیجه جستجو : @Model.Entery</span>
-        
-        <div class="streams-list">
 
+        <div class="streams-list">
 
             <div class="row">
                 @foreach (var item in Model.courses)

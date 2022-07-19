@@ -1,7 +1,8 @@
-﻿@page
-@model Hofre.Pages.Article.IndexModel
+﻿@page "{categoryId}"
+@model Hofre.Pages.Article.CategoryModel
 @{
 }
+
 <section class="page-title-area page-title-bg1">
     <div class="container">
         <div class="page-title-content">
@@ -15,7 +16,7 @@
         <div class="row">
 
 
-            @foreach (var article in Model.Articles)
+            @foreach (var article in Model.articles)
             {
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post-box">

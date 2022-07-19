@@ -19,7 +19,7 @@ namespace Hofre.Pages.Course
         {
             courses = await _repository.GetAll();
         }
-        public async Task<IActionResult> OnPost(string searchentery)
+        public async Task<RedirectToPageResult> OnPost(string searchentery)
         {
            
             return RedirectToPage("./Search",new{searchentery});

@@ -150,7 +150,6 @@ namespace Query.Modules.Course
                 IsActive = x.IsActive,
                 ShortDescription = x.ShortDescription,
                 CategoryId = x.CategoryId,
-                
                 IsFree = x.IsFree,
                 Picture = x.Picture,
                 Price = x.Price,
@@ -159,15 +158,7 @@ namespace Query.Modules.Course
                 Teacher = x.Teacher,
             }).AsNoTracking().ToListAsync();
 
-            foreach (var item in query)
-            {
-                foreach (var video in item.courseVideos)
-                {
-                    long length = new System.IO.FileInfo($"{ _path.Path()}//Media//Course//{item.Subject}//Video {video.VideoName}").Length;
-                    CourseLenght += length;
-                }
-                item.CourseTime = CourseLenght.ToString();
-            }
+       
             return query;
         }
 
@@ -197,6 +188,8 @@ namespace Query.Modules.Course
                 CourseTime = x.CourseTime.ToString(),
                 Picture = x.Picture
             }).ToListAsync();
+
+
         }
     }
 }

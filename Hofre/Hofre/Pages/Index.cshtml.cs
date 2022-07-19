@@ -39,6 +39,7 @@ namespace Hofre.Pages
             //_logger.Log(LogLevel.Critical, "hi", 2323);
         
         }
+       
       
     }
 }
