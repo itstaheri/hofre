@@ -9,8 +9,8 @@ namespace Query.Modules.Course
 {
     public interface ICourseQueryRepository
     {
-        Task<List<CourseQueryViewModel>> GetAll();
-        Task<List<CourseQueryViewModel>> GetByCategory(long Id);
+        Task<CoursePageViewModel> GetAll(int pageId = 1);
+        Task<CoursePageViewModel> GetByCategory(long Id,int pageId = 1);
         Task<CourseQueryViewModel> GetBy(string Slug);
         Task JoinToCourse(long Id);
         Task<bool> FreeCourse(long Id);

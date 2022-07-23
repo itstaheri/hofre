@@ -8,13 +8,13 @@ namespace Query.Modules.Article
 {
     public interface IArticleQueryRepository
     {
-        Task<List<ArticleQueryViewModel>> GetAll();
+        Task<ArticlePageViewModel> GetAll(int pageId = 1);
         Task<List<ArticleQueryViewModel>> GetAll(long Id);
         Task<ArticleQueryViewModel> GetDetailBy(long Id);
         Task<ArticleQueryViewModel> GetDetailBy(string slug);
-        Task<List<ArticleQueryViewModel>> Search(string entery);
-        Task<List<ArticleQueryViewModel>> GetRelatedArticlesBy(long CategoryId);
+        Task<ArticlePageViewModel> Search(string entery, int pageId = 1);
+        Task<List<ArticleQueryViewModel>> GetRelatedArticlesBy(List<ArticleCategoryQueryModel> CategoryIds);
         Task<List<ArticleCategoryQueryModel>> GetAllCategories();
-        Task<List<ArticleQueryViewModel>> GetArticlesByCategory(long CategoryId);
+        Task<ArticlePageViewModel> GetArticlesByCategory(long CategoryId, int pageId = 1);
     }
 }

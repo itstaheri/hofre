@@ -12,17 +12,20 @@ namespace Hofre.Pages
         private readonly IArticleQueryRepository _article;
         private readonly ICourseQueryRepository _course;
         public List<ArticleQueryViewModel> articles { get; set; }
+        public ArticlePageViewModel ArticlePage { get; set; }
         public List<CourseQueryViewModel> courses { get; set; }
+        public string Value;
         public SearchModel(IArticleQueryRepository article, ICourseQueryRepository course)
         {
             _article = article;
             _course = course;
         }
-
-        public async Task OnGet(string entery)
+        public async Task OnGet(string entery,int pageId = 1)
         {
-            articles = await _article.Search(entery);
+            Value = entery;
+            ArticlePage = await _article.Search(entery,pageId);
             courses  = await _course.Search(entery);
+        
         }
     }
 }

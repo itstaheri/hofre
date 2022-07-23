@@ -61,15 +61,18 @@ namespace AM.Application
             var tags = _context.articleTags.Where(x => x.ArticleId == commend.Id);
             #region tag
            
-            foreach (var item in tags)
+            if(commend.Tags != null)
             {
-                _context.articleTags.Remove(item);
-            }
-            await _repository.Save();
-            foreach (var tag in commend.Tags)
-            {
-                var addtag = new ArticleTagsModel(tag, article.Id);
-                _context.articleTags.Add(addtag);
+                foreach (var item in tags)
+                {
+                    _context.articleTags.Remove(item);
+                }
+                await _repository.Save();
+                foreach (var tag in commend.Tags)
+                {
+                    var addtag = new ArticleTagsModel(tag, article.Id);
+                    _context.articleTags.Add(addtag);
+                }
             }
             #endregion
             #region articletocategory

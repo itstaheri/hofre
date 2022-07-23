@@ -51,7 +51,7 @@
 
                                     <td height="10" width="10"><img src="~/Media/Article/@item.Title/@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle" /></td>
                                     <td>@item.Title</td>
-                                    <td>@item.ShortDescription</td>
+                                    <td>@item.ShortDescription.Substring(0,2)</td>
                                     <td>@item.CreationDate</td>
                                     <td width="70">
                                         <a class="button button-warning" asp-page="./Edit" asp-route-Id="@item.Id">ویرایش</a>

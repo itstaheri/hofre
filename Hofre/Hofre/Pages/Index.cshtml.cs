@@ -30,13 +30,8 @@ namespace Hofre.Pages
 
         public  async Task OnGet()
         {
-            Articles = await _article.GetAll();
-            Courses = await _course.GetAll();
-            //throw new Exception("hey budy");
-            //_logger.Log(LogLevel.Trace, 234, "ops");
-            //_logger.Log(LogLevel.Information,555, "این یک پیام امتحانی است");
-            //_logger.LogWarning("warning",4545454);
-            //_logger.Log(LogLevel.Critical, "hi", 2323);
+            Articles = (await _article.GetAll()).Articles.Take(6).ToList();
+            Courses = (await _course.GetAll()).Courses.Take(6).ToList();
         
         }
        

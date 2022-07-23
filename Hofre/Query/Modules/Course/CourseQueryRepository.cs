@@ -40,13 +40,13 @@ namespace Query.Modules.Course
 
         }
 
-      
+
         public async Task<bool> FreeCourse(long Id)
         {
             return await _context.courses.AnyAsync(x => x.Id == Id && x.IsFree == true);
         }
 
-        public async Task<List<CourseQueryViewModel>> GetAll()
+        public async Task<CoursePageViewModel> GetAll(int pageId = 1)
         {
             long CourseLenght = 0;
 
@@ -77,9 +77,23 @@ namespace Query.Modules.Course
                 }
                 item.CourseTime = CourseLenght.ToString();
             }
+            CoursePageViewModel page = new CoursePageViewModel();
+            if (query.Count >= 9)
+            {
+                page.CurrentPage = pageId;
+                page.PageCount = (int)Math.Ceiling(query.Count / (double)9);
+                page.Courses = query.OrderBy(x => x.Id).Skip((pageId - 1) * 9).Take(9).ToList();
+
+            }
+            else
+            {
+                page.CurrentPage = pageId;
+                page.PageCount = 1;
+                page.Courses = query;
+            }
 
 
-            return query;
+            return page;
 
         }
 
@@ -92,7 +106,7 @@ namespace Query.Modules.Course
         public async Task<CourseQueryViewModel> GetBy(string Slug)
         {
             long CourseLenght = 0;
-          
+
             var course = await _context.courses.FirstOrDefaultAsync(x => x.Slug == Slug);
             var query = new CourseQueryViewModel
             {
@@ -141,9 +155,8 @@ namespace Query.Modules.Course
 
         }
 
-        public async Task<List<CourseQueryViewModel>> GetByCategory(long Id)
+        public async Task<CoursePageViewModel> GetByCategory(long Id, int pageId = 1)
         {
-            long CourseLenght = 0;
             var query = await _context.courses.Where(q => q.CategoryId == Id).Select(x => new CourseQueryViewModel
             {
                 Id = x.Id,
@@ -158,11 +171,26 @@ namespace Query.Modules.Course
                 Teacher = x.Teacher,
             }).AsNoTracking().ToListAsync();
 
-       
-            return query;
+            CoursePageViewModel page = new CoursePageViewModel();
+            if (query.Count >= 9)
+            {
+                page.CurrentPage = pageId;
+                page.PageCount = (int)Math.Ceiling(query.Count / (double)9);
+                page.Courses = query.OrderBy(x => x.Id).Skip((pageId - 1) * 9).Take(9).ToList();
+
+            }
+            else
+            {
+                page.CurrentPage = pageId;
+                page.PageCount = 1;
+                page.Courses = query;
+            }
+
+
+            return page;
         }
 
-      
+
 
         public async Task<bool> IsMember(long CourseId, long UserId)
         {
@@ -178,7 +206,7 @@ namespace Query.Modules.Course
 
         public async Task<List<CourseQueryViewModel>> Search(string entry)
         {
-            return  await _context.courses.Where(x=>x.Subject.Contains(entry)).Select(x=>new CourseQueryViewModel
+            return await _context.courses.Where(x => x.Subject.Contains(entry)).Select(x => new CourseQueryViewModel
             {
                 Id = x.Id,
                 Subject = x.Subject,
@@ -191,5 +219,7 @@ namespace Query.Modules.Course
 
 
         }
+
+
     }
 }

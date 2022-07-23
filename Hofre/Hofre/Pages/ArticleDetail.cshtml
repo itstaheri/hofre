@@ -4,6 +4,13 @@
 @{
 }
 
+<section class="page-title-area page-title-bg1">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 title="@Model.Article.Title">@Model.Article.Title</h1>
+        </div>
+    </div>
+</section>
 
 <section class="blog-details-area ptb-100">
     <div class="container">
@@ -18,7 +25,7 @@
                         }
                         else
                         {
-                            <img src="~/Media/Article/@Model.Article.Title/@Model.Article.Picture" />
+                            <img src="~/Media/Article/@Model.Article.Title/@Model.Article.Picture" height="100%" width="100%" alt="@Model.Article.PictureAlt" title="@Model.Article.PictureTitle"/>
 
                         }
                     </div>
@@ -79,41 +86,25 @@
 
 
                     <div class="zelda-post-navigation">
-                        <div class="prev-link-wrapper">
+                        @foreach(var item in Model.RelatedArticle){
+                            <div class="prev-link-wrapper">
                             <div class="info-prev-link-wrapper">
-                                <a href="#">
+                                <a asp-page="/ArticleDetail" asp-route-slug="@item.Slug">
                                     <span class="image-prev">
-                                        <img src="assets/img/main-blog-img1.jpg" alt="image">
-                                        <span class="post-nav-title">قبلی</span>
+                                        <img src="~/Media/Article/@item.Title/@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle">
                                     </span>
 
                                     <span class="prev-link-info-wrapper">
-                                        <span class="prev-title">مهارت های کاربردی در برنامه نویسی اندروید</span>
+                                        <span class="prev-title">@item.Title</span>
                                         <span class="meta-wrapper">
-                                            <span class="date-post">21 دی 1398</span>
+                                            <span class="date-post">@item.CreationDate</span>
                                         </span>
                                     </span>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="next-link-wrapper">
-                            <div class="info-next-link-wrapper">
-                                <a href="#">
-                                    <span class="next-link-info-wrapper">
-                                        <span class="next-title">مهارت های کاربردی در برنامه نویسی اندروید</span>
-                                        <span class="meta-wrapper">
-                                            <span class="date-post">21 دی 1398</span>
-                                        </span>
-                                    </span>
-
-                                    <span class="image-next">
-                                        <img src="assets/img/main-blog-img2.jpg" alt="image">
-                                        <span class="post-nav-title">بعدی</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
+                        }
                     </div>
 
                     <div class="comments-area">
@@ -186,10 +177,10 @@
                     <section class="widget widget_search">
                         <h3 class="widget-title">جستجو</h3>
 
-                        <form class="search-form">
+                      <form method="get" class="search-form" asp-page="/Search">
                             <label>
                                 <span class="screen-reader-text">جستجو:</span>
-                                <input type="search" class="search-field" placeholder="جستجو ...">
+                                <input type="text" name="entery" class="search-field" placeholder="جستجو ..." />
                             </label>
                             <button type="submit"><i class="bx bx-search-alt"></i></button>
                         </form>

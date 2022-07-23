@@ -10,20 +10,16 @@ namespace Hofre.Pages.Article
     {
         private readonly IArticleQueryRepository _repository;
         public List<ArticleQueryViewModel> Articles { get; set; }
+        public ArticlePageViewModel ArticlePage { get; set; }
         public IndexModel(IArticleQueryRepository repository)
         {
             _repository = repository;
 
         }
-        public async Task OnGet()
+        public async Task OnGet(int pageId =1)
         {
-            Articles = await _repository.GetAll();
+            ArticlePage = (await _repository.GetAll(pageId));
         }
-        public async Task<IActionResult> OnPost(string searchentery)
-        {
-
-            return RedirectToPage("./Search", new { searchentery });
-
-        }
+       
     }
 }

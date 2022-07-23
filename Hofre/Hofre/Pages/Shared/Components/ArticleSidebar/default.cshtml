@@ -9,7 +9,7 @@
         <article class="item">
             <div class="col-mg-12">
                 <div class="col-4">
-                    <img src="~/Media/Article/@article.Title/@article.Picture" height="50" width="50">
+           @*         <img src="~/Media/Article/@article.Title/@article.Picture" height="50" width="50">*@
 
                 </div>
 
@@ -35,7 +35,7 @@
     <ul>
         @foreach (var category in Model.Categories)
         {
-            <li><a asp-page="./Category" asp-route-id="@category.Id">@category.Name <span class="post-count">(03)</span></a></li>
+            <li><a asp-page="/Article/Category" asp-route-categoryId="@category.Id">@category.Name <span class="post-count"></span></a></li>
         }
     </ul>
 </section>

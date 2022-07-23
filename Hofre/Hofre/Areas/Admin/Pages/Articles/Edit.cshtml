@@ -28,12 +28,12 @@
                     <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="slug" placeholder="اسلاگ" required value="@Model.Article.Slug"></div>
                     <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="PictureAlt" placeholder="PictureAlt" value="@Model.Article.PictureAlt"></div>
                     <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" name="PictureTitle" placeholder="PictureTitle" value="@Model.Article.PictureTitle"></div>
-                    <div class="col-12 mb-30"><textarea class="form-control" name="ShortDescription" placeholder="توضیحات کوتاه" required>@Model.Article.ShortDescription</textarea></div>
-                    <div class="col-12 mb-30"><textarea class="form-control summernote" name="Description" placeholder="توضیحات" required>@Model.Article.Description</textarea></div>
+                    <div class="col-12 mb-30"><textarea class="form-control" name="ShortDescription" minlength="20" placeholder="توضیحات کوتاه" required>@Model.Article.ShortDescription</textarea></div>
+                    <div class="col-12 mb-30"><textarea class="form-control summernote" name="Description" minlength="20" placeholder="توضیحات" required>@Model.Article.Description</textarea></div>
                     <div class="col-lg-4 col-12 mb-30">
                         <h5 class="sub-title">انتخاب چند گانه</h5>
                         <div class="form-group">
-                            <label>
+                            <label>         
                                 انتخاب گروه
                             </label>
                             <select multiple="multiple" asp-items="Model.categories" name="Categories" class="form-control">

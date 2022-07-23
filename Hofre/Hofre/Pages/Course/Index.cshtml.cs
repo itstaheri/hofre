@@ -10,20 +10,16 @@ namespace Hofre.Pages.Course
     {
         private readonly ICourseQueryRepository _repository;
         public List<CourseQueryViewModel> courses { get; set; }
+        public CoursePageViewModel CoursePage { get; set; }
         public IndexModel(ICourseQueryRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task OnGet()
+        public async Task OnGet(int pageId=1)
         {
-            courses = await _repository.GetAll();
+            CoursePage = await _repository.GetAll(pageId);
         }
-        public async Task<RedirectToPageResult> OnPost(string searchentery)
-        {
-           
-            return RedirectToPage("./Search",new{searchentery});
-
-        }
+        
     }
 }
