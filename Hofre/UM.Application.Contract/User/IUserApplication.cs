@@ -13,12 +13,12 @@ namespace UM.Application.Contract.User
         Task Remove(long Id);
         Task<List<UserViewModel>> GetAll();
         Task<EditUser> GetValueForEdit(long Id);
-        Task Edit(EditUser commend);
+        Task<string> Edit(EditUser commend);
         Task ChangePassword(long Id, string newPassword);
         Task Active(long Id);
         Task DeActive(long Id);
         Task<LoginResult> Login(Login commend);
         Task<int> Signup(Register commend);
-        
+   
     }
 }

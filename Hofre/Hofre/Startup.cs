@@ -7,6 +7,7 @@ using ElmahCore.Mvc;
 using ElmahCore.Sql;
 using Frameworks;
 using Frameworks.Auth;
+using Frameworks.Smtp;
 using Frameworks.ZarinPal;
 using Hofre.HostFrameworks;
 using Hofre.Hubs;
@@ -24,6 +25,7 @@ using Microsoft.Extensions.Hosting;
 using OM.Configuration;
 using Query.Modules.Article;
 using Query.Modules.Course;
+using Query.Modules.User;
 using SM.Configuration;
 using System;
 using System.Collections.Generic;
@@ -71,6 +73,7 @@ namespace Hofre
             SettingBootestrapper.Configuration(services, ConnetionString);
             TicketBootestrapper.Configuration(services, ConnetionString);
             OrderBootestrapper.Configuration(services, ConnetionString);
+            
 
             #region FrameWorks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
@@ -78,6 +81,8 @@ namespace Hofre
             services.AddTransient<IAuth, Auth>();
             services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
             services.AddTransient<IGetPath, GetPath>();
+            services.AddTransient<ISmtpService, SmtpService>();
+
 
             services.AddElmah<SqlErrorLog>(option =>
             {
@@ -113,6 +118,7 @@ namespace Hofre
             #region Query
             services.AddTransient<IArticleQueryRepository, ArticleQueryRepository>();
             services.AddTransient<ICourseQueryRepository, CourseQueryRepository>();
+            services.AddTransient<IAccountQueryRepository, AccountQueryRepository>();
             #endregion
 
             //SignalR

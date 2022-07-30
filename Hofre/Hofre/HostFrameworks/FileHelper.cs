@@ -72,8 +72,12 @@ namespace Hofre.HostFrameworks
         {
             await Task.Run(() =>
             {
-                if (File.Exists(Path.Combine(filePath)))
-                    File.Delete(Path.Combine(filePath));
+                if (File.Exists(Path.Combine($"{_env.WebRootPath}/{filePath}")))
+                {
+                    File.Delete(Path.Combine($"{_env.WebRootPath}/{filePath}"));
+
+                }
+               
             });
         }
 
@@ -82,7 +86,7 @@ namespace Hofre.HostFrameworks
             await Task.Run(() =>
             {
                 if (Directory.Exists(Path.Combine(filePath)))
-                    Directory.Delete(Path.Combine(filePath));
+                    Directory.Delete(Path.Combine(filePath),true);
             });
         }
 

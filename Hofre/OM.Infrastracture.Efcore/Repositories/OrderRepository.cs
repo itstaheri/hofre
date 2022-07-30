@@ -1,4 +1,5 @@
 ﻿using Exceptions;
+using Frameworks;
 using Microsoft.EntityFrameworkCore;
 using OM.Application.Contract.Order;
 using OM.Domain.OrderAgg;
@@ -32,9 +33,19 @@ namespace OM.Infrastracture.Efcore.Repositories
             }
         }
 
-        public Task<List<OrderViewModel>> GetAll(string Username)
+        public async Task<List<OrderViewModel>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.orders.Select(x => new OrderViewModel
+            {
+                Id = x.Id,
+                DiscountAmount = x.DiscountAmount,
+                CreationDate = x.CreationDate.ToFarsi(),
+                CourseId = x.CourseId,
+                PayAmount = x.PayAmount,
+                RefId = x.RefId,
+                TotalPrice = x.TotalPrice,
+                UserId = x.UserId,
+            }).ToListAsync();
         }
 
         public async Task<OrderModel> GetBy(long Id)

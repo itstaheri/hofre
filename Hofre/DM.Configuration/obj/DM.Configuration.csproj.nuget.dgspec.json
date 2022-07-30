@@ -380,6 +380,9 @@
             "projectReferences": {
               "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Domain\\CM.Domain.csproj": {
                 "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Domain\\CM.Domain.csproj"
+              },
+              "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Infrastracture.Efcore\\UM.Infrastracture.Efcore.csproj": {
+                "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Infrastracture.Efcore\\UM.Infrastracture.Efcore.csproj"
               }
             }
           }

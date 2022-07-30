@@ -78,6 +78,30 @@ namespace UM.Infrastracture.Efcore.Migrations
                     b.ToTable("users");
                 });
 
+            modelBuilder.Entity("UM.Domain.UserAgg.UserResetModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpireDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GenericCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("userReset");
+                });
+
             modelBuilder.Entity("UM.Domain.UserRoleAgg.UserRoleModel", b =>
                 {
                     b.Property<long>("Id")

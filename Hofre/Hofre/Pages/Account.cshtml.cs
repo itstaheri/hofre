@@ -2,6 +2,7 @@
 using Frameworks.Auth;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Query.Modules.User;
 using System;
 using System.Threading.Tasks;
 using UM.Application.Contract.User;
@@ -19,9 +20,11 @@ namespace Hofre.Pages
             _auth = auth;
         }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGet()
         {
-            //if (await (_auth.IsAuthenticated())) Redirecttop("./profile");
+            if (await (_auth.IsAuthenticated())) return Redirect("/profile");
+            else return Page();
+
 
 
         }
@@ -31,7 +34,7 @@ namespace Hofre.Pages
             if (result.Valid == false)
             {
                 ModelState.AddModelError(nameof(commend.Username), "کاربری با این نام کاربری وجود ندارد!");
-                return RedirectToPage("./profile");
+                return Page();
             }
 
             else if (result.Valid == true && result.Result == false)

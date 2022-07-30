@@ -20,16 +20,19 @@ namespace UM.Domain.UserAgg
             RoleId = roleId;
             IsActive = true;
         }
-        public void Edit(string username, string email, string phone, string password, string profilePicture, long roleId)
+        public void Edit(string username, string email, string phone, long roleId)
         {
             Username = username;
             Email = email;
             Phone = phone;
-            Password = password;
-            ProfilePicture = profilePicture;
             RoleId = roleId;
 
         }
+        public void ChangeProfilePicture(string picture)
+        {
+            if (!string.IsNullOrWhiteSpace(picture)) ProfilePicture = picture;
+          
+        } 
         public void ChangePassword(string password) => Password = password;
         public void Active() => IsActive = true;
         public void DeActive() => IsActive = false;

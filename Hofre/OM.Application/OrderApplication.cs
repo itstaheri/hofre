@@ -3,6 +3,7 @@ using Frameworks.Auth;
 using OM.Application.Contract.Order;
 using OM.Domain.OrderAgg;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace OM.Application
@@ -16,6 +17,11 @@ namespace OM.Application
         {
             _repository = repository;
             _auth = auth;
+        }
+
+        public async Task<List<OrderViewModel>> GetAll()
+        {
+            return await _repository.GetAll();
         }
 
         public async Task<double> GetAmountBy(long Id)
@@ -37,7 +43,7 @@ namespace OM.Application
         {
             var code = await CodeGenerator.Generate("OC");
             var userId = await _auth.CurrentUserId();
-            var Order = new OrderModel(userId, order.TotalPrice, order.DiscountAmount, order.PayAmount, code);
+            var Order = new OrderModel(userId,order.CourseId, order.TotalPrice, order.DiscountAmount, order.PayAmount, code);
             await _repository.CreateOrder(Order);
             await _repository.Save();
             return Order.Id;

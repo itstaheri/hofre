@@ -17,6 +17,7 @@ namespace UM.Domain.UserAgg
         Task<List<UserViewModel>> GetAll();
         Task<bool> CheckIdentity(string username,string password);
         Task<bool> CheckIdentity(string username,string email,string phoneNumber);
+        Task<string> Edit(EditUser commend);
         
     }
 }

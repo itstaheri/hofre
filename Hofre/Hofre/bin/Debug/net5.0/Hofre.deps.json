@@ -2091,7 +2091,8 @@
           "CM.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "UM.Infrastracture.Efcore": "1.0.0"
         },
         "runtime": {
           "CM.Infrastracture.Efcore.dll": {}
@@ -2263,7 +2264,8 @@
           "CM.Infrastracture.Efcore": "1.0.0",
           "DM.Application.Contract": "1.0.0",
           "DM.Infrastracture.Efcore": "1.0.0",
-          "Grpc.Core": "2.46.3"
+          "Grpc.Core": "2.46.3",
+          "OM.Infrastracture.Efcore": "1.0.0"
         },
         "runtime": {
           "Query.dll": {}

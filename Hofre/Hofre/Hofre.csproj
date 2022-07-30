@@ -8,7 +8,9 @@
     <Content Remove="Areas\Admin\Pages\Courses\Comment.cshtml" />
     <Content Remove="Areas\Admin\Pages\Courses\Edit.cshtml" />
     <Content Remove="Areas\Admin\Pages\Discounts\Create.cshtml" />
+    <Content Remove="Pages\ChangePassword.cshtml" />
     <Content Remove="Pages\Course.cshtml" />
+    <Content Remove="Pages\Profile.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +42,8 @@
   <ItemGroup>
     <Folder Include="wwwroot\Media\Article\" />
     <Folder Include="wwwroot\Media\Course\" />
+    <Folder Include="wwwroot\Media\User\" />
+    <Folder Include="wwwroot\Media\User\4\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,14 +54,18 @@
     <_ContentIncludedByDefault Remove="Areas\Admin\Pages\Courses\Comment.cshtml" />
     <_ContentIncludedByDefault Remove="Areas\Admin\Pages\Courses\Edit.cshtml" />
     <_ContentIncludedByDefault Remove="Areas\Admin\Pages\Discounts\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\ChangePassword.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\Course.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Profile.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Areas\Admin\Pages\Courses\Comment.cshtml" />
     <None Include="Areas\Admin\Pages\Courses\Edit.cshtml" />
     <None Include="Areas\Admin\Pages\Discounts\Create.cshtml" />
+    <None Include="Pages\ChangePassword.cshtml" />
     <None Include="Pages\Course.cshtml" />
+    <None Include="Pages\Profile.cshtml" />
     <None Include="wwwroot\CourseTheme\fonts\Flaticon.woff2" />
     <None Include="wwwroot\CourseTheme\fonts\fontawesome-webfont.svg" />
     <None Include="wwwroot\CourseTheme\fonts\fontawesome-webfont.woff2" />
@@ -108,7 +116,6 @@
     <None Include="wwwroot\MainTheme\assets\js\parallax.min.js" />
     <None Include="wwwroot\MainTheme\assets\js\popper.min.js" />
     <None Include="wwwroot\MainTheme\assets\js\wow.min.js" />
-    <None Include="wwwroot\MainTheme\assets\php\form-process.php" />
   </ItemGroup>
 
   <ItemGroup>
@@ -121,6 +128,14 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Areas\Admin\Pages\Courses\Comment.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Profile.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ChangePassword.cshtml" />
   </ItemGroup>
 
 </Project>

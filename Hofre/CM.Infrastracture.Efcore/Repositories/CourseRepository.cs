@@ -9,20 +9,23 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UM.Infrastracture.Efcore;
 
 namespace CM.Infrastracture.Efcore.Repositories
 {
     public class CourseRepository : ICourseRepository
     {
         private readonly CourseContext _context;
+        private readonly UserContext _user;
         private readonly IGetPath _path;
    
         private readonly IFileHelper _file;
-        public CourseRepository(CourseContext context, IGetPath path,IFileHelper file)
+        public CourseRepository(CourseContext context, IGetPath path,IFileHelper file, UserContext user)
         {
             _context = context;
             _path = path;
             _file = file;
+            _user = user;
         }
 
         public async Task AddVideos(CourseVideoModel commend)
@@ -60,10 +63,12 @@ namespace CM.Infrastracture.Efcore.Repositories
         {
             var video = await _context.courseVideos.FirstOrDefaultAsync(x => x.Id == videoId);
             _context.courseVideos.Remove(video);
+            
             try
             {
                 await _context.SaveChangesAsync();
-                await _file.DeleteFile($"{_path.Path()}//Media//Course//{folder}//{video.VideoName}");
+                await _file.DeleteFile($"//Media//Course//{folder}//{video.VideoName}");
+               
               
 
             }
@@ -124,14 +129,16 @@ namespace CM.Infrastracture.Efcore.Repositories
         {
             var course = await _context.courses.FirstOrDefaultAsync(x => x.Id == Id);
             _context.courses.Remove(course);
+            var userCourses = await _user.userCourses.Where(x => x.CourseId == course.Id).ToListAsync();
+
+            if (userCourses.Count>0 || userCourses!=null) userCourses.ForEach(userCourse => _user.userCourses.Remove(userCourse));
+
+
             try
             {
                 await _context.SaveChangesAsync();
-                string root = $"{_path.Path()}//Media//Course//{course.Subject}";
-                if (Directory.Exists(root))
-                {
-                    Directory.Delete(root, true);
-                }
+                await _file.DeleteDirectory($"{_path.Path()}//Media//Course//{course.Subject}");
+                
 
 
             }

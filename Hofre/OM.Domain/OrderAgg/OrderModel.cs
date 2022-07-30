@@ -9,9 +9,10 @@ namespace OM.Domain.OrderAgg
 {
     public class OrderModel : BaseEntity
     {
-        public OrderModel(long userId, double totalPrice, double discountAmount, double payAmount, string code)
+        public OrderModel(long userId,long courseId, double totalPrice, double discountAmount, double payAmount, string code)
         {
             UserId = userId;
+            CourseId = courseId;
             TotalPrice = totalPrice;
             DiscountAmount = discountAmount;
             PayAmount = payAmount;
@@ -26,6 +27,7 @@ namespace OM.Domain.OrderAgg
         }
 
         public long UserId { get; private set; }
+        public long CourseId { get; private set; }
         public double TotalPrice { get; private set; }
         public double DiscountAmount { get; private set; }
         public double PayAmount { get; private set; }

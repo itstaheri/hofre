@@ -1,0 +1,322 @@
+﻿@page
+@model Hofre.Pages.ProfileModel
+@{
+    // Layout = "/Pages/Hofre/Areas/Admin/Pages/Shared/AdminLayout.cshtml";
+}
+
+<!-- CSS
+============================================ -->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="~/MainTheme/assets/css/bootstrap.min.css">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="~/assets/css/vendor/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="~/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="~/assets/css/vendor/themify-icons.css">
+<link rel="stylesheet" href="~/assets/css/vendor/cryptocurrency-icons.css">
+<!--upload photo style-->
+<link rel="stylesheet" href="~/css/photo-uploader.css" />
+
+<!-- Plugins CSS -->
+<link rel="stylesheet" href="~/assets/css/plugins/plugins.css">
+
+<!-- Helper CSS -->
+<link rel="stylesheet" href="~/assets/css/helper.css">
+
+<!-- Main Style CSS -->
+<link rel="stylesheet" href="~/assets/css/style.css">
+
+<!-- Custom Style CSS Only For Demo Purpose -->
+<link id="cus-style" rel="stylesheet" href="~/assets/css/style-primary.css">
+
+
+<style>
+    body.skin-dark {
+        background-color: #0c0305;
+    }
+</style>
+<section class="page-title-area page-title-bg1">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 title="پروفایل">پروفایل</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="content-body">
+
+            <!-- Page Headings Start -->
+            <div class="row justify-content-between align-items-center mb-10">
+
+                <!-- Page Heading Start -->
+                <div class="col-12 col-lg-auto mb-20">
+                    <div class="page-heading">
+                        <h3>مشخصات</h3>
+                    </div>
+                </div><!-- Page Heading End -->
+
+            </div><!-- Page Headings End -->
+
+            <div class="row mbn-50">
+
+                <!--Author Top Start-->
+                <div class="col-12 mb-50">
+                    <div class="author-top" >
+                        <div class="inner" style="background-image:url(https://images.pling.com/img/00/00/62/69/92/1701727/matrix-code-numbers-green-11.jpg)">
+                            <div class="photocontainer" >
+
+                                <div class="avatar-upload">
+                                    <div class="avatar-edit">
+                                        <input type='file' id="imageUpload" name="picture" accept=".png, .jpg, .jpeg" />
+
+                                        <label for="imageUpload"></label>
+                                    </div>
+                                    <div class="avatar-preview">
+                                        @if (Model.account.ProfilePicture != "avatar.png")
+                                        {
+                                            <div id="imagePreview" style="background-image: url(/Media/User/@Model.account.Id/@(Model.account.ProfilePicture)"></div>
+
+                                        }
+                                        else
+                                        {
+                                            <div id="imagePreview" style="background-image: url(/Media/avatar.png)"></div>
+
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!--Author Top End-->
+                <!--Timeline / Activities Start-->
+                <div class="col-xlg-8 col-12 mb-50">
+                    <div class="box">
+
+                        <div class="box-head">
+                            <h3 class="title">فعالیت ها</h3>
+                        </div>
+
+                        <div class="box-body">
+
+                            <div class="timeline-wrap row mbn-50">
+
+
+                                <div class="col-12 mb-50">
+                                    <ul class="timeline-list">
+
+
+                                        <li>
+                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                            <div class="details">
+                                                <h5 class="title"><a href="#">دوره های من</a></h5>
+                                                <div class="gallery">
+                                                    <div class="row mbn-30">
+
+                                                        @foreach (var course in Model.account.Courses)
+                                                        {
+                                                            <div class="col-md-4 col-sm-6 col-12 mb-30">
+                                                                <a asp-page="/Course" asp-rout-slug="@course.Slug">
+                                                                    <img src="~/Media/Course/@course.CourseName/@course.Picture">
+                                                                    <span>@course.CourseName</span>
+                                                                </a>
+                                                            </div>
+
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                            <div class="details" style="overflow-x:auto;">
+                                                <table class="table" dir="rtl">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>دوره ها</th>
+                                                            <th>مقالات</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            @foreach (var item in Model.account.CourseComments)
+                                                            {
+                                                                <td>@($"دوره : {@item.CourseName} نظر : {(item.Text.Length > 10 ? item.Text.Substring(0,10) : item.Text)} زمان : {item.CreationDate}")</td>
+
+                                                            }
+                                                            @foreach (var item in Model.account.ArticleComments)
+                                                            {
+                                                                <td>@($"مقاله : {@item.ArticleTitle} نظر : {(item.Text.Length > 10 ? item.Text.Substring(0,10) : item.Text)} زمان : {item.CreationDate}")</td>
+
+                                                            }
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+
+
+                                            </div>
+                                        </li>
+
+
+
+                                    </ul>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--Timeline / Activities End-->
+                <!--Right Sidebar Start-->
+                <div class="col-xlg-4 col-12 mb-50">
+                    <div class="row mbn-30">
+
+                        <!--Author Information Start-->
+                        <div class="col-xlg-12 col-lg-6 col-12 mb-30">
+                            <div class="box">
+                                <div class="box-head">
+                                    <h3 class="title">تغییر مشخصات  </h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form" dir="ltr">
+                                        <form method="post" asp-page-handler="Edit">
+                                            <div class="validation text-danger" asp-validation-summary="All"></div>
+                                            <div class="row row-10 mbn-20">
+                                                <div class="col-12 mb-20"><input type="text" name="username" class="form-control" value="@Model.account.Username"></div>
+                                                <div class="col-12 mb-20"><input type="email" name="email" class="form-control" value="@Model.account.Email"></div>
+                                                <div class="col-12 mb-20"><input type="number" name="phone" class="form-control" value="@Model.account.PhoneNumber"></div>
+                                                <div class="col-12 mb-20"><input type="hidden" name="Id" class="form-control" value="@Model.account.Id"></div>
+                                                <div class="col-12 mt-10 mb-20">
+                                                    <input type="submit" class="button button-primary button-outline" value="ذخیره تغییرات">
+                                                    <a class="button button-danger button-outline" asp-page="/changepassword" asp-route-userId="@Model.account.Id">تغییر کلمه عبور</a>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <!--Right Sidebar End-->
+                <div class="col-xlg-12 col-lg-12 col-12 mb-30">
+
+                    <div class="box">
+                        <div class="box-head">
+                            <h3 class="title">خرید ها</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="table-responsive" style="overflow-x:auto;">
+                                <table class="table" style="text-align:right;">
+
+                                    <!-- Table Head Start -->
+                                    <thead>
+                                        <tr>
+                                            <th>محصول</th>
+                                            <th>مبلغ نهایی</th>
+                                            <th>تاریخ خرید</th>
+                                            <th>شماره سفارش</th>
+                                            <th>وضعیت</th>
+                                        </tr>
+                                    </thead><!-- Table Head End -->
+                                    <!-- Table Body Start -->
+                                    <tbody>
+                                        @foreach (var order in Model.account.Orders)
+                                        {
+                                            <tr>
+                                                <td class="fw-600">@order.ProductName</td>
+                                                <td><span class="text-success d-flex justify-content-between fw-600">@order.PayAmount تومان</span></td>
+
+                                                <td>
+                                                    @order.CreationDate
+                                                </td>
+                                                <td>@order.Code</td>
+
+                                                @if (order.IsFinaly)
+                                                {
+                                                    <td style="color:green;">به اتمام رسیده</td>
+                                                }
+                                                else
+                                                {
+                                                    <td style="color:red;">ناتمام</td>
+                                                }
+
+                                            </tr>
+                                        }
+
+                                    </tbody><!-- Table Body End -->
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- Daily Sale Report End -->
+                <form method="post" asp-page-handler="Signout">
+                    <button class="button button-danger button-outline" type="submit">خروج</button>
+                </form>
+            </div>
+
+        </div><!-- Content Body End -->
+
+    </div>
+</div>
+<br />
+<!-- Global Vendor, plugins & Activation JS -->
+<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/vendor/popper.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.min.js"></script>
+<!--Plugins JS-->
+<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+<!--Main JS-->
+<!-- Plugins & Activation JS For Only This Page -->
+<script src="~/assets/js/plugins/moment/moment.min.js"></script>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function() {
+        readURL(this);
+        var value = $('#imageUpload').prop("files");
+        console.log(value);
+           var frm = new FormData();
+           frm.append('profilePicture',value[0]);
+
+        $.ajax({
+            type:'POST',
+            url : '@Url.Page("Profile","Profile")',
+            data : frm,
+            processData : false,
+            contentType : false,
+            headers : {"RequestVerificationToken" : $('input[id="imageUpload"]').val()}
+
+        })
+    });
+</script>

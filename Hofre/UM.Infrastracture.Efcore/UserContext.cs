@@ -19,6 +19,7 @@ namespace UM.Infrastracture.Efcore
         public DbSet<UserModel> users { get; set; }
         public DbSet<UserRoleModel> userRoles { get; set; }
         public DbSet<UserCourseModel> userCourses { get; set; }
+        public DbSet<UserResetModel> userReset { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

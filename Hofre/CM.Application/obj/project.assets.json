@@ -1870,7 +1870,8 @@
           "CM.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "UM.Infrastracture.Efcore": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CM.Infrastracture.Efcore.dll": {}
@@ -1949,6 +1950,23 @@
         },
         "runtime": {
           "bin/placeholder/UM.Domain.dll": {}
+        }
+      },
+      "UM.Infrastracture.Efcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Exceptions": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "UM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UM.Infrastracture.Efcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UM.Infrastracture.Efcore.dll": {}
         }
       }
     }
@@ -6643,6 +6661,11 @@
       "type": "project",
       "path": "../UM.Domain/UM.Domain.csproj",
       "msbuildProject": "../UM.Domain/UM.Domain.csproj"
+    },
+    "UM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "path": "../UM.Infrastracture.Efcore/UM.Infrastracture.Efcore.csproj",
+      "msbuildProject": "../UM.Infrastracture.Efcore/UM.Infrastracture.Efcore.csproj"
     }
   },
   "projectFileDependencyGroups": {

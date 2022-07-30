@@ -29,3 +29,5 @@ C:\Users\alith\source\repos\hofre\Hofre\CM.Configuration\bin\Debug\net5.0\UM.Dom
 C:\Users\alith\source\repos\hofre\Hofre\CM.Configuration\bin\Debug\net5.0\UM.Domain.pdb
 C:\Users\alith\source\repos\hofre\Hofre\CM.Configuration\bin\Debug\net5.0\Exceptions.dll
 C:\Users\alith\source\repos\hofre\Hofre\CM.Configuration\bin\Debug\net5.0\Exceptions.pdb
+C:\Users\alith\source\repos\hofre\Hofre\CM.Configuration\bin\Debug\net5.0\UM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\CM.Configuration\bin\Debug\net5.0\UM.Infrastracture.Efcore.pdb

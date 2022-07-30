@@ -24,7 +24,6 @@ namespace UM.Infrastracture.Efcore.Repositories
         public async Task<bool> CheckIdentity(string username, string password)
         {
             var user = await _context.users.FirstOrDefaultAsync(x => x.Username == username);
-            // if (user == null) throw new NotFoundException(nameof(user), user.Username);
 
             if (user != null && ( _hash.Check(user.Password, password)).Verified) return true;
             else return false;
@@ -50,6 +49,33 @@ namespace UM.Infrastracture.Efcore.Repositories
 
                 throw new SaveErrorException(ex.Message, ex.InnerException);
             }
+
+        }
+
+        public async Task<string> Edit(EditUser commend)
+        {
+            var checkUsername = await _context.users.AnyAsync(x => x.Username == commend.Username && x.Id != commend.Id);
+            if (checkUsername) return nameof(UserEditStatus.RepetitiveUsername);
+
+            var checkPhone = await _context.users.AnyAsync(x => x.Phone == commend.Phone && x.Id != commend.Id);
+             if (checkPhone) return nameof(UserEditStatus.RepetitivePhone);
+
+            var checkEmail = await _context.users.AnyAsync(x => x.Email == commend.Email && x.Id != commend.Id);
+             if (checkEmail) return nameof(UserEditStatus.RepetitiveEmail);
+
+             var user = await _context.users.FirstOrDefaultAsync(x=>x.Id == commend.Id);
+            user.Edit(commend.Username, commend.Email, commend.Phone, user.RoleId);
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
+            return nameof(UserEditStatus.SuccessEdit);
 
         }
 
@@ -88,8 +114,8 @@ namespace UM.Infrastracture.Efcore.Repositories
         {
             var user = await _context.users.FirstOrDefaultAsync(x => x.Username == Username);
 
-            if (user == null)
-                throw new NotFoundException(nameof(user), Username);
+            //if (user == null)
+            //    throw new NotFoundException(nameof(user), Username);
             return user;
         }
 

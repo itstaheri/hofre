@@ -41,3 +41,9 @@ C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\DM.Infrastracture
 C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\DM.Application.Contract.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\DM.Infrastracture.Efcore.pdb
 C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\DM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\OM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\OM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\OM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\OM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\OM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\Query\bin\Debug\net5.0\OM.Domain.pdb

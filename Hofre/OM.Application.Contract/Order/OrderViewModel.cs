@@ -11,6 +11,7 @@ namespace OM.Application.Contract.Order
 
         public long Id { get; set; }
         public long UserId { get; set; }
+        public long CourseId { get; set; }
         public double TotalPrice { get; set; }
         public double DiscountAmount { get; set; }
         public double PayAmount { get; set; }

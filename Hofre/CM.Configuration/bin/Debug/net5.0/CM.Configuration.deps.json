@@ -1371,7 +1371,8 @@
           "CM.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "UM.Infrastracture.Efcore": "1.0.0"
         },
         "runtime": {
           "CM.Infrastracture.Efcore.dll": {}
@@ -1422,6 +1423,18 @@
         },
         "runtime": {
           "UM.Domain.dll": {}
+        }
+      },
+      "UM.Infrastracture.Efcore/1.0.0": {
+        "dependencies": {
+          "Exceptions": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "UM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UM.Infrastracture.Efcore.dll": {}
         }
       }
     }
@@ -2320,6 +2333,11 @@
       "sha512": ""
     },
     "UM.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UM.Infrastracture.Efcore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

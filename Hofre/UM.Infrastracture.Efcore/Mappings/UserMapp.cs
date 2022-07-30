@@ -15,6 +15,7 @@ namespace UM.Infrastracture.Efcore.Mappings
         {
             builder.HasKey(x => x.Id);
             builder.HasOne(x => x.userRole).WithMany(x => x.users).HasForeignKey(x => x.RoleId);
+           
         }
     }
 }

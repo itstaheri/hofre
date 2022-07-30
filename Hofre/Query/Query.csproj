@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Articles\" />
-    <Folder Include="Modules\User\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +17,7 @@
     <ProjectReference Include="..\CM.Infrastracture.Efcore\CM.Infrastracture.Efcore.csproj" />
     <ProjectReference Include="..\DM.Application.Contract\DM.Application.Contract.csproj" />
     <ProjectReference Include="..\DM.Infrastracture.Efcore\DM.Infrastracture.Efcore.csproj" />
+    <ProjectReference Include="..\OM.Infrastracture.Efcore\OM.Infrastracture.Efcore.csproj" />
   </ItemGroup>
 
 </Project>

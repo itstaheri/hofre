@@ -11,7 +11,7 @@ namespace OM.Domain.OrderAgg
     {
         Task CreateOrder(OrderModel model);
         Task<OrderModel> GetBy(long Id);
-        Task<List<OrderViewModel>> GetAll(string Username);
+        Task<List<OrderViewModel>> GetAll();
         Task RemoveOrder(long Id);
         Task Save();
     }

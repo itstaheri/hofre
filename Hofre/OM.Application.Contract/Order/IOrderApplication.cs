@@ -11,6 +11,7 @@ namespace OM.Application.Contract.Order
         Task<long> PlaceOrder(OrderViewModel order);
         Task<string> PaySucceded(long refId,long orderId);
         Task<double> GetAmountBy(long Id);
+        Task<List<OrderViewModel>> GetAll();
 
 
     }

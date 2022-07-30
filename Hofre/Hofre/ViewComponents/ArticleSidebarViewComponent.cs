@@ -18,7 +18,7 @@ namespace Hofre.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            Model.LastArticles = (await _article.GetAll()).Articles.OrderBy(x=>x.CreationDate).Take(4).ToList();
+            Model.LastArticles = (await _article.GetAll()).Articles.OrderByDescending(x=>x.CreationDate).Take(3).ToList();
             Model.Categories = await _article.GetAllCategories();
             return View(Model);
         }

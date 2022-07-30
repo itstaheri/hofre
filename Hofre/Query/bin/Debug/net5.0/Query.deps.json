@@ -12,7 +12,8 @@
           "CM.Infrastracture.Efcore": "1.0.0",
           "DM.Application.Contract": "1.0.0",
           "DM.Infrastracture.Efcore": "1.0.0",
-          "Grpc.Core": "2.46.3"
+          "Grpc.Core": "2.46.3",
+          "OM.Infrastracture.Efcore": "1.0.0"
         },
         "runtime": {
           "Query.dll": {}
@@ -1444,7 +1445,8 @@
           "CM.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "UM.Infrastracture.Efcore": "1.0.0"
         },
         "runtime": {
           "CM.Infrastracture.Efcore.dll": {}
@@ -1492,6 +1494,31 @@
         },
         "runtime": {
           "Frameworks.dll": {}
+        }
+      },
+      "OM.Application.Contract/1.0.0": {
+        "runtime": {
+          "OM.Application.Contract.dll": {}
+        }
+      },
+      "OM.Domain/1.0.0": {
+        "dependencies": {
+          "Frameworks": "1.0.0",
+          "OM.Application.Contract": "1.0.0"
+        },
+        "runtime": {
+          "OM.Domain.dll": {}
+        }
+      },
+      "OM.Infrastracture.Efcore/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "OM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "OM.Infrastracture.Efcore.dll": {}
         }
       },
       "UM.Application/1.0.0": {
@@ -2461,6 +2488,21 @@
       "sha512": ""
     },
     "Frameworks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OM.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OM.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OM.Infrastracture.Efcore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

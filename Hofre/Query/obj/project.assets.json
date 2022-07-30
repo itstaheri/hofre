@@ -1970,7 +1970,8 @@
           "CM.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "UM.Infrastracture.Efcore": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CM.Infrastracture.Efcore.dll": {}
@@ -2046,6 +2047,46 @@
         },
         "runtime": {
           "bin/placeholder/Frameworks.dll": {}
+        }
+      },
+      "OM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/OM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OM.Application.Contract.dll": {}
+        }
+      },
+      "OM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Frameworks": "1.0.0",
+          "OM.Application.Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OM.Domain.dll": {}
+        }
+      },
+      "OM.Infrastracture.Efcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "OM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OM.Infrastracture.Efcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OM.Infrastracture.Efcore.dll": {}
         }
       },
       "UM.Application/1.0.0": {
@@ -6889,6 +6930,21 @@
       "path": "../Frameworks/Frameworks.csproj",
       "msbuildProject": "../Frameworks/Frameworks.csproj"
     },
+    "OM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../OM.Application.Contract/OM.Application.Contract.csproj",
+      "msbuildProject": "../OM.Application.Contract/OM.Application.Contract.csproj"
+    },
+    "OM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../OM.Domain/OM.Domain.csproj",
+      "msbuildProject": "../OM.Domain/OM.Domain.csproj"
+    },
+    "OM.Infrastracture.Efcore/1.0.0": {
+      "type": "project",
+      "path": "../OM.Infrastracture.Efcore/OM.Infrastracture.Efcore.csproj",
+      "msbuildProject": "../OM.Infrastracture.Efcore/OM.Infrastracture.Efcore.csproj"
+    },
     "UM.Application/1.0.0": {
       "type": "project",
       "path": "../UM.Application/UM.Application.csproj",
@@ -6916,7 +6972,8 @@
       "CM.Infrastracture.Efcore >= 1.0.0",
       "DM.Application.Contract >= 1.0.0",
       "DM.Infrastracture.Efcore >= 1.0.0",
-      "Grpc.Core >= 2.46.3"
+      "Grpc.Core >= 2.46.3",
+      "OM.Infrastracture.Efcore >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6962,6 +7019,9 @@
             },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Infrastracture.Efcore\\DM.Infrastracture.Efcore.csproj"
+            },
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\OM.Infrastracture.Efcore\\OM.Infrastracture.Efcore.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\OM.Infrastracture.Efcore\\OM.Infrastracture.Efcore.csproj"
             }
           }
         }

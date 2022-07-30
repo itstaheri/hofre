@@ -70,7 +70,7 @@ namespace Hofre.Pages
             }
             else
             {
-                return RedirectToPage("./PaymentResult", "پرداخت با مشکل مواجه شد.در صورت کسر وجه از حساب شما مبلغ کسر شده تا 24آینده به حساب شما برگشت داده خواهد شد");
+                return RedirectToPage("/Result","OnGet", "پرداخت با مشکل مواجه شد.در صورت کسر وجه از حساب شما مبلغ کسر شده تا 24آینده به حساب شما برگشت داده خواهد شد");
             }
         }
        // [Authorize]

@@ -96,15 +96,15 @@ html, body, .site-wrapper {
 }
 
 body {
-  background-color: #ffffff;
-  font-size: 14px;
-  line-height: 1.75;
-  font-style: normal;
-  font-weight: normal;
-  visibility: visible;
-  font-family: IRANSans;
-  color: #666666;
-  position: relative;
+    background-color: #0c0305;
+    font-size: 14px;
+    line-height: 1.75;
+    font-style: normal;
+    font-weight: normal;
+    visibility: visible;
+    font-family: IRANSans;
+    color: #666666;
+    position: relative;
 }
 
 body[dir="rtl"] {
@@ -4597,9 +4597,10 @@ label.inline:last-child {
 }
 
 /*Form Coltrol*/
-.form-control, #toast-container .toast .toast-message input, .dataTables_wrapper .dataTables_length label input, .dataTables_wrapper .dataTables_filter label input, .dataTables_wrapper .dataTables_length label select, .dataTables_wrapper .dataTables_filter label select, .footable.table thead tr th .footable-filtering-search .input-group .form-control, .jsgrid-grid-header table tr th input, .jsgrid-grid-header table tr th select, .jsgrid-grid-header table tr td input, .jsgrid-grid-header table tr td select, body.skin-dark .footable.table thead tr th .footable-filtering-search .input-group .form-control, body.skin-dark .jsgrid-table tr th input:not(.jsgrid-button), body.skin-dark .jsgrid-table tr td input:not(.jsgrid-button), body.skin-dark .jsgrid-table tr th select, body.skin-dark .jsgrid-table tr td select {
+.form-control, #toast-container .toast .toast-message input, .dataTables_wrapper .dataTables_length label input, .dataTables_wrapper .dataTables_filter label input, .dataTables_wrapper .dataTables_length label select, .dataTables_wrapper .dataTables_filter label select, .footable.table thead tr th .footable-filtering-search .input-group .form-control, .jsgrid-grid-header table tr th input, .jsgrid-grid-header table tr th select, .jsgrid-grid-header table tr td input, .jsgrid-grid-header table tr td select, 
+.footable.table thead tr th .footable-filtering-search .input-group .form-control, body.skin-dark .jsgrid-table tr th input:not(.jsgrid-button), body.skin-dark .jsgrid-table tr td input:not(.jsgrid-button), body.skin-dark .jsgrid-table tr th select, body.skin-dark .jsgrid-table tr td select {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #0c0305;
   border: 1px solid #dddddd;
   border-radius: 4px;
   font-family: IRANSans;
@@ -12860,7 +12861,7 @@ body.side-header-green .side-header .side-header-close {
 /*  21. Dark Skin (Dark Version) CSS
 /*----------------------------------------*/
 body.skin-dark {
-  background-color: #202334;
+  background-color: #0c0305;
   color: #8b8d9b;
   /*Search*/
   /*Pricing Three*/

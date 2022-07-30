@@ -104,12 +104,12 @@ namespace CM.Application
             //if exist picture or video for this course delete it and replace new picture or video
             if (commend.Picture != null)
             {
-                 await _uploader.DeleteFile($"{_path.Path()}//Media//Course//{course.Subject}//{course.Picture}");
+                 await _uploader.DeleteFile($"//Media//Course//{course.Subject}//{course.Picture}");
                  Picturename = await _uploader.SingleUploader(commend.Picture, "Course", commend.Subject);
             }
             if (commend.Video != null)
             {
-                await _uploader.DeleteFile($"{_path.Path()}//Media//Course//{course.Subject}//{course.Video}");
+                await _uploader.DeleteFile($"//Media//Course//{course.Subject}//{course.Video}");
                 Videoname = await _uploader.SingleUploader(commend.Video, "Course", commend.Subject);
             }
 

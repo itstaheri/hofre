@@ -45,8 +45,7 @@ namespace UM.Application
 
         public async Task Create(CreateUser commend)
         {
-            string profilePhoto =await _uploader.SingleUploader(commend.ProfilePicture, "ProfilePhotos", commend.Username);
-            var user = new UserModel(commend.Username, commend.Email, commend.Phone, commend.Password, profilePhoto, commend.RoleId);
+            var user = new UserModel(commend.Username, commend.Email, commend.Phone, commend.Password, "avatar.png", commend.RoleId);
             await _repository.Create(user);
         }
 
@@ -57,12 +56,10 @@ namespace UM.Application
             await _repository.Save();
         }
 
-        public async Task Edit(EditUser commend)
+        public async Task<string> Edit(EditUser commend)
         {
-            string profilePhoto =await _uploader.SingleUploader(commend.ProfilePicture, "ProfilePhotos", commend.Username);
-            var user = await _repository.GetBy(commend.Id);
-            user.Edit(commend.Username, commend.Email, commend.Phone, commend.Password, profilePhoto, commend.RoleId);
-            await _repository.Save();
+            return await _repository.Edit(commend);
+
         }
 
         public async Task<List<UserViewModel>> GetAll()
@@ -122,7 +119,7 @@ namespace UM.Application
             if (!user)
             {
                 var password =await _Hash.Hash(commend.Password);
-                await _repository.Create(new UserModel(commend.Username, commend.Email, commend.PhoneNumber, password, "user.jpg", 7));
+                await _repository.Create(new UserModel(commend.Username, commend.Email, commend.PhoneNumber, password, "avatar.png", 7));
                 return Status.seuccessfulRegister;
 
             }
@@ -135,5 +132,8 @@ namespace UM.Application
                 return Status.UnseuccessfulRegister;
             }
         }
+
+     
+      
     }
 }
