@@ -23,7 +23,7 @@ namespace Hofre.Areas.Admin.Pages.Discounts
             _course = course;
         }
 
-        public async void OnGet()
+        public async Task OnGet()
         {
             discounts = await _repository.GetAll();
 

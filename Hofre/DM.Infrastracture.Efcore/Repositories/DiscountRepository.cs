@@ -46,13 +46,14 @@ namespace DM.Infrastracture.Efcore.Repositories
                 EndDate = x.DateTimeEnd.ToFarsi(),
                 startDate = x.DateTimeStart.ToFarsi(),
                 CourseId = x.CourseId,
-                Title = x.Title
+                Title = x.Title,
+               
             }).ToListAsync();
 
             //  query.ForEach(x => x.CourseName = _course.courses.FirstOrDefault(c => x.Id == x.Id).Subject );
             foreach (var item in query)
             {
-                item.CourseName = _course.courses.FirstOrDefault(c => c.Id == item.CourseId).Subject;
+                item.CourseName = (await _course.courses.FirstOrDefaultAsync(c => c.Id == item.CourseId)).Subject;
                 if (item.EndDate.ToGeorgianDateTime() < DateTime.Now)
                     item.Status = 0;
                 else

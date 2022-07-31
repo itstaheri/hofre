@@ -1414,6 +1414,7 @@
       },
       "DM.Domain/1.0.0": {
         "dependencies": {
+          "CM.Domain": "1.0.0",
           "DM.Application.Contract": "1.0.0",
           "Frameworks": "1.0.0"
         },

@@ -1,4 +1,5 @@
-﻿using Frameworks;
+﻿using CM.Domain.CourseAgg;
+using Frameworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;

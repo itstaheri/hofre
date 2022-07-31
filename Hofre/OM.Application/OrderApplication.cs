@@ -1,5 +1,6 @@
 ﻿using Frameworks;
 using Frameworks.Auth;
+using Frameworks.Sms;
 using OM.Application.Contract.Order;
 using OM.Domain.OrderAgg;
 using System;
@@ -12,11 +13,12 @@ namespace OM.Application
     {
         private readonly IOrderRepository _repository;
         private readonly IAuth _auth;
-
-        public OrderApplication(IOrderRepository repository, IAuth auth)
+        private readonly ISmsServices _sms;
+        public OrderApplication(IOrderRepository repository, IAuth auth, ISmsServices sms)
         {
             _repository = repository;
             _auth = auth;
+            _sms = sms;
         }
 
         public async Task<List<OrderViewModel>> GetAll()
@@ -32,9 +34,11 @@ namespace OM.Application
 
         public async Task<string> PaySucceded(long refId, long orderId)
         {
+            var user = await _auth.CurrentUserInfo();
             var order = await _repository.GetBy(orderId);
             order.PaymentSucceeded(refId);
             await _repository.Save();
+            await _sms.SendMessage(user.Number, $"خرید شما از حفره با موفقیت انجام شد کدسفارش : {order.Code}");
             return order.Code;
 
         }

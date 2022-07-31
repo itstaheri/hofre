@@ -397,6 +397,24 @@
         }
       },
       "System.Text.Encodings.Web/4.5.0": {},
+      "CM.Application.Contract/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.14"
+        },
+        "runtime": {
+          "CM.Application.Contract.dll": {}
+        }
+      },
+      "CM.Domain/1.0.0": {
+        "dependencies": {
+          "CM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0",
+          "UM.Application": "1.0.0"
+        },
+        "runtime": {
+          "CM.Domain.dll": {}
+        }
+      },
       "DM.Application.Contract/1.0.0": {
         "runtime": {
           "DM.Application.Contract.dll": {}
@@ -404,6 +422,7 @@
       },
       "DM.Domain/1.0.0": {
         "dependencies": {
+          "CM.Domain": "1.0.0",
           "DM.Application.Contract": "1.0.0",
           "Frameworks": "1.0.0"
         },
@@ -428,6 +447,34 @@
         },
         "runtime": {
           "Frameworks.dll": {}
+        }
+      },
+      "UM.Application/1.0.0": {
+        "dependencies": {
+          "Exceptions": "1.0.0",
+          "UM.Application.Contract": "1.0.0",
+          "UM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UM.Application.dll": {}
+        }
+      },
+      "UM.Application.Contract/1.0.0": {
+        "dependencies": {
+          "Frameworks": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.14"
+        },
+        "runtime": {
+          "UM.Application.Contract.dll": {}
+        }
+      },
+      "UM.Domain/1.0.0": {
+        "dependencies": {
+          "Frameworks": "1.0.0",
+          "UM.Application.Contract": "1.0.0"
+        },
+        "runtime": {
+          "UM.Domain.dll": {}
         }
       }
     }
@@ -704,6 +751,16 @@
       "path": "system.text.encodings.web/4.5.0",
       "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
     },
+    "CM.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CM.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "DM.Application.Contract/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -720,6 +777,21 @@
       "sha512": ""
     },
     "Frameworks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UM.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UM.Application.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UM.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

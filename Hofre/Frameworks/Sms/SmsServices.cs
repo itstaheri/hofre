@@ -1,4 +1,6 @@
-﻿using SmsIrRestful;
+﻿using Exceptions;
+using Microsoft.Extensions.Configuration;
+using SmsIrRestful;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,14 @@ namespace Frameworks.Sms
 {
     public class SmsServices : ISmsServices
     {
+        private readonly IConfiguration _configuration;
+        public SmsServices(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public async Task SendMessage(string phoneNumber, string message)
         {
-            await Task.Run(() =>
+            try
             {
                 var lines = new SmsLine().GetSmsLines(GetToken().Result);
                 if (lines == null) return;
@@ -25,15 +32,25 @@ namespace Frameworks.Sms
                     SendDateTime = DateTime.Now,
                     CanContinueInCaseOfError = true
                 };
+                 await Task.Run(() =>
+                {
 
-                MessageSendResponseObject messageSendResponseObject = new MessageSend().Send(GetToken().Result, messageSendObject);
+                    MessageSendResponseObject messageSendResponseObject = new MessageSend().Send(GetToken().Result, messageSendObject);
+                    if (messageSendResponseObject.IsSuccessful) return;
 
-                if (messageSendResponseObject.IsSuccessful) return;
+                    line = lines.SMSLines.First().LineNumber.ToString();
+                    messageSendObject.LineNumber = line;
+                    new MessageSend().Send(GetToken().Result, messageSendObject);
 
-                line = lines.SMSLines.First().LineNumber.ToString();
-                messageSendObject.LineNumber = line;
-                new MessageSend().Send(GetToken().Result, messageSendObject);
-            });
+                });
+            }
+            catch (Exception ex)
+            {
+
+                throw new SmSErrorExeption(ex.Message);
+            }
+
+          
         }
         public async Task<string> GetToken()
         {
@@ -41,7 +58,7 @@ namespace Frameworks.Sms
             await Task.Run(() =>
             {
                 SmsIrRestful.Token tk = new SmsIrRestful.Token();
-                result = tk.GetToken("9f836f01b0809cdbab6489c", "abcd");
+                result = tk.GetToken(_configuration.GetSection("Sms")["Userapikey"], _configuration.GetSection("Sms")["Key"]);
             });
             return result;
         }

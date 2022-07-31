@@ -507,6 +507,34 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
+      "CM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.14"
+        },
+        "compile": {
+          "bin/placeholder/CM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CM.Application.Contract.dll": {}
+        }
+      },
+      "CM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CM.Application.Contract": "1.0.0",
+          "Frameworks": "1.0.0",
+          "UM.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CM.Domain.dll": {}
+        }
+      },
       "DM.Application.Contract/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -544,6 +572,49 @@
         },
         "runtime": {
           "bin/placeholder/Frameworks.dll": {}
+        }
+      },
+      "UM.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Exceptions": "1.0.0",
+          "UM.Application.Contract": "1.0.0",
+          "UM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UM.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UM.Application.dll": {}
+        }
+      },
+      "UM.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Frameworks": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.14"
+        },
+        "compile": {
+          "bin/placeholder/UM.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UM.Application.Contract.dll": {}
+        }
+      },
+      "UM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Frameworks": "1.0.0",
+          "UM.Application.Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UM.Domain.dll": {}
         }
       }
     }
@@ -1306,6 +1377,16 @@
         "version.txt"
       ]
     },
+    "CM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../CM.Application.Contract/CM.Application.Contract.csproj",
+      "msbuildProject": "../CM.Application.Contract/CM.Application.Contract.csproj"
+    },
+    "CM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CM.Domain/CM.Domain.csproj",
+      "msbuildProject": "../CM.Domain/CM.Domain.csproj"
+    },
     "DM.Application.Contract/1.0.0": {
       "type": "project",
       "path": "../DM.Application.Contract/DM.Application.Contract.csproj",
@@ -1320,10 +1401,26 @@
       "type": "project",
       "path": "../Frameworks/Frameworks.csproj",
       "msbuildProject": "../Frameworks/Frameworks.csproj"
+    },
+    "UM.Application/1.0.0": {
+      "type": "project",
+      "path": "../UM.Application/UM.Application.csproj",
+      "msbuildProject": "../UM.Application/UM.Application.csproj"
+    },
+    "UM.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../UM.Application.Contract/UM.Application.Contract.csproj",
+      "msbuildProject": "../UM.Application.Contract/UM.Application.Contract.csproj"
+    },
+    "UM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../UM.Domain/UM.Domain.csproj",
+      "msbuildProject": "../UM.Domain/UM.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CM.Domain >= 1.0.0",
       "DM.Application.Contract >= 1.0.0",
       "Frameworks >= 1.0.0"
     ]
@@ -1360,6 +1457,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Domain\\CM.Domain.csproj": {
+              "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\CM.Domain\\CM.Domain.csproj"
+            },
             "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj": {
               "projectPath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\DM.Application.Contract\\DM.Application.Contract.csproj"
             },

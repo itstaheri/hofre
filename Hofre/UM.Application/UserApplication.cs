@@ -1,6 +1,7 @@
 ﻿using Exceptions;
 using Frameworks;
 using Frameworks.Auth;
+using Frameworks.Sms;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,12 +16,14 @@ namespace UM.Application
         private readonly IUserRepository _repository;
         private readonly IFileHelper _uploader;
         private readonly IAuth _auth;
-        public UserApplication(IPasswordHasher hash, IUserRepository repository, IFileHelper uploader, IAuth auth)
+        private readonly ISmsServices _sms;
+        public UserApplication(IPasswordHasher hash, IUserRepository repository, IFileHelper uploader, IAuth auth,ISmsServices sms)
         {
             _Hash = hash;
             _repository = repository;
             _uploader = uploader;
             _auth = auth;
+            _sms = sms;
         }
 
         public async Task Active(long Id)
@@ -120,6 +123,7 @@ namespace UM.Application
             {
                 var password =await _Hash.Hash(commend.Password);
                 await _repository.Create(new UserModel(commend.Username, commend.Email, commend.PhoneNumber, password, "avatar.png", 7));
+
                 return Status.seuccessfulRegister;
 
             }

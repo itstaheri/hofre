@@ -308,24 +308,24 @@
                             <a><i class="ti-package"></i> <span>مقالات</span></a>
                             <ul class="side-header-sub-menu">
 
-                                <li><a href="elements-typography.html"><span>مقالات</span></a></li>
+                                <li><a asp-page="/articles/index"><span>مقالات</span></a></li>
                                 <li><a asp-page="/ArticleCategories/Index"><span>دسته بندی</span></a></li>
-                                <li><a href="elements-typography.html"><span>دیدگاه ها</span></a></li>
-                                <li><a href="elements-typography.html"><span>تگ ها</span></a></li>
+                                <li><a asp-page="/articles/articlecomments/index"><span>دیدگاه ها</span></a></li>
+                              @*  <li><a href="elements-typography.html"><span>تگ ها</span></a></li>*@
                             </ul>
                         </li>
                         <li class="has-sub-menu">
                             <a href="#"><i class="ti-crown"></i> <span> دوره ها</span></a>
                             <ul class="side-header-sub-menu">
-                                <li><a href="elements-clipboard.html"><span>دوره ها</span></a></li>
-                                <li><a href="elements-clipboard.html"><span>دسته بندی</span></a></li>
-                                <li><a href="elements-clipboard.html"><span>دیدگاه ها</span></a></li>
-                                <li><a href="elements-clipboard.html"><span>تگ ها</span></a></li>
+                                <li><a asp-page="/courses/index"><span>دوره ها</span></a></li>
+                                <li><a asp-page="/coursecategories/index"><span>دسته بندی</span></a></li>
+                                <li><a asp-page="/courses/comment"><span>دیدگاه ها</span></a></li>
+                              @*  <li><a href="elements-clipboard.html"><span>تگ ها</span></a></li>*@
 
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="ti-money"></i> <span>تخفیفات</span></a>
+                            <a asp-page="/discounts/index"><i class="ti-money"></i> <span>تخفیفات</span></a>
 
                         </li>
 
@@ -333,8 +333,8 @@
                             <a href="#"><i class="ti-notepad"></i> <span>کاربران</span></a>
                             <ul class="side-header-sub-menu">
 
-                                <li><a href="form-switchers.html"><span>کاربران</span></a></li>
-                                <li><a href="form-wizard.html"><span>نقش ها</span></a></li>
+                                <li><a asp-page="/users/index"><span>کاربران</span></a></li>
+                                <li><a asp-page="/users/userroles/index"><span>نقش ها</span></a></li>
                             </ul>
                         </li>
                         <li>
