@@ -7,6 +7,7 @@ using ElmahCore.Mvc;
 using ElmahCore.Sql;
 using Frameworks;
 using Frameworks.Auth;
+using Frameworks.Sms;
 using Frameworks.Smtp;
 using Frameworks.ZarinPal;
 using Hofre.HostFrameworks;
@@ -66,6 +67,8 @@ namespace Hofre
                 options.MultipartHeadersLengthLimit = int.MaxValue;
             });
 
+
+
             ArticleBootestrapper.Configuration(services, ConnetionString);
             UserBootestrapper.Configuration(services, ConnetionString);
             CourseBootestrapper.Configuration(services, ConnetionString);
@@ -82,6 +85,7 @@ namespace Hofre
             services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
             services.AddTransient<IGetPath, GetPath>();
             services.AddTransient<ISmtpService, SmtpService>();
+            services.AddTransient<ISmsServices,SmsServices>();
 
 
             services.AddElmah<SqlErrorLog>(option =>

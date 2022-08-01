@@ -2524,7 +2524,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "DM.Application.Contract": "1.0.0",
-          "DM.Domain": "1.0.0"
+          "DM.Domain": "1.0.0",
+          "DM.Infrastracture.Efcore": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DM.Application.dll": {}

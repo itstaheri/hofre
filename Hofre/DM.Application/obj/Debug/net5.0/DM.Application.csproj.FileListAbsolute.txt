@@ -29,3 +29,15 @@ C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\CM.Domai
 C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\UM.Application.pdb
 C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\UM.Application.Contract.pdb
 C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\UM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\AM.Application.Contract.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\AM.Domain.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\AM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\CM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\DM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\UM.Infrastracture.Efcore.dll
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\DM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\AM.Application.Contract.pdb
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\AM.Domain.pdb
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\AM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\CM.Infrastracture.Efcore.pdb
+C:\Users\alith\source\repos\hofre\Hofre\DM.Application\bin\Debug\net5.0\UM.Infrastracture.Efcore.pdb

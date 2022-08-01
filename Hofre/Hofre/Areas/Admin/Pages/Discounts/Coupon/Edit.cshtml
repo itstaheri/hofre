@@ -1,0 +1,68 @@
+﻿@page
+@model Hofre.Areas.Admin.Pages.Discounts.Coupon.EditModel
+@{
+}
+<div class="content-body">
+
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3>ویرایش کوپن تخفیف</h3>
+            </div>
+        </div><!-- Page Heading End -->
+
+    </div><!-- Page Headings End -->
+    <!-- Add or Edit Product Start -->
+    <div class="add-edit-product-wrap col-12">
+
+        <div class="add-edit-product-form">
+            <form method="post">
+
+
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" id="coupon" name="coupon" type="text" placeholder="کوپن" required value="@Model.Coupon.Coupon"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" name="Title" type="text" placeholder="مناسبت تخفیف" required value="@Model.Coupon.Title"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control PersianDateInput" name="startDate" placeholder="تاریخ شروع" required value="@Model.Coupon.StartDate"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control PersianDateInput" name="EndDate" placeholder="تاریخ پایان" required value="@Model.Coupon.EndDate"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" name="DiscountRate" type="number" placeholder="درصد تخفیف" max="100" value="@Model.Coupon.DiscountRate"></div>
+
+
+                   
+                    <div class="col-lg-6 col-12 mb-30">
+                        <select multiple="multiple" asp-items="Model.Courses" name="CourseIds" class="form-control">
+                            <option value="0">انتخاب دوره</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- Button Group Start -->
+                <div class="row">
+                    <div class="d-flex flex-wrap justify-content-end col mbn-10">
+                        <button class="submit button button-outline button-primary mb-10 ml-10 mr-0">ذخیره و انتشار</button>
+
+                    </div>
+                </div><!-- Button Group End -->
+
+            </form>
+        </div>
+
+    </div><!-- Add or Edit Product End -->
+
+</div><!-- Content Body End -->
+@section Scripts{
+<script src="~/assets/js/persian-datepicker.min.js"></script>
+<script src="~/assets/js/persian-date.min.js"></script>
+<link rel="stylesheet" href="~/css/persian-datepicker.min.css">
+<script>
+    $('.PersianDateInput').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        initialValueType: "persian"
+    });
+</script>
+}

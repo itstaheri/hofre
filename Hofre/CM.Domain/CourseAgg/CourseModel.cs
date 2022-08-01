@@ -29,6 +29,7 @@ namespace CM.Domain.CourseAgg
             CategoryId = cateogryId;
             Slug = slug;
             LastUpdate = DateTime.Now;
+            IsDeleted = false;
         }
         public void Edit(string subject, string shortDescription, string description,
            float courseTime, string teacher, double price, string picture, string video, bool isFree, bool isFinal, long cateogryId, string slug)
@@ -52,6 +53,8 @@ namespace CM.Domain.CourseAgg
 
         public void Active() => IsActive = true;
         public void DeActive() => IsActive = false;
+        public void Delete() => IsDeleted = true;
+        public void UnDelete() => IsDeleted = false;
 
 
         public string Subject { get; private set; }
@@ -71,5 +74,6 @@ namespace CM.Domain.CourseAgg
         public CourseCategoryModel courseCategory { get; private set; }
         public List<CourseCommentModel> courseComments { get; private set; }
         public long CategoryId { get; private set; }
+        public bool IsDeleted { get;private set; }
     }
 }

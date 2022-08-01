@@ -48,6 +48,72 @@ namespace DM.Infrastracture.Efcore.Migrations
 
                     b.ToTable("Discounts");
                 });
+
+            modelBuilder.Entity("DM.Domain.DiscountCode.DiscountCouponModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Coupon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DiscountRate")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DiscountCoupon");
+                });
+
+            modelBuilder.Entity("DM.Domain.DiscountCode.DiscountCoursesModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long>("CouponId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CourseId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CouponId");
+
+                    b.ToTable("DiscountCourses");
+                });
+
+            modelBuilder.Entity("DM.Domain.DiscountCode.DiscountCoursesModel", b =>
+                {
+                    b.HasOne("DM.Domain.DiscountCode.DiscountCouponModel", "Coupon")
+                        .WithMany("DiscountCourses")
+                        .HasForeignKey("CouponId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Coupon");
+                });
+
+            modelBuilder.Entity("DM.Domain.DiscountCode.DiscountCouponModel", b =>
+                {
+                    b.Navigation("DiscountCourses");
+                });
 #pragma warning restore 612, 618
         }
     }

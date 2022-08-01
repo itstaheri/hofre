@@ -521,3 +521,6 @@ C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\Cours
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\ForgotPassword.cshtml.g.cs
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\ResetPassword.cshtml.g.cs
 C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Pages\Result.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Discounts\Coupon\Index.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Discounts\Coupon\Create.cshtml.g.cs
+C:\Users\alith\source\repos\hofre\Hofre\Hofre\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Discounts\Coupon\Edit.cshtml.g.cs

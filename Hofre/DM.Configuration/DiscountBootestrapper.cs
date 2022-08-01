@@ -1,6 +1,8 @@
 ﻿using DM.Application;
 using DM.Application.Contract.CustomerDiscount;
+using DM.Application.Contract.DiscountCoupon;
 using DM.Domain.CustomerDiscount;
+using DM.Domain.DiscountCode;
 using DM.Infrastracture.Efcore;
 using DM.Infrastracture.Efcore.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,8 @@ namespace DM.Configuration
             services.AddDbContext<DiscountContext>(x => { x.UseSqlServer(ConnectionString); });
             services.AddTransient<IDiscountRepository, DiscountRepository>();
             services.AddTransient<IDiscountApplication, DiscountApplication>();
+            services.AddTransient<ICouponRepository, CoupontRepository>();
+            services.AddTransient<ICouponApplication, CouponApplication>();
         }
     }
 }

@@ -17,5 +17,6 @@ namespace CM.Application.Contract.Course
         Task DeActive(long Id);
         Task DeleteVideo(long videoId,string folder);
         Task<List<CourseVideos>> GetVideos(long Id);
+        Task Delete(long Id);
     }
 }

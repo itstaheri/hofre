@@ -74,6 +74,14 @@ namespace CM.Application
             await _repository.Save();
         }
 
+        public async Task Delete(long Id)
+        {
+            var course = await _repository.GetBy(Id);
+            course.Delete();
+            await _repository.Save();
+
+        }
+
         public async Task DeleteVideo(long videoId, string folder)
         {
             //delete special Video
@@ -104,8 +112,8 @@ namespace CM.Application
             //if exist picture or video for this course delete it and replace new picture or video
             if (commend.Picture != null)
             {
-                 await _uploader.DeleteFile($"//Media//Course//{course.Subject}//{course.Picture}");
-                 Picturename = await _uploader.SingleUploader(commend.Picture, "Course", commend.Subject);
+                await _uploader.DeleteFile($"//Media//Course//{course.Subject}//{course.Picture}");
+                Picturename = await _uploader.SingleUploader(commend.Picture, "Course", commend.Subject);
             }
             if (commend.Video != null)
             {
@@ -164,7 +172,7 @@ namespace CM.Application
                 CourseVideosNames = course.courseVideos.Where(x => x.CourseId == course.Id)
                 .Select(x => x.VideoName).ToList(),
                 CategoryName = course.courseCategory.Name
-                
+
             };
 
         }
