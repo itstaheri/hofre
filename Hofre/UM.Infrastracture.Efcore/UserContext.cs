@@ -20,11 +20,13 @@ namespace UM.Infrastracture.Efcore
         public DbSet<UserRoleModel> userRoles { get; set; }
         public DbSet<UserCourseModel> userCourses { get; set; }
         public DbSet<UserResetModel> userReset { get; set; }
+        public DbSet<UserCouponModel> userCoupons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new UserMapp());
             builder.ApplyConfiguration(new UserRoleMapp());
+            builder.ApplyConfiguration(new UserCouponMapp());
             base.OnModelCreating(builder);
         }
     }

@@ -25,6 +25,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OM.Configuration;
 using Query.Modules.Article;
+using Query.Modules.Coupon;
 using Query.Modules.Course;
 using Query.Modules.User;
 using SM.Configuration;
@@ -123,6 +124,7 @@ namespace Hofre
             services.AddTransient<IArticleQueryRepository, ArticleQueryRepository>();
             services.AddTransient<ICourseQueryRepository, CourseQueryRepository>();
             services.AddTransient<IAccountQueryRepository, AccountQueryRepository>();
+            services.AddTransient<ICouponQueryRepository, CouponQueryRepository>();
             #endregion
 
             //SignalR

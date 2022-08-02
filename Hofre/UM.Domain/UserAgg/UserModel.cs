@@ -19,6 +19,7 @@ namespace UM.Domain.UserAgg
             ProfilePicture = profilePicture;
             RoleId = roleId;
             IsActive = true;
+            userCoupons = new List<UserCouponModel>();
         }
         public void Edit(string username, string email, string phone, long roleId)
         {
@@ -45,5 +46,6 @@ namespace UM.Domain.UserAgg
         public bool IsActive { get; private set; }
         public long RoleId { get; private set; }
         public UserRoleModel userRole { get; private set; }
+        public List<UserCouponModel> userCoupons { get;private set; }
     }
 }

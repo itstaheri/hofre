@@ -50,7 +50,7 @@ namespace Query.Modules.Course
         {
             long CourseLenght = 0;
 
-            var query = await _context.courses.Where(x => x.IsActive == true).Select(x => new CourseQueryViewModel
+            var query = await _context.courses.Where(x => x.IsActive == true && !x.IsDeleted).Select(x => new CourseQueryViewModel
             {
                 Id = x.Id,
                 IsActive = x.IsActive,
@@ -107,7 +107,7 @@ namespace Query.Modules.Course
         {
             long CourseLenght = 0;
 
-            var course = await _context.courses.FirstOrDefaultAsync(x => x.Slug == Slug);
+            var course = await _context.courses.FirstOrDefaultAsync(x => x.Slug == Slug && !x.IsDeleted);
             var query = new CourseQueryViewModel
             {
                 Id = course.Id,
@@ -155,9 +155,60 @@ namespace Query.Modules.Course
 
         }
 
+        public async Task<CourseQueryViewModel> GetBy(long Id)
+        {
+            long CourseLenght = 0;
+
+            var course = await _context.courses.FirstOrDefaultAsync(x => x.Id == Id && !x.IsDeleted);
+            var query = new CourseQueryViewModel
+            {
+                Id = course.Id,
+                IsActive = course.IsActive,
+                ShortDescription = course.ShortDescription,
+                CategoryId = course.CategoryId,
+                IsFree = course.IsFree,
+                Picture = course.Picture,
+                Price = course.Price,
+                Slug = course.Slug,
+                Subject = course.Subject,
+                Teacher = course.Teacher,
+                Description = course.Description,
+                IsFinal = course.IsFinal,
+                LastUpdate = course.LastUpdate,
+                Video = course.Video,
+
+            };
+            query.courseVideos = await _context.courseVideos.Where(q => q.CourseId == query.Id)
+            .Select(o => new CourseVideoQueryViewModel { CourseId = o.CourseId, VideoName = o.VideoName }).ToListAsync();
+
+            var discount = (await _discount.Discounts
+                .FirstOrDefaultAsync(x => x.CourseId == query.Id));
+
+            var courseVideos = _context.courseVideos.Where(x => x.CourseId == query.Id);
+            foreach (var video in courseVideos)
+            {
+                long length = new System.IO.FileInfo($"{ _path.Path()}//Media//Course//{query.Subject}//{video.VideoName}").Length;
+                CourseLenght += length;
+            }
+            query.CourseTime = CourseLenght.ToString();
+
+            if (discount != null)
+            {
+                var discountAmount = (query.Price * discount.DiscountRate) / 100;
+                query.PayAmount = query.Price - discountAmount;
+
+            }
+            else
+            {
+                query.PayAmount = query.Price;
+            }
+
+            return query;
+        }
+
         public async Task<CoursePageViewModel> GetByCategory(long Id, int pageId = 1)
         {
-            var query = await _context.courses.Where(q => q.CategoryId == Id).Select(x => new CourseQueryViewModel
+            var query = await _context.courses.Where(q => q.CategoryId == Id && !q.IsDeleted).Select(x => new CourseQueryViewModel
             {
                 Id = x.Id,
                 IsActive = x.IsActive,
@@ -206,7 +257,7 @@ namespace Query.Modules.Course
 
         public async Task<List<CourseQueryViewModel>> Search(string entry)
         {
-            return await _context.courses.Where(x => x.Subject.Contains(entry)).Select(x => new CourseQueryViewModel
+            return await _context.courses.Where(x => x.Subject.Contains(entry) && !x.IsDeleted).Select(x => new CourseQueryViewModel
             {
                 Id = x.Id,
                 Subject = x.Subject,

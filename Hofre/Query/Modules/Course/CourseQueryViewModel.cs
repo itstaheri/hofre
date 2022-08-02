@@ -18,6 +18,7 @@ namespace Query.Modules.Course
         public string Teacher { get; set; }
         public double Price { get; set; }
         public int DiscountRate { get; set; }
+        public double DiscountAmount { get; set; }
         public double PayAmount { get; set; }
         public bool IsFree { get; set; }
         public bool IsActive { get; set; }

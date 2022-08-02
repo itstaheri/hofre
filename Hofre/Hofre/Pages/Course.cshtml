@@ -185,11 +185,9 @@
                             {
                                 <form method="post" asp-page-handler="Pay">
 
-                                    <input name="UserId" type="hidden" value="@await (_auth.CurrentUserId())">
-                                    <input name="TotalPrice" type="hidden" value="@Model.Course.Price">
-                                    <input name="DiscountAmount" type="hidden" value="@Model.Course.DiscountRate">
-                                    <input name="PayAmount" type="hidden" value="@Model.Course.PayAmount">
+                               
                                     <input name="CourseId" type="hidden" value="@Model.Course.Id">
+                                    
                                     <button type="submit" style="text-align:center;" class="btn_1 d-block">ثبت نام در کلاس</button>
 
                                 </form>

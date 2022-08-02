@@ -12,6 +12,7 @@ namespace Query.Modules.Course
         Task<CoursePageViewModel> GetAll(int pageId = 1);
         Task<CoursePageViewModel> GetByCategory(long Id,int pageId = 1);
         Task<CourseQueryViewModel> GetBy(string Slug);
+        Task<CourseQueryViewModel> GetBy(long Id);
         Task JoinToCourse(long Id);
         Task<bool> FreeCourse(long Id);
         Task<bool> IsMember(long CourseId, long UserId);

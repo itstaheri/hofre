@@ -19,6 +19,32 @@ namespace UM.Infrastracture.Efcore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("UM.Domain.UserAgg.UserCouponModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long>("CouponId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CourseId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("userCoupons");
+                });
+
             modelBuilder.Entity("UM.Domain.UserAgg.UserCourseModel", b =>
                 {
                     b.Property<long>("Id")
@@ -120,6 +146,17 @@ namespace UM.Infrastracture.Efcore.Migrations
                     b.ToTable("userRoles");
                 });
 
+            modelBuilder.Entity("UM.Domain.UserAgg.UserCouponModel", b =>
+                {
+                    b.HasOne("UM.Domain.UserAgg.UserModel", "User")
+                        .WithMany("userCoupons")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("UM.Domain.UserAgg.UserModel", b =>
                 {
                     b.HasOne("UM.Domain.UserRoleAgg.UserRoleModel", "userRole")
@@ -129,6 +166,11 @@ namespace UM.Infrastracture.Efcore.Migrations
                         .IsRequired();
 
                     b.Navigation("userRole");
+                });
+
+            modelBuilder.Entity("UM.Domain.UserAgg.UserModel", b =>
+                {
+                    b.Navigation("userCoupons");
                 });
 
             modelBuilder.Entity("UM.Domain.UserRoleAgg.UserRoleModel", b =>

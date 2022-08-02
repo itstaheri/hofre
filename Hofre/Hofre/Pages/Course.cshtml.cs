@@ -11,6 +11,7 @@ using CM.Application.Contract.CourseComment;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using System.Linq;
+using CM.Application.Contract.Course;
 
 namespace Hofre.Pages
 {
@@ -18,16 +19,13 @@ namespace Hofre.Pages
     public class CourseModel : PageModel
     {
         private readonly ICourseQueryRepository _repository;
-        private readonly IZarinPalFactory _zarinpal;
-        private readonly IOrderApplication _order;
         private readonly IAuth _auth;
         private readonly ICourseCommentApplication _comment;
 
-        public CourseModel(ICourseQueryRepository repository, IZarinPalFactory zarinpal, IOrderApplication order, IAuth auth, ICourseCommentApplication comment)
+        public CourseModel(ICourseQueryRepository repository, IAuth auth, ICourseCommentApplication comment)
         {
             _repository = repository;
-            _zarinpal = zarinpal;
-            _order = order;
+
             _auth = auth;
             _comment = comment;
         }
@@ -43,36 +41,23 @@ namespace Hofre.Pages
             comments = (await _comment.GetCommentsBy(Course.Id));
 
         }
-        public async Task<IActionResult> OnPostPay(OrderViewModel order, long CourseId)
-        {
-            var user = await _auth.CurrentUserInfo();
 
+        public async Task<RedirectToPageResult> OnPostPay(long CourseId)
+        {
+           
             if (await (_repository.FreeCourse(CourseId)))
             {
-                await _repository.JoinToCourse(CourseId);
+                await _repository.JoinToCourse(Course.Id);
                 return RedirectToPage();
             }
             else
             {
-                var orderId = await _order.PlaceOrder(order);
-                var paymentResponse = _zarinpal.CreatePaymentRequest(order.TotalPrice.ToMoney(), user.Number, user.Email, "", orderId);
-                return Redirect($"https://{_zarinpal.Prefix}.zarinpal.com/pg/StartPay/{paymentResponse.Authority}");
+                return RedirectToPage("/checkout", routeValues: new{CourseId = CourseId});
+
             }
+
         }
-        public async Task<IActionResult> OnGetCallBack([FromQuery] string authority, string status, [FromQuery] long orderId)
-        {
-            var amount = await _order.GetAmountBy(orderId);
-            var verify = _zarinpal.CreateVerificationRequest(authority, amount.ToString());
-            if (status == "OK" && verify.Status == 200)
-            {
-                var Code = await _order.PaySucceded(verify.RefID, orderId);
-                return RedirectToPage("./PaymentResult", "پرداخت با موفقیت انجام شد.", Code);
-            }
-            else
-            {
-                return RedirectToPage("/Result","OnGet", "پرداخت با مشکل مواجه شد.در صورت کسر وجه از حساب شما مبلغ کسر شده تا 24آینده به حساب شما برگشت داده خواهد شد");
-            }
-        }
+       
        // [Authorize]
         public async Task<RedirectToPageResult> OnPostComment(CreateCourseComment commend)
         {

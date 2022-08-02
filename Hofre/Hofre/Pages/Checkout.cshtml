@@ -1,0 +1,138 @@
+﻿@page
+@model Hofre.Pages.CheckoutModel
+@inject Frameworks.Auth.IAuth _auth;
+@{
+}
+
+<section class="page-title-area page-title-bg1">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 title="پرداخت">پرداخت</h1>
+        </div>
+    </div>
+
+    <section class="cart-area ptb-100">
+        <div class="container">
+            @if (!await _auth.IsAuthenticated())
+            {
+                <div class="user-actions">
+                    <i class='bx bx-log-in'></i>
+                    <span>قبل از خرید باید به حساب خود وارد شوید. <a asp-page="/account" style="color:lightblue">ورود/ثبت نام کاربران</a></span>
+                </div>
+            }
+            <div class="cart-table table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">دوره</th>
+                            <th scope="col">نام دوره</th>
+                            <th scope="col">قیمت</th>
+                            <th scope="col">قیمت نهایی</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                        <tr>
+                            <td class="product-thumbnail">
+                                <a asp-page="/course" asp-route-slug="@Model.Course.Slug">
+                                    <img src="~/Media/Course/@Model.Course.Subject/@Model.Course.Picture" title="@Model.Course.Subject">
+                                </a>
+                            </td>
+
+                            <td class="product-name">
+                                <a asp-page="/course" asp-route-slug="@Model.Course.Slug">@Model.Course.Subject</a>
+                            </td>
+
+                            <td class="product-price">
+                                <span class="unit-amount">@Model.Course.Price</span>
+                            </td>
+
+
+
+                            <td class="product-subtotal">
+                                <span class="subtotal-amount">@Model.Course.PayAmount</span>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cart-buttons">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                        @ViewData["CouponMessage"]
+                        <form asp-page-handler="PlaceCoupon" method="post">
+                            <div class="shopping-coupon-code" style="position:center; margin:auto;">
+                                <input type="text" class="form-control" placeholder="کد تخفیف" name="coupon" id="coupon-code" @(Model.PlaceOrder == true ? "disabled" : "") value="@Model.SaveCoupon">
+                                <input name="Price" type="hidden" value="@Model.Course.Price">
+                                <input name="CourseId" type="hidden" value="@Model.Course.Id">
+                                <input name="DiscountAmount" type="hidden" value="@Model.Course.DiscountRate">
+                                <i id="EnableField">🖊️</i>
+                                <button type="submit">اعمال کد</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <form asp-page-handler="Pay" method="post">
+
+                <div class="cart-totals">
+                    <h3>مجموع خرید</h3>
+                    <ul>
+                        <li>قیمت <span>@Model.Course.Price</span></li>
+                        <li>مقدار تخفیف <span>@Model.Course.DiscountAmount</span></li>
+                        <li>قیمت نهایی <span>@Model.Course.PayAmount</span></li>
+                    </ul>
+
+                    <!--data-->
+                    <input name="UserId" type="hidden" value="@(await _auth.CurrentUserId())">
+                    <input name="TotalPrice" type="hidden" value="@Model.Course.Price">
+                    <input name="CourseId" type="hidden" value="@Model.Course.Id">
+                    @* <input name="DiscountAmount" type="hidden" value="@Model.CouponResult.DiscountAmount">*@
+                    <input name="PayAmount" type="hidden" value="@Model.Course.PayAmount">
+                    @if (await _auth.IsAuthenticated())
+                    {
+                        <button id="btnpay" type="submit" class="default-btn">پرداخت</button>
+
+                    }
+                    else
+                    {
+                        <a asp-page="/account" class="default-btn">ورود/ثبت نام</a>
+
+                    }
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+</section>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script>
+     $('#btnpay').click(function(){
+        if($("#btnpay").prop('disabled'))
+         {
+            alert("اول باید وارد حساب کاربری خود شوید")
+
+     }
+    })
+
+    if($("#coupon-code").prop('disabled')){
+         $("#EnableField").show()
+
+        $("#EnableField").click(function(){
+       $("#coupon-code").prop('disabled',false)
+    })
+    }else{
+        $("#EnableField").hide()
+    }
+
+
+
+</script>
