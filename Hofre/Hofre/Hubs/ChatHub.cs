@@ -18,27 +18,27 @@ namespace Hofre.Hubs
             _app = app;
         }
 
-        public override Task OnConnectedAsync()
-        {
+        //public override Task OnConnectedAsync()
+        //{
 
-            Groups.AddToGroupAsync(Context.ConnectionId, Context.User.Identity.Name);
-            return base.OnConnectedAsync();
-        }
-        public override async Task OnDisconnectedAsync(Exception? exception)
+        //    Groups.AddToGroupAsync(Context.ConnectionId, Context.User.Identity.Name);
+        //    return base.OnConnectedAsync();
+        //}
+        //public override async Task OnDisconnectedAsync(Exception? exception)
+        //{
+        //    await Groups.RemoveFromGroupAsync(Context.ConnectionId, "SignalR Users");
+        //    await base.OnDisconnectedAsync(exception);
+        //}
+        public async Task SendMessage(string user, string message)
         {
-            await Groups.RemoveFromGroupAsync(Context.ConnectionId, "SignalR Users");
-            await base.OnDisconnectedAsync(exception);
-        }
-        public async Task SendMessage(string receive, string message,string date)
-        {
-            await Clients.All.SendAsync("ReceiveMessage", receive, message,date);
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
 
-        public async Task SendMessageToGroup(string sender, string receiver, string message,string date)
-        {
-            await _app.CreateMessage(new Messages { CreationDate = date, Message = message, Username = sender });
-            await Clients.Group(receiver).SendAsync("ReceiveMessage", sender, message,date);
-        }
+        //public async Task SendMessageToGroup(string sender, string receiver, string message,string date)
+        //{
+        //    await _app.CreateMessage(new Messages { CreationDate = date, Message = message, Username = sender });
+        //    await Clients.Group(receiver).SendAsync("ReceiveMessage", sender, message,date);
+        //}
 
 
     }

@@ -18,6 +18,8 @@ namespace UM.Domain.UserAgg
         Task<bool> CheckIdentity(string username,string password);
         Task<bool> CheckIdentity(string username,string email,string phoneNumber);
         Task<string> Edit(EditUser commend);
+        string GetRoleName(long RoleId);
+        Task<List<string>> GetPermissions(long RoleId);
         
     }
 }

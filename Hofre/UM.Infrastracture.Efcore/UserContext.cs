@@ -10,7 +10,7 @@ using UM.Infrastracture.Efcore.Mappings;
 
 namespace UM.Infrastracture.Efcore
 {
-    public class  UserContext : DbContext
+    public class UserContext : DbContext
     {
         public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
@@ -21,12 +21,15 @@ namespace UM.Infrastracture.Efcore
         public DbSet<UserCourseModel> userCourses { get; set; }
         public DbSet<UserResetModel> userReset { get; set; }
         public DbSet<UserCouponModel> userCoupons { get; set; }
+        public DbSet<UserPermissionModel> userPermissions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new UserMapp());
             builder.ApplyConfiguration(new UserRoleMapp());
             builder.ApplyConfiguration(new UserCouponMapp());
+            builder.ApplyConfiguration(new UserPermissionMapp
+                ());
             base.OnModelCreating(builder);
         }
     }

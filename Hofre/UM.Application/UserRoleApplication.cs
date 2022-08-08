@@ -17,6 +17,17 @@ namespace UM.Application
             _repository = repository;
         }
 
+        public async Task AddPermissions(List<string> Permissions, long RoleId)
+        {
+            List<UserPermissionModel> PermissionsModel = new List<UserPermissionModel>();
+            foreach (var item in Permissions)
+            {
+                var permission = new UserPermissionModel(RoleId, item);
+                PermissionsModel.Add(permission);
+            }
+            await _repository.AddPermissions(PermissionsModel);
+        }
+
         public async Task Create(CreateUserRole commend)
         {
             var userRole = new UserRoleModel(commend.RoleName);

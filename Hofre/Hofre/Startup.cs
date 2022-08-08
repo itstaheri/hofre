@@ -32,6 +32,7 @@ using SM.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using TM.Configuration;
 using UM.Configuration;
@@ -53,9 +54,20 @@ namespace Hofre
         {
             string ConnetionString = Configuration.GetConnectionString("HofreDB");
 
+            //use api in part(layer) of application
             var mvcBuilder = services.AddRazorPages().AddApplicationPart(typeof(ArticleController).Assembly)
                 .AddApplicationPart(typeof(CourseController).Assembly);
+            //
 
+            //add authorizeFolder area
+            services.AddRazorPages(option =>
+            {
+                option.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
+                option.Conventions.AuthorizeAreaFolder("Courses", "/", "CourseArea");
+            });
+            //
+
+            //configure for send data up then as usual
             services.Configure<IISServerOptions>(option =>
             {
                 option.MaxRequestBodySize = int.MaxValue;
@@ -67,7 +79,7 @@ namespace Hofre
                 options.MultipartBodyLengthLimit = int.MaxValue;
                 options.MultipartHeadersLengthLimit = int.MaxValue;
             });
-
+            //
 
 
             ArticleBootestrapper.Configuration(services, ConnetionString);
@@ -77,7 +89,7 @@ namespace Hofre
             SettingBootestrapper.Configuration(services, ConnetionString);
             TicketBootestrapper.Configuration(services, ConnetionString);
             OrderBootestrapper.Configuration(services, ConnetionString);
-            
+
 
             #region FrameWorks
             services.AddTransient<IPasswordHasher, PasswordHasher>();
@@ -86,7 +98,8 @@ namespace Hofre
             services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
             services.AddTransient<IGetPath, GetPath>();
             services.AddTransient<ISmtpService, SmtpService>();
-            services.AddTransient<ISmsServices,SmsServices>();
+            services.AddTransient<ISmsServices, SmsServices>();
+            services.AddTransient<IFileHelper, FileHelper>();
 
 
             services.AddElmah<SqlErrorLog>(option =>
@@ -97,28 +110,36 @@ namespace Hofre
             });
             #endregion
             #region Auth
+            services.AddHttpContextAccessor();
+
             services.Configure<CookiePolicyOptions>(option =>
             {
                 option.CheckConsentNeeded = context => true;
                 option.MinimumSameSitePolicy = SameSiteMode.Lax;
 
-                services.AddTransient<IFileHelper, FileHelper>();
 
                 services.AddSignalR();
 
 
             });
+         
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, q =>
                 {
-                    //q.LoginPath = new PathString("/Account");
-                    //q.LogoutPath = new PathString("/Account");
-                    //q.AccessDeniedPath = new PathString("/AccessDenied");
+                    q.LoginPath = new PathString("/Account");
+                    q.LogoutPath = new PathString("/Account");
+                    q.AccessDeniedPath = new PathString("/AccessDenied");
                 });
             services.AddAuthorization(option =>
             {
-                option.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { "1" }));
+                option.AddPolicy("AdminArea", builder => builder.RequireClaim("RoleName", new List<string> { "Manager", "Admin" }));
+                //option.AddPolicy("Permission.Course.Create", builder => builder.AddRequirements(new PermissionRequirement("Permission.Course.Create")));
+                //option.AddPolicy(PermissionTypes.Course.Create, builder => builder.RequireAssertion(context=>context.User.HasClaim(x=>(x.Type == "Permissions" && x.Value ==PermissionTypes.Course.Create))));
             });
+           
+
+
             #endregion
             #region Query
             services.AddTransient<IArticleQueryRepository, ArticleQueryRepository>();
@@ -176,8 +197,8 @@ namespace Hofre
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapDefaultControllerRoute();
                 endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapDefaultControllerRoute();
                 endpoints.MapControllers();
 
 

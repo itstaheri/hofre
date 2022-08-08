@@ -128,6 +128,29 @@ namespace UM.Infrastracture.Efcore.Migrations
                     b.ToTable("userReset");
                 });
 
+            modelBuilder.Entity("UM.Domain.UserRoleAgg.UserPermissionModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("RoleId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("userPermissions");
+                });
+
             modelBuilder.Entity("UM.Domain.UserRoleAgg.UserRoleModel", b =>
                 {
                     b.Property<long>("Id")
@@ -168,6 +191,17 @@ namespace UM.Infrastracture.Efcore.Migrations
                     b.Navigation("userRole");
                 });
 
+            modelBuilder.Entity("UM.Domain.UserRoleAgg.UserPermissionModel", b =>
+                {
+                    b.HasOne("UM.Domain.UserRoleAgg.UserRoleModel", "Role")
+                        .WithMany("permissions")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("UM.Domain.UserAgg.UserModel", b =>
                 {
                     b.Navigation("userCoupons");
@@ -175,6 +209,8 @@ namespace UM.Infrastracture.Efcore.Migrations
 
             modelBuilder.Entity("UM.Domain.UserRoleAgg.UserRoleModel", b =>
                 {
+                    b.Navigation("permissions");
+
                     b.Navigation("users");
                 });
 #pragma warning restore 612, 618

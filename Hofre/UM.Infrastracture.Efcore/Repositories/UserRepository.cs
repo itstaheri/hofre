@@ -119,6 +119,16 @@ namespace UM.Infrastracture.Efcore.Repositories
             return user;
         }
 
+        public async Task<List<string>> GetPermissions(long RoleId)
+        {
+            return await _context.userPermissions.Where(x=>x.RoleId == RoleId).Select(x=>x.Code).ToListAsync();
+        }
+
+        public  string GetRoleName(long RoleId)
+        {
+            return _context.userRoles.FirstOrDefault(x=>x.Id == RoleId).RoleName;
+        }
+
         public async Task Remove(long Id)
         {
             var user = await _context.users.FirstOrDefaultAsync(x => x.Id == Id);

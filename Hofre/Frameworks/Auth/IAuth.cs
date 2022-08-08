@@ -8,6 +8,7 @@ namespace Frameworks.Auth
 {
     public interface IAuth
     {
+        Task<List<int>> GetPermissions();
         Task SignIn(AuthViewModel account);
         Task SignOut();
         Task<bool> IsAuthenticated();

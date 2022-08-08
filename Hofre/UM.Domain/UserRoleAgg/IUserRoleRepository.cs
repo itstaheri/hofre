@@ -14,6 +14,7 @@ namespace UM.Domain.UserRoleAgg
         Task Remove(long Id);
         Task<UserRoleModel> GetBy(long Id);
         Task<List<UserRoleViewModel>> GetAll();
+        Task AddPermissions(List<UserPermissionModel> commend);
 
     }
 }

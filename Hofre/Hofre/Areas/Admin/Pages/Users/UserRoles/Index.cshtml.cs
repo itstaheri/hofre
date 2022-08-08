@@ -10,6 +10,8 @@ namespace Hofre.Areas.Admin.Pages.Users.UserRoles
     {
         private readonly IUserRoleApplication _repository;
         public List<UserRoleViewModel> UserRoles { get; set; }
+        
+       
         public IndexModel(IUserRoleApplication repository)
         {
             _repository = repository;
@@ -18,11 +20,17 @@ namespace Hofre.Areas.Admin.Pages.Users.UserRoles
         public async Task OnGet()
         {
             UserRoles = await _repository.GetAll();
+            
 
         }
         public async Task OnPost(CreateUserRole commend)
         {
             await _repository.Create(commend);
+        }
+        public async Task<RedirectToPageResult> OnPostPermission(List<string> Permissions,long RoleId)
+        {
+            await _repository.AddPermissions(Permissions, RoleId);
+            return RedirectToPage();
         }
     }
 }

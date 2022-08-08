@@ -11,6 +11,7 @@ namespace UM.Application.Contract.UserRole
         Task Create(CreateUserRole commend);
         Task Remove(long Id);
         Task<List<UserRoleViewModel>> GetAll();
+        Task AddPermissions(List<string> Permissions, long RoleId);
 
     }
 }

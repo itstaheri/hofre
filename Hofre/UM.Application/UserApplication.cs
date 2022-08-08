@@ -92,6 +92,8 @@ namespace UM.Application
             var check = await _repository.CheckIdentity(commend.Username, commend.Password);
             if (!check) return new LoginResult(true, check, "نام کاربری یا کلمه ی عبور شما اشتباه است");
 
+            var permissions = await _repository.GetPermissions(user.RoleId);
+
             AuthViewModel auth = new AuthViewModel
             {
                 Email = user.Email,
@@ -99,7 +101,10 @@ namespace UM.Application
                 Number = user.Phone,
                 Picture = user.ProfilePicture,
                 RoleId = user.RoleId,
-                Username = user.Username
+                Username = user.Username,
+                RoleName = _repository.GetRoleName(user.RoleId),
+                Permissions = permissions
+                
             };
 
             await _auth.SignIn(auth);

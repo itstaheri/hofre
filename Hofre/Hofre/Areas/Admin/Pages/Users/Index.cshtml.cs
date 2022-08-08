@@ -16,7 +16,7 @@ namespace Hofre.Areas.Admin.Pages.Users
             _repository = repository;
         }
 
-        public async void OnGet()
+        public async Task OnGet()
         {
             Users = await _repository.GetAll();   
         }

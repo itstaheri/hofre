@@ -5,12 +5,15 @@ using System.Net;
 using System.Threading.Tasks;
 using CM.Application.Contract.Course;
 using CM.Application.Contract.CourseCategory;
+using Frameworks.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Hofre.Areas.Admin.Pages.Courses
 {
+    [Authorize(Policy =PermissionTypes.Course.Create)]
     public class CreateModel : PageModel
     {
         private readonly ICourseApplication _repository;

@@ -60,7 +60,7 @@
                 </table>
             </div>
 
-            <div class="cart-buttons">
+            <div class="cart-buttons" >
                 <div class="row align-items-center">
                     <div class="col-lg-12 col-sm-12 col-md-12">
                         @ViewData["CouponMessage"]
@@ -70,7 +70,7 @@
                                 <input name="Price" type="hidden" value="@Model.Course.Price">
                                 <input name="CourseId" type="hidden" value="@Model.Course.Id">
                                 <input name="DiscountAmount" type="hidden" value="@Model.Course.DiscountRate">
-                                <i id="EnableField">🖊️</i>
+
                                 <button type="submit">اعمال کد</button>
 
                             </div>
@@ -79,6 +79,8 @@
 
                 </div>
             </div>
+            <i id="EnableField">🖊️</i>
+
             <form asp-page-handler="Pay" method="post">
 
                 <div class="cart-totals">

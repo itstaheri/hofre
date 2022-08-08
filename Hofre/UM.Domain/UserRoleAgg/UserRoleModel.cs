@@ -16,5 +16,6 @@ namespace UM.Domain.UserRoleAgg
         }
         public string RoleName { get;private set; }
         public List<UserModel> users { get; private set; }
+        public List<UserPermissionModel> permissions { get; private set; }
     }
 }

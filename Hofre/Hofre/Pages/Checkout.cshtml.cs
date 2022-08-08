@@ -43,7 +43,7 @@ namespace Hofre.Pages
             //var usercoupon = new UserCouponViewModel { Coupon = }
             var user = await _auth.CurrentUserInfo();
             var orderId = await _order.PlaceOrder(order);
-            var paymentResponse = _zarinpal.CreatePaymentRequest(order.TotalPrice.ToMoney(), user.Number, user.Email, "", orderId);
+            var paymentResponse = _zarinpal.CreatePaymentRequest(order.PayAmount.ToMoney(), user.Number, user.Email, "", orderId);
             return Redirect($"https://{_zarinpal.Prefix}.zarinpal.com/pg/StartPay/{paymentResponse.Authority}");
         }
         public async Task<IActionResult> OnGetCallBack([FromQuery] string authority, string status, [FromQuery] long orderId)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ou0KNLA9Gqh8JF14/d8YKMex51lEk0MDDCIkqUtM3GU0gNr9Cxu2X8jmZPv4/CAkvck07P0xKxHupC+JxGNitA==",
+  "dgSpecHash": "4n1Tv64uQ8vDVwOrxyGGD0HcsAZ/2C2VtRp8eBVukrF9ExuIpTGubNA5+9jWdXNWmcdUSZ8ZjNFKUZfvww7g+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\alith\\source\\repos\\hofre\\Hofre\\UM.Application.Contract\\UM.Application.Contract.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\alith\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\smsirrestful\\1.1.3\\smsirrestful.1.1.3.nupkg.sha512",
     "C:\\Users\\alith\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",

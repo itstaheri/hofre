@@ -4,12 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using AM.Application.Contract.Article;
 using AM.Application.Contract.ArticleCategory;
+using Frameworks.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Hofre.Areas.Admin.Pages.Articles
 {
+    [Authorize(Policy = PermissionTypes.Article.Create)]
     public class CreateModel : PageModel
     {
         private readonly IArticleCategoryApplication _articlecategory;

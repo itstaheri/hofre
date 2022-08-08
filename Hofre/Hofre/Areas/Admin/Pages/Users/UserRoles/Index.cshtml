@@ -16,10 +16,58 @@
             </div>
 
         </div><!-- Page Heading End -->
-        <a class="button button-success" asp-page="./Create">افزودن دسته بندی</a>
+      
     </div><!-- Page Headings End -->
 
     <div class="row">
+        <!--Modal Edit-->
+        <div class="modal fade" id="exampleModal5">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">پیام جدید</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" asp-page-handler="Permission">
+                            <div class="form-group">
+                                <select class="form-control" name="Permissions" multiple>
+                                    <optgroup label="مقالات" style="text-align:center;background-color:lightblue;"></optgroup>
+                                    <option value="Permission.Article.Create">ایجاد</option>
+                                    <option value="Permission.Article.View">مشاهده</option>
+                                    <option value="Permission.Article.Edit">ویرایش</option>
+                                    <option value="Permission.Article.Delete">حذف</option>
+                                    <optgroup label="دوره ها" style="text-align:center;background-color:lightblue;"></optgroup>
+                                    <option value="Permission.Course.Create">ایجاد</option>
+                                    <option value="Permission.Course.View">مشاهده</option>
+                                    <option value="Permission.Course.Edit">ویرایش</option>
+                                    <option value="Permission.Course.Delete">حذف</option>
+                                    <optgroup label="کاربران" style="text-align:center;background-color:lightblue;"></optgroup>
+                                    <option value="Permission.User.Create">ایجاد</option>
+                                    <option value="Permission.User.View">مشاهده</option>
+                                    <option value="Permission.User.Edit">ویرایش</option>
+                                    <option value="Permission.User.Delete">حذف</option>
+                                    <optgroup label="تنظیمات" style="text-align:center;background-color:lightblue;"></optgroup>
+                                    <option value="Permission.Setting.Create">ویرایش</option>
+                                    <optgroup label="تخفیفات" style="text-align:center;background-color:lightblue;"></optgroup>
+                                    <option value="Permission.Discount.Create">ایجاد</option>
+                                    <option value="Permission.Discount.View">مشاهده</option>
+                                    <option value="Permission.Discount.Edit">ویرایش</option>
+                                    <option value="Permission.Discount.Delete">حذف</option>
+                                </select>
+                                <input type="hidden" class="form-control" name="RoleId" id="UserRoleId">
+                            </div>
+                            <div class="modal-footer">
+                                <button class="button button-danger" data-dismiss="modal">بستن</button>
+                                <button type="submit" class="button button-primary">اعمال</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
         <!--Basic Start-->
@@ -36,31 +84,29 @@
                         <thead>
                             <tr>
                                 <th data-name="نام دسترسی">نام دسترسی</th>
-                                <th></th>
+                                <th>سطح دسترسی ها</th>
 
                             </tr>
                         </thead>
 
                         <tbody>
 
-                            <tr>
-                                @foreach (var item in Model.UserRoles)
-                                {
+                            @foreach (var item in Model.UserRoles)
+                            {
+                                <tr>
 
                                     <td>@item.RoleName</td>
 
-                                    <td width="70">
-                                        <a class="button button-warning" asp-page="./Edit" asp-route-Id="@item.Id">ویرایش</a>
-                                    </td>
-                                    <td width="70">
-                                        <form method="post">
-                                            <input type="hidden" name="Id" value="@item.Id" />
-                                            <button class="button button-danger">حذف</button>
-                                        </form>
-                                    </td>
 
-                                }
-                            </tr>
+                                    <td>
+                                        <button class="button button-disqus" data-toggle="modal" data-target="#exampleModal5" data-whatever="mdo" onclick="RoleId(@item.Id)">مدیریت</button>
+                                    </td>
+                                   
+                                  
+                                </tr>
+                            }
+
+
                         </tbody>
                     </table>
 
@@ -88,3 +134,9 @@
 <script src="~/assets/js/plugins/footable/footable.min.js"></script>
 <script src="~/assets/js/plugins/footable/footable.active.js"></script>
 }
+<script>
+
+    function RoleId(roleId){
+        $("#UserRoleId").val(roleId)
+    }
+</script>

@@ -10,9 +10,11 @@ namespace Frameworks.Auth
     {
         public long Id { get; set; }
         public long RoleId { get; set; }
+        public string RoleName { get; set; }
         public string Username { get; set; }
         public string Number { get; set; }
         public string Email { get; set; }
         public string Picture { get; set; }
+        public List<string> Permissions { get; set; }
     }
 }

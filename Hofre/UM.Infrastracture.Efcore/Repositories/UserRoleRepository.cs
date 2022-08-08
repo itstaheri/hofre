@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Exceptions;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,34 @@ namespace UM.Infrastracture.Efcore.Repositories
             _context = context;
         }
 
+        public async Task AddPermissions(List<UserPermissionModel> commend)
+        {
+            await _context.userPermissions.AddRangeAsync(commend);
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
+        }
+
         public async Task Create(UserRoleModel commend)
         {
             _context.userRoles.Add(commend);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
         }
 
         public async Task<List<UserRoleViewModel>> GetAll()
@@ -45,7 +70,16 @@ namespace UM.Infrastracture.Efcore.Repositories
 
         public async Task Save()
         {
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new SaveErrorException(ex.Message, ex.InnerException);
+            }
         }
     }
 }

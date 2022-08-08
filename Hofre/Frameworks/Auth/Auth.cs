@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,15 @@ namespace Frameworks.Auth
         {
             _httpContext = httpContext;
         }
+        public async Task<List<int>> GetPermissions()
+        {
+            if (!await IsAuthenticated())
+                return new List<int>();
 
+            var permissions = _httpContext.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "Permissions")
+                ?.Value;
+            return JsonConvert.DeserializeObject<List<int>>(permissions);
+        }
         public async Task<long> CurrentUserId()
         {
             return await IsAuthenticated()
@@ -40,6 +49,8 @@ namespace Frameworks.Auth
             result.Number = claims.FirstOrDefault(x => x.Type == "Phone")?.Value;
             result.Email = claims.FirstOrDefault(x => x.Type == ClaimTypes.Email).Value;
             result.Picture = claims.FirstOrDefault(x => x.Type == "Picture").Value;
+            result.RoleName = claims.FirstOrDefault(x => x.Type == "RoleName").Value;
+            result.RoleName = claims.FirstOrDefault(x => x.Type == "Permissions").Value;
             return result;
         }
 
@@ -65,6 +76,7 @@ namespace Frameworks.Auth
 
         public async Task SignIn(AuthViewModel account)
         {
+            var permissions = JsonConvert.SerializeObject(account.Permissions);
             var claims = new List<Claim>
             {
                 new Claim("AccountId",account.Id.ToString()),
@@ -73,7 +85,9 @@ namespace Frameworks.Auth
                 new Claim("Phone",account.Number),
                 new Claim(ClaimTypes.Email,account.Email),
                 new Claim("Picture",account.Picture),
-                new Claim(ClaimTypes.Name,account.Username)
+                new Claim(ClaimTypes.Name,account.Username),
+                new Claim("RoleName",account.RoleName),
+                new Claim("Permissions",permissions)
 
 
             };
