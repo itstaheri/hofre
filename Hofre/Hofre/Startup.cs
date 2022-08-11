@@ -134,8 +134,7 @@ namespace Hofre
             services.AddAuthorization(option =>
             {
                 option.AddPolicy("AdminArea", builder => builder.RequireClaim("RoleName", new List<string> { "Manager", "Admin" }));
-                //option.AddPolicy("Permission.Course.Create", builder => builder.AddRequirements(new PermissionRequirement("Permission.Course.Create")));
-                //option.AddPolicy(PermissionTypes.Course.Create, builder => builder.RequireAssertion(context=>context.User.HasClaim(x=>(x.Type == "Permissions" && x.Value ==PermissionTypes.Course.Create))));
+                option.AddPolicy(PermissionTypes.Course.Create, builder => builder.RequireAssertion(context=>context.User.HasClaim(x=>(x.Type == "Permissions" && x.Value ==PermissionTypes.Course.Create))));
             });
            
 

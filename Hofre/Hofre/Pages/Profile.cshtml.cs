@@ -29,12 +29,12 @@ namespace Hofre.Pages
         public async Task OnGet()
         {
 
-            account = await _repository.GetBy((await _auth.CurrentUserId()));
+            account = await _repository.GetBy((await _auth.CurrentUserId()),"profile");
         }
         public async Task <IActionResult> OnPostEdit(EditUser commend)
         {
             var result =await _userApplication.Edit(commend);
-            account = await _repository.GetBy((await _auth.CurrentUserId()));
+            account = await _repository.GetBy((await _auth.CurrentUserId()),"profile");
 
             if (result == nameof(UserEditStatus.RepetitiveUsername))
             {
@@ -58,8 +58,8 @@ namespace Hofre.Pages
             }
             return Page();
         }
-        public async Task<RedirectToPageResult> OnPostSignout()
-        {
+        public async Task<RedirectToPageResult> OnGetSignout()
+        {   
             await _auth.SignOut();
             return RedirectToPage("/account");
         }
@@ -67,6 +67,11 @@ namespace Hofre.Pages
         {
             await _repository.UpdateProfilePicture(await _auth.CurrentUserId(), profilePicture);
             return RedirectToPage();
+        }
+        public  async Task<IActionResult> OnPostData(long Id,string commend)
+        {
+            account = await _repository.GetBy(Id,commend);
+            return new JsonResult(account);
         }
     }
 }

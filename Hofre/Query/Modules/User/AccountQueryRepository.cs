@@ -154,71 +154,92 @@ namespace Query.Modules.User
             };
         }
 
-        public async Task<AccountQueryViewModel> GetBy(long userId)
+        public async Task<AccountQueryViewModel> GetBy(long userId,string commend)
         {
-            List<UserCourseQueryViewModel> courses = new List<UserCourseQueryViewModel>();
-            //get user courseComments
             var query = await _user.users.FirstOrDefaultAsync(x => x.Id == userId);
-            var comments = await _course.courseComments.Where(x => x.Username == query.Username && x.IsActive).Select(x => new UserCourseCommentQueryViewModel
+
+            AccountQueryViewModel Model = new AccountQueryViewModel();
+            List<UserCourseQueryViewModel> courses = new List<UserCourseQueryViewModel>();
+            List<UserCourseCommentQueryViewModel> courseComments = new List<UserCourseCommentQueryViewModel>();
+            List<UserArticleCommentQueryViewModel> articleComments = new List<UserArticleCommentQueryViewModel>();
+            List<UserOrderQueryViewModel> orders = new List<UserOrderQueryViewModel>();
+            //get user courseComments
+            if (commend == "comment")
             {
-                IsActive = x.IsActive,
-                CreationDate = x.CreationDate.ToFarsi(),
-                CourseId = x.CourseId,
-                Text = x.Text,
-                Username = x.Username,
+                courseComments = await _course.courseComments.Where(x => x.Username == query.Username && x.IsActive).Select(x => new UserCourseCommentQueryViewModel
+                {
+                    IsActive = x.IsActive,
+                    CreationDate = x.CreationDate.ToFarsi(),
+                    CourseId = x.CourseId,
+                    Text = x.Text,
+                    Username = x.Username,
 
 
-            }).ToListAsync();
+                }).ToListAsync();
+                foreach (var item in courseComments)
+                {
+                    item.CourseName =  _course.courses.FirstOrDefault(x => x.Id == item.CourseId).Subject;
+                }
+                //get user artcileComments
+                articleComments = await _article.articleComments.Where(x => x.UserId == query.Id && x.IsActive).Select(x => new UserArticleCommentQueryViewModel
+                {
+                    Id = x.Id,
+                    CreationDate = x.CreationDate.ToFarsi(),
+                    ArticleId = x.ArticleId,
+                    IsActive = x.IsActive,
+                    Text = x.Text,
 
-            //get user artcileComments
-            var articles = await _article.articleComments.Where(x => x.UserId == query.Id && x.IsActive).Select(x => new UserArticleCommentQueryViewModel
-            {
-                Id = x.Id,
-                CreationDate = x.CreationDate.ToFarsi(),
-                ArticleId = x.ArticleId,
-                IsActive = x.IsActive,
-                Text = x.Text,
-
-            }).ToListAsync();
-
+                }).ToListAsync();
+                foreach (var article in articleComments)
+                {
+                    article.ArticleTitle = (await _article.articles.FirstOrDefaultAsync(x => x.Id == article.ArticleId)).Title;
+                }
+            }
             //get UserCourses
-            var courseIds = await _user.userCourses.Where(x => x.UserId == query.Id).Select(x => x.CourseId).ToListAsync();
-            foreach (var Id in courseIds)
+            else if (commend == "course")
             {
-                var course = await _course.courses.FirstOrDefaultAsync(x => x.Id == Id);
-                courses.Add(new UserCourseQueryViewModel { CourseId = course.Id, CourseName = course.Subject, Picture = course.Picture, Slug = course.Slug });
+                var courseIds =  _user.userCourses.Where(x => x.UserId == query.Id).Select(x => x.CourseId).ToList();
+             
+                foreach (var Id in courseIds)
+                {
+                    var course = await _course.courses.FirstOrDefaultAsync(x => x.Id == Id);
+                    courses.Add(new UserCourseQueryViewModel { CourseId = course.Id, CourseName = course.Subject, Picture = course.Picture, Slug = course.Slug });
 
+                }
+              
             }
-         
+
             //get user orders
-            var orders = await _order.orders.Where(x => x.UserId == query.Id).Select(x => new UserOrderQueryViewModel
+            else if(commend == "order")
             {
-                OrderId = x.Id,
-                CreationDate = x.CreationDate.ToFarsi(),
-                PayAmount = x.PayAmount,
-                CourseId = x.CourseId,
-                Code = x.Code,
-                IsFinaly = x.Isfinaly
-            }).ToListAsync();
-            orders.ForEach(async order => order.ProductName = (await _course.courses
-            .FirstOrDefaultAsync(j => j.Id == order.CourseId)).Subject);
+                orders = await _order.orders.Where(x => x.UserId == query.Id).Select(x => new UserOrderQueryViewModel
+                {
+                    OrderId = x.Id,
+                    CreationDate = x.CreationDate.ToFarsi(),
+                    PayAmount = x.PayAmount,
+                    CourseId = x.CourseId,
+                    Code = x.Code,
+                    IsFinaly = x.Isfinaly
+                }).ToListAsync();
+                foreach (var item in orders)
+                {
+                    item.ProductName = (await _course.courses.FirstOrDefaultAsync(x => x.Id == item.CourseId)).Subject;
+                }
 
-            foreach (var article in articles)
-            {
-                article.ArticleTitle = (await _article.articles.FirstOrDefaultAsync(x => x.Id == article.ArticleId)).Title;
             }
 
-            return  new AccountQueryViewModel
+         
+            return new AccountQueryViewModel
             {
                 Id = query.Id,
-                CourseComments = comments,
-                Courses = courses,
                 Email = query.Email,
                 PhoneNumber = query.Phone,
                 ProfilePicture = query.ProfilePicture,
                 RoleId = query.RoleId,
                 Username = query.Username,
-                ArticleComments = articles,
+                CourseComments = courseComments,
+                Courses = courses,
+                ArticleComments = articleComments,
                 Orders = orders
 
             };

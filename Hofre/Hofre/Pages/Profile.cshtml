@@ -1,37 +1,74 @@
 ﻿@page
 @model Hofre.Pages.ProfileModel
+@inject Frameworks.Auth.IAuth _auth;
 @{
-    // Layout = "/Pages/Hofre/Areas/Admin/Pages/Shared/AdminLayout.cshtml";
+            // Layout = "/Pages/Hofre/Areas/Admin/Pages/Shared/AdminLayout.cshtml";
 }
 
 <!-- CSS
 ============================================ -->
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="~/MainTheme/assets/css/bootstrap.min.css">
-<!-- Icon Font CSS -->
-<link rel="stylesheet" href="~/assets/css/vendor/material-design-iconic-font.min.css">
-<link rel="stylesheet" href="~/assets/css/vendor/font-awesome.min.css">
-<link rel="stylesheet" href="~/assets/css/vendor/themify-icons.css">
-<link rel="stylesheet" href="~/assets/css/vendor/cryptocurrency-icons.css">
 <!--upload photo style-->
 <link rel="stylesheet" href="~/css/photo-uploader.css" />
 
-<!-- Plugins CSS -->
-<link rel="stylesheet" href="~/assets/css/plugins/plugins.css">
-
-<!-- Helper CSS -->
-<link rel="stylesheet" href="~/assets/css/helper.css">
+<link rel="stylesheet" href="~/ProfileTheme/assets/css/plugins.css">
 
 <!-- Main Style CSS -->
-<link rel="stylesheet" href="~/assets/css/style.css">
+<link rel="stylesheet" href="~/ProfileTheme/assets/css/style.css">
 
-<!-- Custom Style CSS Only For Demo Purpose -->
-<link id="cus-style" rel="stylesheet" href="~/assets/css/style-primary.css">
+
+
+<!-- Main Style CSS -->
+<link rel="stylesheet" href="~/MainTheme/assets/css/style.css">
+
 
 
 <style>
     body.skin-dark {
         background-color: #0c0305;
+    }
+
+    .table-responsive table thead, tbody {
+        background-color: #222222;
+        color: white;
+    }
+
+    .account_page_bg {
+        background-color: black;
+    }
+
+    #CommentPage {
+        color: black;
+        Background-color: yellow;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    #CommentText {
+        color: black;
+        Background-color: orangered;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    #CommentDate {
+        color: black;
+        Background-color: aqua;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    #CommentPage:hover {
+        box-shadow: 2px 2px 5px yellow;
+    }
+
+    #CommentText:hover {
+        box-shadow: 2px 2px 5px orangered;
+    }
+
+    #CommentDate:hover {
+        box-shadow: 2px 2px 5px aqua;
     }
 </style>
 <section class="page-title-area page-title-bg1">
@@ -41,254 +78,291 @@
         </div>
     </div>
 </section>
-
-<div class="container">
-    <div class="row">
-        <div class="content-body">
-
-            <!-- Page Headings Start -->
-            <div class="row justify-content-between align-items-center mb-10">
-
-                <!-- Page Heading Start -->
-                <div class="col-12 col-lg-auto mb-20">
-                    <div class="page-heading">
-                        <h3>مشخصات</h3>
-                    </div>
-                </div><!-- Page Heading End -->
-
-            </div><!-- Page Headings End -->
-
-            <div class="row mbn-50">
-
-                <!--Author Top Start-->
-                <div class="col-12 mb-50">
-                    <div class="author-top" >
-                        <div class="inner" style="background-image:url(https://images.pling.com/img/00/00/62/69/92/1701727/matrix-code-numbers-green-11.jpg)">
-                            <div class="photocontainer" >
-
-                                <div class="avatar-upload">
-                                    <div class="avatar-edit">
-                                        <input type='file' id="imageUpload" name="picture" accept=".png, .jpg, .jpeg" />
-
-                                        <label for="imageUpload"></label>
-                                    </div>
-                                    <div class="avatar-preview">
-                                        @if (Model.account.ProfilePicture != "avatar.png")
-                                        {
-                                            <div id="imagePreview" style="background-image: url(/Media/User/@Model.account.Id/@(Model.account.ProfilePicture)"></div>
-
-                                        }
-                                        else
-                                        {
-                                            <div id="imagePreview" style="background-image: url(/Media/avatar.png)"></div>
-
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        </div>
-                    </div>
-                </div>
-
-                <!--Author Top End-->
-                <!--Timeline / Activities Start-->
-                <div class="col-xlg-8 col-12 mb-50">
-                    <div class="box">
-
-                        <div class="box-head">
-                            <h3 class="title">فعالیت ها</h3>
-                        </div>
-
-                        <div class="box-body">
-
-                            <div class="timeline-wrap row mbn-50">
-
-
-                                <div class="col-12 mb-50">
-                                    <ul class="timeline-list">
-
-
-                                        <li>
-                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
-                                            <div class="details">
-                                                <h5 class="title"><a href="#">دوره های من</a></h5>
-                                                <div class="gallery">
-                                                    <div class="row mbn-30">
-
-                                                        @foreach (var course in Model.account.Courses)
-                                                        {
-                                                            <div class="col-md-4 col-sm-6 col-12 mb-30">
-                                                                <a asp-page="/Course" asp-rout-slug="@course.Slug">
-                                                                    <img src="~/Media/Course/@course.CourseName/@course.Picture">
-                                                                    <span>@course.CourseName</span>
-                                                                </a>
-                                                            </div>
-
-                                                        }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
-                                            <div class="details" style="overflow-x:auto;">
-                                                <table class="table" dir="rtl">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>دوره ها</th>
-                                                            <th>مقالات</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            @foreach (var item in Model.account.CourseComments)
-                                                            {
-                                                                <td>@($"دوره : {@item.CourseName} نظر : {(item.Text.Length > 10 ? item.Text.Substring(0,10) : item.Text)} زمان : {item.CreationDate}")</td>
-
-                                                            }
-                                                            @foreach (var item in Model.account.ArticleComments)
-                                                            {
-                                                                <td>@($"مقاله : {@item.ArticleTitle} نظر : {(item.Text.Length > 10 ? item.Text.Substring(0,10) : item.Text)} زمان : {item.CreationDate}")</td>
-
-                                                            }
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table>
+<section class="profile-authentication-area ptb-100">
+    <div class="container">
 
 
 
-                                            </div>
-                                        </li>
-
-
-
+        <!--Author Top End-->
+        <!--Timeline / Activities Start-->
+        <div class="account_page_bg" style="box-shadow:3px 3px 4px #070000">
+            <div class="container" style="padding:20px">
+                <section class="main_content_area">
+                    <div class="account_dashboard">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <!-- Nav tabs -->
+                                <div class="dashboard_tab_button">
+                                    <ul role="tablist" class="nav flex-column dashboard-list">
+                                        <li><a href="#dashboard" data-toggle="tab" class="nav-link active">داشبورد</a></li>
+                                        <li id="order"><a href="#orders" data-toggle="tab" class="nav-link">سفارشات</a></li>
+                                        <li id="comments"><a href="#downloads" data-toggle="tab" class="nav-link">نظرات من</a></li>
+                                        <li id="course"><a href="#address" data-toggle="tab" class="nav-link">دوره های من</a></li>
+                                        <li><a href="#account-details" data-toggle="tab" class="nav-link">جزئیات حساب</a></li>
+                                        <li><a asp-page="profile" asp-page-handler="Signout" class="nav-link">خروج</a></li>
                                     </ul>
                                 </div>
-
-
-
                             </div>
+                            <div class="col-sm-12 col-md-9 col-lg-9">
+                                <!-- Tab panes -->
+                                <div class="tab-content dashboard_content">
+                                    <div class="tab-pane fade show active" id="dashboard">
+                                        <h3>داشبورد </h3>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>نظرات</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="orders">
+                                        <h3>سفارشات</h3>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>دوره</th>
+                                                        <th>تاریخ</th>
+                                                        <th>مبلغ پرداختی</th>
+                                                        <th>شناسه</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="ordervalues">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="downloads">
+                                        <h3>نظرات من</h3>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>نظرات</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="commentvalues">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
 
-                        </div>
+                                    <div class="tab-pane" id="address">
+                                        <div class="row" id="coursevalues">
+                                        </div>
+                                    </div>
 
-                    </div>
-                </div>
-                <!--Timeline / Activities End-->
-                <!--Right Sidebar Start-->
-                <div class="col-xlg-4 col-12 mb-50">
-                    <div class="row mbn-30">
+                                    <div class="tab-pane fade" id="account-details">
+                                        <h3>جزئیات حساب </h3>
 
-                        <!--Author Information Start-->
-                        <div class="col-xlg-12 col-lg-6 col-12 mb-30">
-                            <div class="box">
-                                <div class="box-head">
-                                    <h3 class="title">تغییر مشخصات  </h3>
-                                </div>
-                                <div class="box-body">
-                                    <div class="form" dir="ltr">
-                                        <form method="post" asp-page-handler="Edit">
-                                            <div class="validation text-danger" asp-validation-summary="All"></div>
-                                            <div class="row row-10 mbn-20">
-                                                <div class="col-12 mb-20"><input type="text" name="username" class="form-control" value="@Model.account.Username"></div>
-                                                <div class="col-12 mb-20"><input type="email" name="email" class="form-control" value="@Model.account.Email"></div>
-                                                <div class="col-12 mb-20"><input type="number" name="phone" class="form-control" value="@Model.account.PhoneNumber"></div>
-                                                <div class="col-12 mb-20"><input type="hidden" name="Id" class="form-control" value="@Model.account.Id"></div>
-                                                <div class="col-12 mt-10 mb-20">
-                                                    <input type="submit" class="button button-primary button-outline" value="ذخیره تغییرات">
-                                                    <a class="button button-danger button-outline" asp-page="/changepassword" asp-route-userId="@Model.account.Id">تغییر کلمه عبور</a>
+                                        <div class="container">
+                                            <div class="row">
+
+                                                <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+                                                    <div class="login" display:grid">
+                                                        <div class="login_form_container">
+                                                            <div class="account_login_form">
+                                                                <form method="post" asp-page-handler="Edit">
+                                                                    <div class="validation text-danger" asp-validation-summary="All"></div>
+                                                                    <div class="row row-10 mbn-20">
+                                                                        <div class="col-12 mb-20"><input type="text" name="username" class="form-control" value="@Model.account.Username"></div>
+                                                                        <div class="col-12 mb-20"><input type="email" name="email" class="form-control" value="@Model.account.Email"></div>
+                                                                        <div class="col-12 mb-20"><input type="number" name="phone" class="form-control" value="@Model.account.PhoneNumber"></div>
+                                                                        <div class="col-12 mb-20"><input type="hidden" name="Id" class="form-control" value="@Model.account.Id"></div>
+                                                                        <div class="col-12 mt-10 mb-20">
+                                                                            <input type="submit" class="button button-primary button-outline" value="ذخیره تغییرات">
+                                                                            <a class="button button-danger button-outline" asp-page="/changepassword" asp-route-userId="@Model.account.Id">تغییر کلمه عبور</a>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+
+                                                <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+                                                    <div class="avatar-upload">
+
+                                                        <div class="avatar-edit">
+                                                            <input type='file' id="imageUpload" name="picture" accept=".png, .jpg, .jpeg" />
+
+                                                            <label for="imageUpload"></label>
+                                                        </div>
+                                                        <div class="avatar-preview">
+                                                            @if (Model.account.ProfilePicture != "avatar.png")
+                                                            {
+                                                                <div id="imagePreview" style="background-image: url(/Media/User/@Model.account.Id/@(Model.account.ProfilePicture)"></div>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <div id="imagePreview" style="background-image: url(/Media/avatar.png)"></div>
+
+                                                            }
+                                                        </div>
+                                                    </div>
 
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-                </div>
-                <!--Right Sidebar End-->
-                <div class="col-xlg-12 col-lg-12 col-12 mb-30">
-
-                    <div class="box">
-                        <div class="box-head">
-                            <h3 class="title">خرید ها</h3>
-                        </div>
-                        <div class="box-body">
-                            <div class="table-responsive" style="overflow-x:auto;">
-                                <table class="table" style="text-align:right;">
-
-                                    <!-- Table Head Start -->
-                                    <thead>
-                                        <tr>
-                                            <th>محصول</th>
-                                            <th>مبلغ نهایی</th>
-                                            <th>تاریخ خرید</th>
-                                            <th>شماره سفارش</th>
-                                            <th>وضعیت</th>
-                                        </tr>
-                                    </thead><!-- Table Head End -->
-                                    <!-- Table Body Start -->
-                                    <tbody>
-                                        @foreach (var order in Model.account.Orders)
-                                        {
-                                            <tr>
-                                                <td class="fw-600">@order.ProductName</td>
-                                                <td><span class="text-success d-flex justify-content-between fw-600">@order.PayAmount تومان</span></td>
-
-                                                <td>
-                                                    @order.CreationDate
-                                                </td>
-                                                <td>@order.Code</td>
-
-                                                @if (order.IsFinaly)
-                                                {
-                                                    <td style="color:green;">به اتمام رسیده</td>
-                                                }
-                                                else
-                                                {
-                                                    <td style="color:red;">ناتمام</td>
-                                                }
-
-                                            </tr>
-                                        }
-
-                                    </tbody><!-- Table Body End -->
-
-                                </table>
                             </div>
                         </div>
                     </div>
-
-                </div><!-- Daily Sale Report End -->
-                <form method="post" asp-page-handler="Signout">
-                    <button class="button button-danger button-outline" type="submit">خروج</button>
-                </form>
+                </section>
             </div>
-
-        </div><!-- Content Body End -->
+        </div>
 
     </div>
-</div>
-<br />
-<!-- Global Vendor, plugins & Activation JS -->
-<script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
-<script src="~/assets/js/vendor/popper.min.js"></script>
-<script src="~/assets/js/vendor/bootstrap.min.js"></script>
-<!--Plugins JS-->
-<script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-<script src="~/assets/js/plugins/tippy4.min.js.js"></script>
-<!--Main JS-->
-<!-- Plugins & Activation JS For Only This Page -->
-<script src="~/assets/js/plugins/moment/moment.min.js"></script>
+
+</section>
+<script src="~/MainTheme/assets/js/jquery.min.js"></script>
+
+<!-- Plugins JS -->
+<script src="~/ProfileTheme/assets/js/plugins.js">
+</script>
+
+<!-- Main JS -->
+<script src="~/ProfileTheme/assets/js/main.js"></script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+
+
+
+        $("#order").click(function () {
+            if($("#ordervalues tr").length <= 0)
+            {
+                  $.ajax({
+                type: 'POST',
+                url: '@Url.Page("Profile","Data")',
+                data: { "Id": @Model.account.Id, "commend": "order"
+        },
+            headers : { "RequestVerificationToken": @Model.account.Id
+    },
+        dataType : 'json',
+        success : function (response) {
+            $(response.orders).each(function () {
+                var table = `<tr>
+             <td>${this.productName}</td>
+             <td>${this.creationDate}</td>
+             <td>${this.payAmount} تومان</td>
+             <td>${this.code}</td>
+             </tr>`
+                $("#ordervalues").append(table)
+            })
+        },
+        error: function (response) {
+            alert(response.responseText)
+        },
+        failure: function (response) {
+            alert(response.responseText)
+        }
+
+
+            })
+            }
+
+        })
+
+
+
+
+    //comments
+    $("#comments").click(function () {
+       if($("#commentvalues tr").length<=0){
+            var table;
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Page("Profile","Data")',
+            data: { "Id": @Model.account.Id, "commend" : "comment"
+    },
+        headers : { "RequestVerificationToken": @Model.account.Id},
+    dataType: 'json',
+        success : function (response) {
+            $(response.articleComments).each(function () {
+                table = `<tr><td><a asp-page="/article" asp-route-slug="" id="CommentPage">مقاله : ${this.articleTitle}</a> <a id="CommentText">نظر : ${this.text.lenght > 10 ? this.text.subString(1, 10) : this.text}</a>  <a id="CommentDate">زمان :${this.creationDate}</a></td></tr>`
+                $("#commentvalues").append(table)
+            })
+            $(response.courseComments).each(function () {
+                table = `<tr><td><a asp-page="/article" asp-route-slug="" id="CommentPage">دوره : ${this.courseName}</a> <a id="CommentText">نظر : ${this.text.lenght > 10 ? this.text.subString(1, 10) : this.text}</a>  <a id="CommentDate">زمان :${this.creationDate}</a></td></tr>`
+                $("#commentvalues").append(table)
+            })
+        },
+
+          })
+          }
+        })
+
+
+        //courses
+        $("#course").click(function () {
+            if($("#coursevalues div").length<=0){
+
+                  $.ajax({
+                type: 'POST',
+                url: '@Url.Page("Profile","Data")',
+                data: { "Id": @Model.account.Id, "commend": "course"
+        },
+            headers : { "RequestVerificationToken": @Model.account.Id
+    },
+        dataType : 'json',
+        success : function (response) {
+            $(response.courses).each(function () {
+                var table = `
+                                        <div class="col-lg-3 col-md-6">
+                                            <div class="single-live-stream-item">
+                                                <img asp-page="./Course" asp-route-slug="${this.slug}" src="/Media/Course/${this.courseName}/${this.picture}" >
+                                              <a asp-page="./Course" asp-route-slug="${this.slug}" class="link-btn"></a>
+
+                                            </div>
+
+
+                                    </div>`
+                $("#coursevalues").append(table)
+            })
+        },
+        error: function (response) {
+            alert(response.responseText)
+        },
+        failure: function (response) {
+            alert(response.responseText)
+        }
+
+
+
+    })
+            }
+
+    })
+
+
+
+
+    })
+
+
+
+
+</script>
+
+
 
 <script>
     function readURL(input) {
@@ -302,6 +376,7 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
     $("#imageUpload").change(function() {
         readURL(this);
         var value = $('#imageUpload').prop("files");

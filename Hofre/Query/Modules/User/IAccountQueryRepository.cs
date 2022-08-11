@@ -15,7 +15,7 @@ namespace Query.Modules.User
         Task<bool> ForgetPassword(string entery);
         Task<string> ResetPassword(ResetPasswordViewModel commend);
         Task<AccountQueryViewModel> GetBy(string username);
-        Task<AccountQueryViewModel> GetBy(long userId);
+        Task<AccountQueryViewModel> GetBy(long userId,string commend);
         Task UpdateProfilePicture(long userId, IFormFile picture);
         Task RemoveAllResetRequests(long UserId);
         Task<bool> ValidationResetCode(string code);

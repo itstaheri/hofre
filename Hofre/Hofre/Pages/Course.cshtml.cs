@@ -47,7 +47,7 @@ namespace Hofre.Pages
            
             if (await (_repository.FreeCourse(CourseId)))
             {
-                await _repository.JoinToCourse(Course.Id);
+                await _repository.JoinToCourse(CourseId);
                 return RedirectToPage();
             }
             else
